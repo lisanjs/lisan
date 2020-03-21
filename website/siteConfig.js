@@ -30,7 +30,7 @@ const siteConfig = {
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
-  editUrl: 'https://gitlab.com/lisanjs/lisan/docs/',
+  editUrl: 'https://github.com/lisanjs/lisan/docs/',
 
   // Used for publishing and more
   projectName: 'lisan',
@@ -117,7 +117,7 @@ const siteConfig = {
 
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
-  repoUrl: 'https://github.com/facebook/test-site',
+  repoUrl: 'https://github.com/lisanjs/lisan',
 };
 
 module.exports = siteConfig;
