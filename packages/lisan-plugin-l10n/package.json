@@ -1,6 +1,6 @@
 {
   "name": "lisan-plugin-l10n",
-  "version": "0.0.3",
+  "version": "0.0.34-alpha.0",
   "description": "Lisan Localization Plugin",
   "author": "Mehmet Yatkı <mehmet@yatki.com>",
   "keywords": [
@@ -37,9 +37,9 @@
     "url": "https://gitlab.com/lisanjs/lisan/issues"
   },
   "dependencies": {
-    "lisan-types": "^0.0.3"
+    "lisan-types": "^0.0.34-alpha.0"
   },
   "devDependencies": {
-    "lisan": "^0.0.3"
+    "lisan": "^0.0.34-alpha.0"
   }
 }

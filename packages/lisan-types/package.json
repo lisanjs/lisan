@@ -1,6 +1,6 @@
 {
   "name": "lisan-types",
-  "version": "0.0.3",
+  "version": "0.0.34-alpha.0",
   "description": "Lisan Typescript Type Declarations",
   "keywords": [
     "i18n",
