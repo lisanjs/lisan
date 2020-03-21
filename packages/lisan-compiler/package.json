@@ -23,7 +23,8 @@
   "files": [
     "dist/",
     "package.json",
-    "README.md"
+    "README.md",
+    "LICENCE"
   ],
   "repository": {
     "type": "git",
