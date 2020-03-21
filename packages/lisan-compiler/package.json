@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@types/estree": "0.0.42",
-    "acorn": "7.1.0"
+    "acorn": "7.1.1"
   },
   "bugs": {
     "url": "https://github.com/lisanjs/lisan/issues"
