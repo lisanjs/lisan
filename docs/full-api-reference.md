@@ -338,7 +338,7 @@ You can find the setup instructions and available options [here](/docs/lisan-plu
 > contains production-ready Localization configurations.
 >
 > You can find the full list of Localization configs
-> [here](https://github.com/lisanjs/lisan/packages/lisan-locales).
+> [here](https://github.com/lisanjs/lisan/tree/master/packages/lisan-locales).
 
 </div>
 

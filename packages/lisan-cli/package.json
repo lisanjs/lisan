@@ -14,7 +14,7 @@
     "js"
   ],
   "author": "Mehmet Yatkı <mehmet@yatki.com>",
-  "homepage": "https://gitlab.com/lisanjs/lisan/packages/lisan-cli",
+  "homepage": "https://github.com/lisanjs/lisan/tree/master/packages/lisan-cli",
   "license": "MIT",
   "main": "./dist/index.js",
   "bin": {
@@ -32,10 +32,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/lisanjs/lisan.git"
+    "url": "git+ssh://git@github.com/lisanjs/lisan.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/lisanjs/lisan/issues"
+    "url": "https://github.com/lisanjs/lisan/issues"
   },
   "dependencies": {
     "chokidar": "3.3.1",

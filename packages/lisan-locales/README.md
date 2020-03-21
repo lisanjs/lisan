@@ -29,7 +29,7 @@ of your native language is missing or wrong,<br>
 please feel free to
 [open an issue](https://github.com/lisanjs/lisan/issues/new),
 or submit a
-[pull request](https://github.com/lisanjs/lisan/packages/lisan-locales).
+[pull request](https://github.com/lisanjs/lisan/tree/master/packages/lisan-locales).
 
 ## Installation
 
@@ -72,7 +72,7 @@ After adding the script tag above,
 ## List of Locales
 
 You can find the full list of Localization configs,
-[lisan-locale](https://github.com/lisanjs/lisan/packages/lisan-locales) repository.
+[lisan-locale](https://github.com/lisanjs/lisan/tree/master/packages/lisan-locales) repository.
 
 ## Compatibility
 

@@ -14,14 +14,14 @@
     "js"
   ],
   "author": "Mehmet Yatkı <mehmet@yatki.com>",
-  "homepage": "https://gitlab.com/lisanjs/lerna-ts-boilerplate/packages/lisan-types#readme",
+  "homepage": "https://github.com/lisanjs/lisan/tree/master/packages/lisan-types#readme",
   "license": "MIT",
   "main": "index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/lisanjs/lisan.git"
+    "url": "git+ssh://git@github.com/lisanjs/lisan.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/lisanjs/lisan/issues"
+    "url": "https://github.com/lisanjs/lisan/issues"
   }
 }

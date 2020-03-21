@@ -75,7 +75,7 @@ lisan.toOrdinal(3); // Returns: 3'üncü
 > contains production-ready Localization configurations.
 >
 > You can find the full list of Localization configs
-> [here](https://github.com/lisanjs/lisan/packages/lisan-locales).
+> [here](https://github.com/lisanjs/lisan/tree/master/packages/lisan-locales).
 
 </div>
 

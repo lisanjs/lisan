@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/lisanjs/lerna-ts-boilerplate.git"
+    "url": "git+ssh://git@github.com/lisanjs/lisan.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/lisanjs/lerna-ts-boilerplate/issues"
+    "url": "https://github.com/lisanjs/lisan/issues"
   },
-  "homepage": "https://gitlab.com/lisanjs/lerna-ts-boilerplate#readme",
+  "homepage": "https://github.com/lisanjs/lisan#readme",
   "devDependencies": {
     "@types/jest": "25.1.4",
     "@types/node": "13.9.2",

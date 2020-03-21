@@ -14,7 +14,7 @@
     "js"
   ],
   "author": "Mehmet Yatkı <mehmet@yatki.com>",
-  "homepage": "https://gitlab.com/lisanjs/lerna-ts-boilerplate/packages/lisan-compiler#readme",
+  "homepage": "https://github.com/lisanjs/lisan/tree/master/packages/lisan-compiler#readme",
   "license": "MIT",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
@@ -28,7 +28,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/lisanjs/lisan.git"
+    "url": "git+ssh://git@github.com/lisanjs/lisan.git"
   },
   "scripts": {
     "build": "rollup -c rollup.config.ts",
@@ -39,6 +39,6 @@
     "acorn": "^7.1.0"
   },
   "bugs": {
-    "url": "https://gitlab.com/lisanjs/lisan/issues"
+    "url": "https://github.com/lisanjs/lisan/issues"
   }
 }

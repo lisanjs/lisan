@@ -14,7 +14,7 @@
     "js"
   ],
   "author": "Mehmet Yatkı <mehmet@yatki.com>",
-  "homepage": "https://gitlab.com/lisanjs/lerna-ts-boilerplate/packages/lisan-locales#readme",
+  "homepage": "https://github.com/lisanjs/lisan/tree/master/packages/lisan-locales#readme",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -27,7 +27,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/lisanjs/lisan.git"
+    "url": "git+ssh://git@github.com/lisanjs/lisan.git"
   },
   "scripts": {
     "prebuild": "rimraf ./dist",
@@ -35,7 +35,7 @@
     "start": "rollup -c rollup.config.ts -w"
   },
   "bugs": {
-    "url": "https://gitlab.com/lisanjs/lisan/issues"
+    "url": "https://github.com/lisanjs/lisan/issues"
   },
   "devDependencies": {
     "lisan": "^0.0.34-alpha.0",
