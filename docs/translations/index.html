@@ -1,0 +1,480 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Translations · Lisan</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="To create dictionaries automatically,"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Translations · Lisan"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lisanjs.com/"/><meta property="og:description" content="To create dictionaries automatically,"/><meta property="og:image" content="https://lisanjs.com/img/logo/lisan-512.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lisanjs.com/img/logo/lisan-512.png"/><link rel="shortcut icon" href="/img/logo/lisan-512.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="/js/external-links.js"></script><script type="text/javascript" src="/js/code-mirror.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo/lisan-512.png" alt="Lisan"/><h2 class="headerTitleWithLogo">Lisan</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/what-is-lisan" target="_self">Docs</a></li><li class=""><a href="/try-it-out" target="_self">Try it out</a></li><li class=""><a href="https://github.com/lisanjs/lisan" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Components</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">About</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan">Lisan</a></li><li class="navListItem"><a class="navItem" href="/docs/how-lisan-works">How it works?</a></li><li class="navListItem"><a class="navItem" href="/docs/performance">Performance</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-compiler">Lisan Compiler</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-cli">Lisan CLI</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-locales">Lisan Locales</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-plugins">Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-adapters">Adapters</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Components</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/translations">Translations</a></li><li class="navListItem"><a class="navItem" href="/docs/dictionary">Dictionary</a></li><li class="navListItem"><a class="navItem" href="/docs/conditional-groups">Conditional Groups</a></li><li class="navListItem"><a class="navItem" href="/docs/formatters">Formatters</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugins</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/lisan-plugin-l10n">Localization</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-plugin-loader">Loader</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides &amp; Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/pluralization">Pluralization</a></li><li class="navListItem"><a class="navItem" href="/docs/multiple-instances">Multiple Instances</a></li><li class="navListItem"><a class="navItem" href="/docs/how-to-write-plugins">Write Plugins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/full-api-reference">Lisan</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-compiler">Lisan Compiler</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-cli">Lisan CLI</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/lisanjs/lisan/docs/translations.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Translations</h1></header><article><div><span><p>To create dictionaries automatically,
+your translation files should be compatible with
+<a href="#lisan-json-schema">Lisan JSON Schema</a> and your translation texts
+must follow <a href="#lisan-literal">Lisan Literal</a> conventions.</p>
+<p>Translations must be valid <a href="https://json5.org/">JSON5</a> objects and preferably
+should be stored in JSON files.</p>
+<div class="hint-block">
+<blockquote>
+<p><strong>Best Practice</strong></p>
+<p>Please always maintain your translations as JSON files,
+and generate <a href="/docs/dictionary">dictionaries</a>
+by using <a href="/docs/what-is-lisan-cli">Lisan CLI</a>
+or <a href="/docs/what-is-lisan-compiler">Lisan Compiler</a>, since
+compiler will also validate your translations.</p>
+</blockquote>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="lisan-json-schema"></a><a href="#lisan-json-schema" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lisan JSON Schema</h2>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">interface</span> TranslationJson {
+  locale?: <span class="hljs-built_in">string</span>;
+  entries: {
+    [translationKey: <span class="hljs-built_in">string</span>]: LisanLiteral;
+    [conditionalGroupKey: <span class="hljs-built_in">string</span>]: {
+      [conditionTag: <span class="hljs-built_in">string</span>]: LisanLiteral;
+    };
+  };
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="lisan-literal"></a><a href="#lisan-literal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lisan Literal</h2>
+<p><strong>Lisan Literal</strong> is a <strong>string</strong> and must have a valid Javascript
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Template Literal</a>
+syntax. However, the text is not enclosed with backtick
+(<a href="https://en.wikipedia.org/wiki/Grave_accent">grave accent</a>)
+character but with single (') or double (&quot;) quote characters.</p>
+<p>Template Literal is a great and powerful feature of javascript
+allowing to have embedded expressions. <strong>However</strong>, to avoid security risks and
+make interpolation rules easy to understand,
+almost every embed expression is forbidden.</p>
+<p>Only variables and a handful of <a href="#allowed-functions">call expressions</a>
+are allowed in <strong>Lisan Literal</strong>.</p>
+<p>Below, you can find the list of Lisan Literal rules and capabilities.</p>
+<blockquote>
+<p>You can also try <a href="/try-it-out">Lisan Online Compiler</a> to see how translations
+are compiled into dictionaries.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="plain-text"></a><a href="#plain-text" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plain Text</h3>
+<p>Lisan Literal can be a simple string.</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"locale"</span>: <span class="hljs-string">"en-US"</span>,
+  <span class="hljs-attr">"entries"</span>: {
+    <span class="hljs-comment">/**
+     * @compiledTo:
+     *  { "simple.text.key": "Simple text" }
+     */</span>
+    <span class="hljs-attr">"simple.text.key"</span>: <span class="hljs-string">"Simple text"</span>
+  }
+}
+</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> text = lisan.t(<span class="hljs-string">'simple.text.key'</span>);
+
+<span class="hljs-built_in">console</span>.log(text);
+<span class="hljs-comment">// Outputs: "Simple Text"</span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="interpolation"></a><a href="#interpolation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interpolation</h3>
+<p>Lisan Literal can contain variables.</p>
+<!-- markdownlint-disable MD013 -->
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"locale"</span>: <span class="hljs-string">"en-US"</span>,
+  <span class="hljs-attr">"entries"</span>: {
+    <span class="hljs-comment">/**
+     * @compiledTo:
+     *  { "interpolationExample": ({name, surname}) =&gt; `Hello ${name} ${surname}` }
+     */</span>
+    <span class="hljs-attr">"interpolationExample"</span>: <span class="hljs-string">"Hello ${name} ${surname}"</span>
+  }
+}
+</code></pre>
+<!-- markdownlint-enable MD013 -->
+<p><strong>Usage:</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> text = lisan.t(<span class="hljs-string">'interpolationExample'</span>, {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'John'</span>,
+  <span class="hljs-attr">surname</span>: <span class="hljs-string">'Doe'</span>,
+});
+
+<span class="hljs-built_in">console</span>.log(text);
+<span class="hljs-comment">// Outputs: "Hello John Doe"</span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="accessing-child-properties-of-an-object"></a><a href="#accessing-child-properties-of-an-object" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Accessing Child Properties of an Object</h3>
+<p>Lisan Literal can contain a deep object as a variable,
+as long as the value of last child property is
+<strong>string</strong> or <strong>number</strong>.</p>
+<!-- markdownlint-disable MD013 -->
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"locale"</span>: <span class="hljs-string">"en-US"</span>,
+  <span class="hljs-attr">"entries"</span>: {
+    <span class="hljs-comment">/**
+     * @compiledTo:
+     *  { "deep-object": ({info}) =&gt; `Hi ${info.person.name} ${info.person.surname}` }
+     */</span>
+    <span class="hljs-attr">"deep-object"</span>: <span class="hljs-string">"Hi ${info.person.name} ${info.person.surname}"</span>
+  }
+}
+</code></pre>
+<!-- markdownlint-enable MD013 -->
+<p><strong>Usage:</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> data = {
+  <span class="hljs-attr">person</span>: {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'John'</span>,
+    <span class="hljs-attr">surname</span>: <span class="hljs-string">'Doe'</span>,
+  },
+};
+
+<span class="hljs-keyword">const</span> text = lisan.t(<span class="hljs-string">'deep-object'</span>, data);
+
+<span class="hljs-built_in">console</span>.log(text);
+<span class="hljs-comment">// Outputs: "Hi John Doe"</span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="escaping"></a><a href="#escaping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Escaping</h3>
+<p>Lisan Literal can contain escaped placeholders,
+in that case, the expression is ignored.</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"locale"</span>: <span class="hljs-string">"en-US"</span>,
+  <span class="hljs-attr">"entries"</span>: {
+    <span class="hljs-comment">/**
+     * @compiledTo:
+     *  { "escaped_exp": ({name}) =&gt; `Hello ${name} \${surname}` }
+     */</span>
+    <span class="hljs-attr">"escaped_exp"</span>: <span class="hljs-string">"Hello ${name} \\${surname}"</span>
+  }
+}
+</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> text = lisan.t(<span class="hljs-string">'escaped_exp'</span>, {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'John'</span>,
+  <span class="hljs-attr">surname</span>: <span class="hljs-string">'Doe'</span>,
+});
+
+<span class="hljs-built_in">console</span>.log(text);
+<span class="hljs-comment">// Outputs: "Hello John ${surname}"</span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="nested-translations"></a><a href="#nested-translations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Nested Translations</h3>
+<p>Lisan Literal can contain the <a href="/docs/full-api-reference#lisantkey-placeholders"><code>lisan.t()</code></a>
+method.</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"locale"</span>: <span class="hljs-string">"en-US"</span>,
+  <span class="hljs-attr">"entries"</span>: {
+    <span class="hljs-attr">"a.simple.text"</span>: <span class="hljs-string">"Simple text"</span>,
+
+    <span class="hljs-comment">/**
+     * @compiledTo:
+     *  { "tInception": ({name}, {t}) =&gt; `This is a ${t('a.simple.text')}.` }
+     */</span>
+    <span class="hljs-attr">"tInception"</span>: <span class="hljs-string">"This is a ${t('a.simple.text')}."</span>
+  }
+}
+</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> text = lisan.t(<span class="hljs-string">'tInception'</span>);
+
+<span class="hljs-built_in">console</span>.log(text);
+<span class="hljs-comment">// Outputs: "This is a Simple text."</span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="interpolation-in-nested-translations"></a><a href="#interpolation-in-nested-translations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interpolation in Nested Translations</h3>
+<p>Lisan Literal can contain the <a href="/docs/full-api-reference#lisant"><code>lisan.t()</code></a>
+method with variables.</p>
+<div class="warning-block">
+<blockquote>
+<p><strong>Caution</strong></p>
+<p>All variables must be passed to <code>t()</code> function as
+an object with
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015">shorthand property names</a>.</p>
+</blockquote>
+</div>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"locale"</span>: <span class="hljs-string">"en-US"</span>,
+  <span class="hljs-attr">"entries"</span>: {
+    <span class="hljs-attr">"greetings.hello"</span>: <span class="hljs-string">"Hello ${name} ${surname}"</span>,
+    <span class="hljs-comment">/**
+     * @compiledTo:
+     *  { "fun.stuff": ({day, name, surname}, {t}) =&gt;
+     *        `Today is ${day}! ${t('greetings.hello', {name, surname})}` }
+     */</span>
+    <span class="hljs-attr">"fun.stuff"</span>: <span class="hljs-string">"Today is ${day}! ${t('greetings.hello', {name, surname})}"</span>
+  }
+}
+</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> text = lisan.t(<span class="hljs-string">'fun.stuff'</span>, {
+  <span class="hljs-attr">day</span>: <span class="hljs-string">'Monday'</span>,
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'John'</span>,
+  <span class="hljs-attr">surname</span>: <span class="hljs-string">'Doe'</span>,
+});
+
+<span class="hljs-built_in">console</span>.log(text);
+<span class="hljs-comment">// Outputs: "Today is Monday! Hello John Doe."</span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="conditional-groups"></a><a href="#conditional-groups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conditional Groups</h3>
+<p><a href="/docs/conditional-groups"><code>Conditional Groups</code></a> is a very useful concept to
+easily achieve logical interpolations such as <strong>pluralization</strong>.</p>
+<div class="warning-block">
+<blockquote>
+<p><strong>Hint</strong></p>
+<p>Please note that Conditional Group Keys used in <a href="/docs/full-api-reference#lisanckey-value-placeholders"><code>lisan.c()</code></a>
+method and <strong>not</strong> with <code>lisan.t()</code>.</p>
+</blockquote>
+</div>
+<!-- markdownlint-disable MD013 -->
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"locale"</span>: <span class="hljs-string">"en-US"</span>,
+  <span class="hljs-attr">"entries"</span>: {
+    <span class="hljs-attr">"hello"</span>: <span class="hljs-string">"Hello ${name}"</span>,
+
+    <span class="hljs-comment">// Conditional Group Key</span>
+    <span class="hljs-attr">"verb.present.be"</span>: {
+      <span class="hljs-comment">// Condition Tag: LisanLiteral</span>
+      <span class="hljs-attr">"one"</span>: <span class="hljs-string">"is"</span>,
+      <span class="hljs-attr">"other"</span>: <span class="hljs-string">"are"</span>
+    },
+
+    <span class="hljs-attr">"child"</span>: {
+      <span class="hljs-attr">"one"</span>: <span class="hljs-string">"child"</span>,
+      <span class="hljs-attr">"other"</span>: <span class="hljs-string">"children"</span>
+    },
+
+    <span class="hljs-comment">/**
+     * @compiledTo:
+     *  { "wow": ({name, numberOfKids}, {c, t}) =&gt;
+     *    `${t('hello', {name})}. There ${c('verb.present.be', numberOfKids)} ${numberOfKids} ${c('child', numberOfKids)}`}
+     */</span>
+    <span class="hljs-attr">"wow!"</span>: <span class="hljs-string">"${t('hello', {name})}. There ${c('verb.present.be', numberOfKids)} ${numberOfKids} ${c('child', numberOfKids)}"</span>
+  }
+}
+</code></pre>
+<!-- markdownlint-enable MD013 -->
+<p><strong>Usage:</strong></p>
+<pre><code class="hljs css language-js">lisan.c(<span class="hljs-string">'verb.present.be'</span>, <span class="hljs-number">1</span>); <span class="hljs-comment">// Returns: "is"</span>
+lisan.c(<span class="hljs-string">'verb.present.be'</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// Returns: "are"</span>
+
+<span class="hljs-keyword">const</span> text1 = lisan.t(<span class="hljs-string">'wow!'</span>, {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'John'</span>,
+  <span class="hljs-attr">numberOfKids</span>: <span class="hljs-number">1</span>,
+});
+
+<span class="hljs-built_in">console</span>.log(text1);
+<span class="hljs-comment">// Outputs: "Hello John. There is 1 child."</span>
+
+<span class="hljs-keyword">const</span> text2 = lisan.t(<span class="hljs-string">'wow!'</span>, {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Jane'</span>,
+  <span class="hljs-attr">numberOfKids</span>: <span class="hljs-number">3</span>,
+});
+
+<span class="hljs-built_in">console</span>.log(text2);
+<span class="hljs-comment">// Outputs: "Hello Jane. There are 3 children."</span>
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="interpolation-in-conditional-groups"></a><a href="#interpolation-in-conditional-groups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Interpolation in Conditional Groups</h3>
+<p>Interpolation with Conditional Groups is the same as LisanLiteral entries.</p>
+<div class="warning-block">
+<blockquote>
+<p><strong>Caution</strong></p>
+<p>All variables must be passed to <code>c()</code> function as
+an object with
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015">shorthand property names</a>.</p>
+</blockquote>
+</div>
+<!-- markdownlint-disable MD013 -->
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"locale"</span>: <span class="hljs-string">"en-US"</span>,
+  <span class="hljs-attr">"entries"</span>: {
+    <span class="hljs-comment">// Conditional Group Key</span>
+    <span class="hljs-attr">"item.error"</span>: {
+      <span class="hljs-comment">// Condition Tag: LisanLiteral</span>
+      <span class="hljs-attr">"zero"</span>: <span class="hljs-string">"You still don't have a ${item}, buy one now?"</span>,
+      <span class="hljs-attr">"other"</span>: <span class="hljs-string">"You can't buy more than 1 ${item}, sorry."</span>
+    },
+
+    <span class="hljs-comment">/**
+     * @compiledTo:
+     *  { "actually key can be a sentence as well":
+     *    ({numberOfItems, item}) =&gt; `Ooops! ${c('item.error', numberOfItems, {item)}`
+     */</span>
+    <span class="hljs-attr">"actually key can be a sentence as well!"</span>: <span class="hljs-string">"Ooops! ${c('item.error', numberOfItems, {item)}"</span>
+  }
+}
+</code></pre>
+<!-- markdownlint-enable MD013 -->
+<p><strong>Usage:</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> text1 = lisan.t(<span class="hljs-string">'actually key can be a sentence as well!'</span>, {
+  <span class="hljs-attr">numberOfItems</span>: <span class="hljs-number">0</span>,
+  <span class="hljs-attr">item</span>: <span class="hljs-string">'sofa'</span>,
+});
+
+<span class="hljs-built_in">console</span>.log(text1);
+<span class="hljs-comment">// Outputs: "Ooops! You still don't have a sofa, buy one now?."</span>
+
+<span class="hljs-keyword">const</span> text2 = lisan.t(<span class="hljs-string">'actually key can be a sentence as well!'</span>, {
+  <span class="hljs-attr">numberOfItems</span>: <span class="hljs-number">2</span>,
+  <span class="hljs-attr">item</span>: <span class="hljs-string">'chair'</span>,
+});
+
+<span class="hljs-built_in">console</span>.log(text2);
+<span class="hljs-comment">// Outputs: "Ooops! You can't buy more than 1 chair, sorry."</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="missing-keys"></a><a href="#missing-keys" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Missing Keys</h3>
+<p>If an entry is missing t function returns the entry key.</p>
+<div class="hint-block">
+<blockquote>
+<p><strong>Hint</strong></p>
+<p>If you'd like to log missing entries or have a custom
+behaviour you can check
+<a href="/docs/how-to-write-plugins#example-2---logging-suspicious-entries">Loging suspicious entries</a>
+example on <a href="/docs/how-to-write-plugins">How to write plugins?</a> section.</p>
+</blockquote>
+</div>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"locale"</span>: <span class="hljs-string">"en-US"</span>,
+  <span class="hljs-attr">"entries"</span>: {
+    <span class="hljs-attr">"How do you bend the spoon?"</span>: <span class="hljs-string">"Maybe spoon does not exist, but this entry does!"</span>
+  }
+}
+</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> text1 = lisan.t(<span class="hljs-string">'How do you bend the spoon?'</span>);
+
+<span class="hljs-built_in">console</span>.log(text1);
+<span class="hljs-comment">// Outputs: "Maybe spoon does not exist, but this entry does!"</span>
+
+<span class="hljs-keyword">const</span> text2 = lisan.t(<span class="hljs-string">'This is not the entry you are looking for!'</span>);
+
+<span class="hljs-built_in">console</span>.log(text2);
+<span class="hljs-comment">// Outputs: "This is not the entry you are looking for!"</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="using-formatters-inside-entries"></a><a href="#using-formatters-inside-entries" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Formatters Inside Entries</h3>
+<p><a href="/docs/full-api-reference#lisanaddformattersformatters"><code>lisan.addFormatters()</code></a>
+method allows you to add formatter functions to <strong>transform</strong> values
+into desired format.</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"locale"</span>: <span class="hljs-string">"en-US"</span>,
+  <span class="hljs-attr">"entries"</span>: {
+    <span class="hljs-comment">/**
+     * @compiledTo:
+     *  { "tInception": ({date}, {dateTime}) =&gt; `Today is ${dateTime(date)}.` }
+     */</span>
+    <span class="hljs-attr">"today.message"</span>: <span class="hljs-string">"Today is ${dateTime(date)}."</span>
+  }
+}
+</code></pre>
+<p><strong>Usage:</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> text = lisan.t(<span class="hljs-string">'today.message'</span>, {
+  <span class="hljs-attr">date</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-string">'2020-01-01 13:03:22'</span>),
+});
+
+<span class="hljs-built_in">console</span>.log(text);
+<span class="hljs-comment">// Outputs: "Today is 01 January 2020, 01:03 PM."</span>
+</code></pre>
+<div class="warning-block">
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>Before using formatters, formatters <strong>have to be</strong> registered
+to lisan instance via <a href="/docs/full-api-reference#lisanaddformattersformatters"><code>lisan.addFormatters()</code></a>.</p>
+</blockquote>
+</div>
+<blockquote>
+<p>For more information, see: <a href="/docs/formatters">Formatters</a></p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="allowed-functions"></a><a href="#allowed-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Allowed Functions</h2>
+<h3><a class="anchor" aria-hidden="true" id="t-function"></a><a href="#t-function" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>t function</h3>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-comment">/**
+   * @compiledTo:
+   *  {
+   *    "key": ({param1, param2}, {t}) =&gt; `${t('entryKey', {param1, param2})}`
+   *  }
+   */</span>
+  <span class="hljs-attr">"key"</span>: <span class="hljs-string">"${t('entryKey', {param1, param2})}"</span>
+}
+</code></pre>
+<ul>
+<li>The first argument is the translation key.</li>
+<li>The second argument is a JSON object <strong>enforced</strong> with
+shorthand syntax and being used for interpolation.
+The arguments that were provided can be <strong>number</strong> or <strong>string</strong>
+or <strong>object</strong> containing <a href="/docs/translations#accessing-nested-object-properties">nested object properties</a>.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="c-function"></a><a href="#c-function" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>c function</h3>
+<!-- markdownlint-disable MD013 -->
+<pre><code class="hljs css language-json">{
+  <span class="hljs-comment">/**
+   * @compiledTo:
+   *  {
+   *    "key": ({param1, param2, value}, {c}) =&gt; `${c('condtionalGroupKey', value, {param1, param2})}`
+   *  }
+   */</span>
+  <span class="hljs-attr">"key"</span>: <span class="hljs-string">"${c('condtionalGroupKey', value, {param1, param2})}"</span>
+}
+</code></pre>
+<!-- markdownlint-enable MD013 -->
+<ul>
+<li>The first argument is a conditional group key.</li>
+<li>The second argument is the value that will be passed down to
+<a href="/docs/conditional-groups#condition-function">condition functions</a>.</li>
+<li>The third argument is a JSON object <strong>enforced</strong> with
+shorthand syntax and being used for interpolation.
+The arguments that were provided can be <strong>number</strong> or <strong>string</strong>
+or <strong>object</strong> containing <a href="/docs/translations#accessing-nested-object-properties">nested object properties</a>.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="formatters"></a><a href="#formatters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Formatters</h3>
+<p>Any formatter function that was registered via
+<a href="/docs/full-api-reference#lisanaddformattersformatters"><code>lisan.addFormatters()</code></a>
+method can be used in Lisan Literals.</p>
+<p>For more information, see: <a href="/docs/formatters">Formatters</a></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/21/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/lisan-adapters"><span class="arrow-prev">← </span><span>Adapters</span></a><a class="docs-next button" href="/docs/dictionary"><span>Dictionary</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#lisan-json-schema">Lisan JSON Schema</a></li><li><a href="#lisan-literal">Lisan Literal</a><ul class="toc-headings"><li><a href="#plain-text">Plain Text</a></li><li><a href="#interpolation">Interpolation</a></li><li><a href="#accessing-child-properties-of-an-object">Accessing Child Properties of an Object</a></li><li><a href="#escaping">Escaping</a></li><li><a href="#nested-translations">Nested Translations</a></li><li><a href="#interpolation-in-nested-translations">Interpolation in Nested Translations</a></li><li><a href="#conditional-groups">Conditional Groups</a></li><li><a href="#interpolation-in-conditional-groups">Interpolation in Conditional Groups</a></li><li><a href="#missing-keys">Missing Keys</a></li><li><a href="#using-formatters-inside-entries">Using Formatters Inside Entries</a></li></ul></li><li><a href="#allowed-functions">Allowed Functions</a><ul class="toc-headings"><li><a href="#t-function">t function</a></li><li><a href="#c-function">c function</a></li><li><a href="#formatters">Formatters</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/lisan-512.png" alt="Lisan" width="72" height="72"/></a><div><h5>Docs</h5><a href="/docs/what-is-lisan">About</a><a href="/docs/translations">Components</a><a href="/docs/lisan-plugins">Plugins</a><a href="/docs/pluralization">Guide &amp; Tips</a><a href="/docs/full-api-reference">API Reference</a></div><div><h5>Ecosystem</h5><a href="/docs/what-is-lisan#installation">Lisan</a><a href="/docs/what-is-lisan-locales">Lisan Locales</a><a href="/docs/what-is-lisan-compiler">Lisan Compiler</a><a href="/docs/what-is-lisan-cli">Lisan CLI</a><a href="/docs/lisan-plugin-l10n">Localization Plugin</a><a href="/docs/lisan-plugin-loader">Loader Plugin</a><a href="https://github.com/lisanjs/lisan-types" target="_blank">Lisan Types</a></div><div><h5>More</h5><a href="https://github.com/lisanjs/lisan" target="_blank" rel="noreferrer noopener">Issues</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/lisanjs/lisan" data-icon="octicon-star" data-show-count="true" aria-label="Star lisanjs/lisan on GitHub">Star</a></div></section></footer></div></body></html>

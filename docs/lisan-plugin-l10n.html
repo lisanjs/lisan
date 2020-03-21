@@ -1,0 +1,630 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Lisan Localization Plugin · Lisan</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;!-- markdownlint-disable MD036 --&gt;"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Lisan Localization Plugin · Lisan"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lisanjs.com/"/><meta property="og:description" content="&lt;!-- markdownlint-disable MD036 --&gt;"/><meta property="og:image" content="https://lisanjs.com/img/logo/lisan-512.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lisanjs.com/img/logo/lisan-512.png"/><link rel="shortcut icon" href="/img/logo/lisan-512.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="/js/external-links.js"></script><script type="text/javascript" src="/js/code-mirror.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo/lisan-512.png" alt="Lisan"/><h2 class="headerTitleWithLogo">Lisan</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/what-is-lisan" target="_self">Docs</a></li><li class=""><a href="/try-it-out" target="_self">Try it out</a></li><li class=""><a href="https://github.com/lisanjs/lisan" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Plugins</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">About</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan">Lisan</a></li><li class="navListItem"><a class="navItem" href="/docs/how-lisan-works">How it works?</a></li><li class="navListItem"><a class="navItem" href="/docs/performance">Performance</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-compiler">Lisan Compiler</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-cli">Lisan CLI</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-locales">Lisan Locales</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-plugins">Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-adapters">Adapters</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/translations">Translations</a></li><li class="navListItem"><a class="navItem" href="/docs/dictionary">Dictionary</a></li><li class="navListItem"><a class="navItem" href="/docs/conditional-groups">Conditional Groups</a></li><li class="navListItem"><a class="navItem" href="/docs/formatters">Formatters</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugins</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/lisan-plugin-l10n">Localization</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-plugin-loader">Loader</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides &amp; Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/pluralization">Pluralization</a></li><li class="navListItem"><a class="navItem" href="/docs/multiple-instances">Multiple Instances</a></li><li class="navListItem"><a class="navItem" href="/docs/how-to-write-plugins">Write Plugins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/full-api-reference">Lisan</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-compiler">Lisan Compiler</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-cli">Lisan CLI</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/lisanjs/lisan/docs/lisan-plugin-l10n.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Lisan Localization Plugin</h1></header><article><div><span><!-- markdownlint-disable MD036 -->
+<p>Lisan localization plugin allows you
+to format your data based on the locale.</p>
+<h2><a class="anchor" aria-hidden="true" id="installation"></a><a href="#installation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installation</h2>
+<p>You can install lisan from the sources below, as you see fit.</p>
+<h3><a class="anchor" aria-hidden="true" id="from-npm"></a><a href="#from-npm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>from npm</h3>
+<pre><code class="hljs css language-bash">npm install lisan-plugin-l10n
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="from-cdn"></a><a href="#from-cdn" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>from CDN</h3>
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable MD013 -->
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/lisan-plugin-l10n/dist/index.umd.js"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<!-- markdownlint-enable MD013 -->
+<!-- prettier-ignore-end -->
+<p>After adding the script tag above, all public variables
+will be accessible via <code>window.lisanPluginL10n</code> variables.</p>
+<h2><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> { lisan } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lisan'</span>);
+<span class="hljs-keyword">const</span> { Localization } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lisan-plugin-l10n'</span>);
+<span class="hljs-keyword">const</span> { trTR } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lisan-locales'</span>);
+
+lisan.use(Localization);
+
+lisan.setLocale(trTR);
+
+lisan.toOrdinal(<span class="hljs-number">3</span>); <span class="hljs-comment">// Returns: 3'üncü</span>
+</code></pre>
+<div class="hint-block">
+<blockquote>
+<p><strong>Hint</strong></p>
+<p>Lisan provides <a href="/docs/what-is-lisan-locales"><code>Lisan Locales</code></a> package which
+contains production-ready Localization configurations.</p>
+<p>You can find the full list of Localization configs
+<a href="https://github.com/lisanjs/lisan/packages/lisan-locales">here</a>.</p>
+</blockquote>
+</div>
+<h2><a class="anchor" aria-hidden="true" id="methods"></a><a href="#methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h2>
+<p>For the full list of methods, see <a href="/docs/full-api-reference#localization-plugin">Lisan Localization API</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="locale-configuration"></a><a href="#locale-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Locale Configuration</h2>
+<p><strong>Type Signature</strong></p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">interface</span> Locale {
+  name: <span class="hljs-built_in">string</span>;
+
+  conditions?: Conditions;
+
+  <span class="hljs-built_in">number</span>?: NumberFormatOptions;
+  currency?: CurrencyFormatOptions;
+
+  ordinal?: <span class="hljs-function">(<span class="hljs-params">num: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-built_in">string</span>;
+
+  date?: {
+    masks: DateMasks;
+    amPm: <span class="hljs-built_in">string</span>[];
+
+    <span class="hljs-comment">// weeks</span>
+    <span class="hljs-comment">// Sunday is the first day</span>
+    weekdays: <span class="hljs-built_in">string</span>[];
+    weekdaysShort: <span class="hljs-built_in">string</span>[];
+    weekdaysMin: <span class="hljs-built_in">string</span>[];
+
+    <span class="hljs-comment">// months</span>
+    months: <span class="hljs-built_in">string</span>[];
+    monthsShort: <span class="hljs-built_in">string</span>[];
+  };
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="name"></a><a href="#name" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>name</h3>
+<p>Type: <strong>string</strong> (Required)<br>
+Default: <code>&quot;&quot;</code></p>
+<p><code>name</code> is a string with a <a href="https://tools.ietf.org/html/bcp47">BCP 47</a>
+language tag.</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="conditions"></a><a href="#conditions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>conditions</h3>
+<p>Type: <strong>Conditions</strong> (Optional)<br>
+Default: <code>{}</code></p>
+<p><code>conditions</code> is an object contains
+<a href="/docs/conditional-groups#condition-tag">Condition Tag</a> and
+<a href="/docs/conditional-groups#condition-function">Condition Functions</a>.</p>
+<p><strong>Type Signature</strong></p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">type</span> ConditionFunction = <span class="hljs-function">(<span class="hljs-params">num: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-built_in">boolean</span>;
+<span class="hljs-keyword">type</span> Conditions = Record&lt;<span class="hljs-built_in">string</span>, ConditionFunction&gt;;
+</code></pre>
+<blockquote>
+<p>Condition keys are especially useful to achieve <a href="/docs/pluralization">Pluralization</a>.</p>
+</blockquote>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="number"></a><a href="#number" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>number</h3>
+<p>Type: <strong>NumberFormatOptions</strong> (Optional)<br>
+Default: <code>{}</code></p>
+<p><code>number</code> is being used to set the configuration for
+<a href="/docs/full-api-reference#lisantonumbernumber"><code>lisan.toNumber</code></a> Localization Helper
+and it has the following type definition.</p>
+<blockquote>
+<p>If this option is not set <code>lisan.toNumber</code> method won't be available.</p>
+</blockquote>
+<p><strong>Type Signature</strong></p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">interface</span> NumberFormatOptions {
+  grouping: {
+    delimiters: <span class="hljs-built_in">string</span>[];
+    blocks: <span class="hljs-built_in">number</span>[];
+  };
+  fraction: {
+    delimiter: <span class="hljs-built_in">string</span>;
+    digits: <span class="hljs-built_in">number</span>;
+  };
+  zeroFormat: <span class="hljs-built_in">string</span>;
+  nullFormat: <span class="hljs-built_in">string</span>;
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="numbergrouping"></a><a href="#numbergrouping" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>number.grouping</code></h4>
+<p>This option is being used to format numbers to have groups.
+Eg. thousand separators, lakh, wan</p>
+<h5><a class="anchor" aria-hidden="true" id="numbergroupingblocks"></a><a href="#numbergroupingblocks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>number.grouping.blocks</code></h5>
+<p><code>blocks</code> is an <code>array</code> of numbers to define the length of each group.</p>
+<ul>
+<li>Grouping is done from <code>right</code> to <code>left</code> that means
+the first number in the array determines the last group length.</li>
+<li>The Grouping will continue by the <strong>last</strong> number in the array.</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="numbergroupingdelimiters"></a><a href="#numbergroupingdelimiters" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>number.grouping.delimiters</code></h5>
+<p><code>delimiters</code> is an <code>array</code> of numbers to define the delimiter of each group.</p>
+<ul>
+<li>Delimiters match with groups by the array <code>indices</code>.</li>
+<li>If the length of the <code>blocks</code> array is bigger than the length of delimiters,
+the last delimiter will be used for the rest of the groups.</li>
+<li>If the length of the <code>blocks</code> array is less than the length of delimiters,
+<code>registerLocale</code> method <strong>throws</strong> an <code>Exception</code>.</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="grouping-examples"></a><a href="#grouping-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Grouping Examples</h5>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> output = lisan.toNumber(<span class="hljs-number">12345678901234567890</span>);
+</code></pre>
+ <table class="table table-striped table-bordered">
+  <tbody>
+    <tr>
+      <th><code>blocks</code></th>
+      <th><code>delimiters</code></th>
+      <th>Output</th>
+    </tr>
+    <tr>
+      <td><code>[3]</code></td>
+      <td><code>[',']</code></td>
+      <td>12,345,678,901,234,567,890</td>
+    </tr>
+    <tr>
+      <td><code>[3, 2]</code></td>
+      <td><code>[',']</code></td>
+      <td>1,23,45,67,89,01,23,45,67,890</td>
+    </tr>
+    <tr>
+      <td><code>[3, 2]</code></td>
+      <td><code>['-', '.']</code></td>
+      <td>1.23.45.67.89.01.23.45.67-890</td>
+    </tr>
+    <tr>
+      <td><code>[2, 1, 2, 3]</code></td>
+      <td><code>['-', ' ', '#']</code></td>
+      <td>12#345#678#901#234#56 7-90</td>
+    </tr>
+    <tr>
+      <td><code>[3, 2, 2, 4]</code></td>
+      <td><code>['-', ' ',' ','#']</code></td>
+      <td>1#2345#6789#0123 45 67-890</td>
+    </tr>
+  </tbody>
+</table>
+<div class="info-block">
+<blockquote>
+<p><strong>Info</strong></p>
+<p>Grouping configuration options were inspired by
+<a href="https://github.com/nosir/cleave.js/blob/master/doc/options.md#blocks">cleave.js</a>
+configuration options.</p>
+</blockquote>
+</div>
+<h4><a class="anchor" aria-hidden="true" id="numberfloating"></a><a href="#numberfloating" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>number.floating</h4>
+<h5><a class="anchor" aria-hidden="true" id="numberfloatingprecision"></a><a href="#numberfloatingprecision" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>number.floating.precision</code></h5>
+<p>This option is used to define the length of the decimal points.</p>
+<ul>
+<li>If the length of decimal points is longer than <code>precision</code> value,
+the decimal points will be <strong>rounded</strong>.</li>
+<li>If <code>precision</code> is <code>0</code>, the floating-point will be hidden.</li>
+<li>If <code>precision</code> is <code>-1</code>, the floating-point will be printed as it is.</li>
+</ul>
+<h5><a class="anchor" aria-hidden="true" id="numberfloatingdelimiter"></a><a href="#numberfloatingdelimiter" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>number.floating.delimiter</code></h5>
+<p>This option is used to define delimiter for the decimal point.</p>
+<h5><a class="anchor" aria-hidden="true" id="decimal-point-examples"></a><a href="#decimal-point-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Decimal Point Examples</h5>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">const</span> output = lisan.toNumber(<span class="hljs-number">1234.1234567</span>);
+</code></pre>
+ <table class="table table-striped table-bordered">
+  <tbody>
+    <tr>
+      <th><code>precision</code></th>
+      <th><code>delimiters</code></th>
+      <th>Output</th>
+    </tr>
+    <tr>
+      <td><code>0</code></td>
+      <td><code>.</code></td>
+      <td>1234</td>
+    </tr>
+    <tr>
+      <td><code>-1</code></td>
+      <td><code>.</code></td>
+      <td>1234.1234567</td>
+    </tr>
+    <tr>
+      <td><code>2</code></td>
+      <td><code>.</code></td>
+      <td>1234.12</td>
+    </tr>
+     <tr>
+      <td><code>3</code></td>
+      <td><code>,</code></td>
+      <td>1234,123</td>
+    </tr>
+     <tr>
+      <td><code>5</code></td>
+      <td><code>#</code></td>
+      <td>1234#12346</td>
+    </tr>
+  </tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="numberzeroformat"></a><a href="#numberzeroformat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>number.zeroFormat</h4>
+<p>This option is used to output a custom text when the given number equals <code>0</code>.</p>
+<h4><a class="anchor" aria-hidden="true" id="numbernullformat"></a><a href="#numbernullformat" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>number.nullFormat</h4>
+<p>This option is used to output a custom text when the given number equals to <code>null</code>.</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="currency"></a><a href="#currency" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>currency</h3>
+<p>Type: <strong>CurrencyFormatOptions</strong> (Optional)<br>
+Default: <code>{}</code></p>
+<p><code>currency</code> is being used to set the configuration for
+<a href="/docs/full-api-reference#lisantocurrencyamount"><code>lisan.toCurrency</code></a>
+Localization Helper and it has the following type definition.</p>
+<blockquote>
+<p>If this option is not set <code>lisan.toCurrency</code> method won't be available.</p>
+</blockquote>
+<p><strong>Type Signature</strong></p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">interface</span> CurrencyFormatOptions {
+  grouping?: {
+    delimiters: <span class="hljs-built_in">string</span>[];
+    blocks: <span class="hljs-built_in">number</span>[];
+  };
+  fraction?: {
+    delimiter: <span class="hljs-built_in">string</span>;
+    digits: <span class="hljs-built_in">number</span>;
+  };
+  zeroFormat?: <span class="hljs-built_in">string</span>;
+  nullFormat?: <span class="hljs-built_in">string</span>;
+  template: <span class="hljs-function">(<span class="hljs-params">formattedNumber: <span class="hljs-built_in">string</span></span>) =&gt;</span> <span class="hljs-built_in">string</span>;
+}
+</code></pre>
+<div class="hint-block">
+<blockquote>
+<p><strong>Hint</strong></p>
+<p><code>currency</code> inherits configuration from <code>number</code> configuration.
+So you can override any of the configurations.</p>
+</blockquote>
+</div>
+<pre><code class="hljs css language-js">{
+  <span class="hljs-string">"currency"</span>: {
+    <span class="hljs-string">"floating"</span>: {
+      <span class="hljs-string">"delimiter"</span>: <span class="hljs-string">"."</span>,
+      <span class="hljs-string">"precision"</span>: <span class="hljs-number">2</span>
+    },
+    <span class="hljs-string">"template"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">formattedNumber</span>) </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">"$"</span> + formattedNumber;
+    }
+  }
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="currencytemplate"></a><a href="#currencytemplate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>currency.template</code></h4>
+<p><code>template</code> is a function used to format price values.</p>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="ordinal"></a><a href="#ordinal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ordinal</h3>
+<p>Type: <strong>CurrencyFormatOptions</strong> (Optional)<br>
+Default: <code>x =&gt; x.toString()</code></p>
+<p><code>ordinal</code> is being used to set the configuration for
+<a href="/docs/full-api-reference#lisantoordinalnumber"><code>lisan.toOrdinal</code></a>
+Localization Helper and it has the following type definition.</p>
+<p><strong>Type Signature</strong></p>
+<pre><code class="hljs css language-ts">{
+  ordinal: <span class="hljs-function">(<span class="hljs-params"><span class="hljs-built_in">number</span>: <span class="hljs-built_in">number</span></span>) =&gt;</span> <span class="hljs-built_in">string</span>;
+}
+</code></pre>
+<hr>
+<h3><a class="anchor" aria-hidden="true" id="date"></a><a href="#date" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>date</h3>
+<p>Type: <strong>DateOptions</strong> (Optional)<br>
+Default: <code>{}</code></p>
+<p><code>date</code> is being used to set the configuration for
+various date Localization Helpers and
+it has the following type definition.</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">interface</span> DateOptions {
+  masks: {
+    dateTime: <span class="hljs-built_in">string</span>;
+    dateShort: <span class="hljs-built_in">string</span>;
+    dateMedium: <span class="hljs-built_in">string</span>;
+    dateLong: <span class="hljs-built_in">string</span>;
+    dateFull: <span class="hljs-built_in">string</span>;
+    timeShort: <span class="hljs-built_in">string</span>;
+    timeMedium: <span class="hljs-built_in">string</span>;
+    timeLong: <span class="hljs-built_in">string</span>;
+  };
+  amPm: <span class="hljs-built_in">string</span>[];
+
+  <span class="hljs-comment">// weeks</span>
+  weekdays: <span class="hljs-built_in">string</span>[];
+  weekdaysShort: <span class="hljs-built_in">string</span>[];
+  weekdaysMin: <span class="hljs-built_in">string</span>[];
+
+  <span class="hljs-comment">// months</span>
+  months: <span class="hljs-built_in">string</span>[];
+  monthsShort: <span class="hljs-built_in">string</span>[];
+}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="datemasks"></a><a href="#datemasks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>date.masks</h4>
+<p><code>date.masks</code> is being used to modify listed localization helper formats.</p>
+<ul>
+<li><a href="/docs/full-api-reference#lisantodatetimetime"><code>lisan.toDateTime()</code></a></li>
+<li><a href="/docs/full-api-reference#lisantodatefulltime"><code>lisan.toDateFull()</code></a></li>
+<li><a href="/docs/full-api-reference#lisantodatelongtime"><code>lisan.toDateLong()</code></a></li>
+<li><a href="/docs/full-api-reference#lisantodatemediumtime"><code>lisan.toDateMedium()</code></a></li>
+<li><a href="/docs/full-api-reference#lisantodateshorttime"><code>lisan.toDateShort()</code></a></li>
+<li><a href="/docs/full-api-reference#lisantotimelongtime"><code>lisan.toTimeLong()</code></a></li>
+<li><a href="/docs/full-api-reference#lisantotimemediumtime"><code>lisan.toTimeMedium()</code></a></li>
+<li><a href="/docs/full-api-reference#lisantotimeshorttime"><code>lisan.toTimeShort()</code></a></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="dateampm"></a><a href="#dateampm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>date.amPm</h4>
+<p><code>amPM</code> is an array. Only takes two string values in <strong>lowercase</strong> format,
+first being the <em>am</em> indicator and the second indicating <em>pm</em>.</p>
+<h4><a class="anchor" aria-hidden="true" id="dateweekdays"></a><a href="#dateweekdays" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>date.weekdays</h4>
+<p><code>weekdays</code> is an array and contains the names of the weekdays.
+The first item of the array has to be <strong>Sunday</strong>.</p>
+<h4><a class="anchor" aria-hidden="true" id="dateweekdaysshort"></a><a href="#dateweekdaysshort" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>date.weekdaysShort</h4>
+<p>Same as <code>date.weekdays</code>, but shorter day names (usually 3 letters, eg. Sat)</p>
+<h4><a class="anchor" aria-hidden="true" id="dateweekdaysmin"></a><a href="#dateweekdaysmin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>date.weekdaysMin</h4>
+<p>Same as <code>date.weekdays</code>, but shorter day names (usually 2 letters, eg. St).</p>
+<h4><a class="anchor" aria-hidden="true" id="datemonths"></a><a href="#datemonths" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>date.months</h4>
+<p><code>months</code> is an array and contains the names of the months.
+The first item of the array has to be <strong>January</strong>.</p>
+<h4><a class="anchor" aria-hidden="true" id="datemonthsshort"></a><a href="#datemonthsshort" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>date.monthsShort</h4>
+<p>Same as <code>date.months</code>, but shorter month names (usually 3 letters, eg. Jan).</p>
+<h2><a class="anchor" aria-hidden="true" id="date-formatting-tokens"></a><a href="#date-formatting-tokens" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Date Formatting Tokens</h2>
+<table class="table table-striped table-bordered">
+  <tbody>
+    <tr>
+      <th></th>
+      <th>Token</th>
+      <th>Output</th>
+    </tr>
+    <tr>
+      <td><b>Month</b></td>
+      <td>M</td>
+      <td>1 2 ... 11 12</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Mo</td>
+      <td>1st 2nd ... 11th 12th</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>MM</td>
+      <td>01 02 ... 11 12</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>MMM</td>
+      <td>Jan Feb ... Nov Dec</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>MMMM</td>
+      <td>January February ... November December</td>
+    </tr>
+    <tr>
+      <td><b>Quarter</b></td>
+      <td>Q</td>
+      <td>1 2 3 4</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Qo</td>
+      <td>1st 2nd 3rd 4th</td>
+    </tr>
+    <tr>
+      <td><b>Day of Month</b></td>
+      <td>D</td>
+      <td>1 2 ... 30 31</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Do</td>
+      <td>1st 2nd ... 30th 31st</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>DD</td>
+      <td>01 02 ... 30 31</td>
+    </tr>
+    <tr>
+      <td><b>Day of Year</b></td>
+      <td>DDD</td>
+      <td>1 2 ... 364 365</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>DDDo</td>
+      <td>1st 2nd ... 364th 365th</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>DDDD</td>
+      <td>001 002 ... 364 365</td>
+    </tr>
+    <tr>
+      <td><b>Day of Week</b></td>
+      <td>d</td>
+      <td>0 1 ... 5 6</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>do</td>
+      <td>0th 1st ... 5th 6th</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>dd</td>
+      <td>Su Mo ... Fr Sa</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>ddd</td>
+      <td>Sun Mon ... Fri Sat</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>dddd</td>
+      <td>Sunday Monday ... Friday Saturday</td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://en.wikipedia.org/wiki/ISO_week_date#First_week">
+          <b>ISO Week Number of Year</b>
+        </a>
+      </td>
+      <td>w</td>
+      <td>1 2 ... 52 53</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>wo</td>
+      <td>1st 2nd ... 52nd 53rd</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>ww</td>
+      <td>01 02 ... 52 53</td>
+    </tr>
+    <tr>
+      <td><b>Year</b></td>
+      <td>YY</td>
+      <td>70 71 ... 29 30</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>YYYY</td>
+      <td>1970 1971 ... 2029 2030</td>
+    </tr>
+    <tr>
+      <td><b>AM/PM</b></td>
+      <td>A</td>
+      <td>AM PM</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>a</td>
+      <td>am pm</td>
+    </tr>
+    <tr>
+      <td><b>Hour</b></td>
+      <td>H</td>
+      <td>0 1 ... 22 23</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>HH</td>
+      <td>00 01 ... 22 23</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>h</td>
+      <td>1 2 ... 11 12</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>hh</td>
+      <td>01 02 ... 11 12</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>k</td>
+      <td>1 2 ... 23 24</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>kk</td>
+      <td>01 02 ... 23 24</td>
+    </tr>
+    <tr>
+      <td><b>Minute</b></td>
+      <td>m</td>
+      <td>0 1 ... 58 59</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>mm</td>
+      <td>00 01 ... 58 59</td>
+    </tr>
+    <tr>
+      <td><b>Second</b></td>
+      <td>s</td>
+      <td>0 1 ... 58 59</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>ss</td>
+      <td>00 01 ... 58 59</td>
+    </tr>
+    <tr>
+      <td><b>Fractional Second</b></td>
+      <td>S</td>
+      <td>0 1 ... 8 9</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>SS</td>
+      <td>00 01 ... 98 99</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>SSS</td>
+      <td>000 001 ... 998 999</td>
+    </tr>
+    <tr>
+      <td><b>Time Zone</b></td>
+      <td>Z</td>
+      <td>-07:00 -06:00 ... +06:00 +07:00</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>ZZ</td>
+      <td>
+        -0700 -0600 ... +0600 +0700
+      </td>
+    </tr>
+    <tr>
+      <td><b>Unix Timestamp</b></td>
+      <td>X</td>
+      <td>1360013296</td>
+    </tr>
+    <tr>
+      <td><b>Unix Millisecond Timestamp</b></td>
+      <td>x</td>
+      <td>1360013296123</td>
+    </tr>
+  </tbody>
+</table>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/21/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/formatters"><span class="arrow-prev">← </span><span>Formatters</span></a><a class="docs-next button" href="/docs/lisan-plugin-loader"><span>Loader</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installation">Installation</a><ul class="toc-headings"><li><a href="#from-npm">from npm</a></li><li><a href="#from-cdn">from CDN</a></li></ul></li><li><a href="#usage">Usage</a></li><li><a href="#methods">Methods</a></li><li><a href="#locale-configuration">Locale Configuration</a><ul class="toc-headings"><li><a href="#name">name</a></li><li><a href="#conditions">conditions</a></li><li><a href="#number">number</a></li><li><a href="#currency">currency</a></li><li><a href="#ordinal">ordinal</a></li><li><a href="#date">date</a></li></ul></li><li><a href="#date-formatting-tokens">Date Formatting Tokens</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/lisan-512.png" alt="Lisan" width="72" height="72"/></a><div><h5>Docs</h5><a href="/docs/what-is-lisan">About</a><a href="/docs/translations">Components</a><a href="/docs/lisan-plugins">Plugins</a><a href="/docs/pluralization">Guide &amp; Tips</a><a href="/docs/full-api-reference">API Reference</a></div><div><h5>Ecosystem</h5><a href="/docs/what-is-lisan#installation">Lisan</a><a href="/docs/what-is-lisan-locales">Lisan Locales</a><a href="/docs/what-is-lisan-compiler">Lisan Compiler</a><a href="/docs/what-is-lisan-cli">Lisan CLI</a><a href="/docs/lisan-plugin-l10n">Localization Plugin</a><a href="/docs/lisan-plugin-loader">Loader Plugin</a><a href="https://github.com/lisanjs/lisan-types" target="_blank">Lisan Types</a></div><div><h5>More</h5><a href="https://github.com/lisanjs/lisan" target="_blank" rel="noreferrer noopener">Issues</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/lisanjs/lisan" data-icon="octicon-star" data-show-count="true" aria-label="Star lisanjs/lisan on GitHub">Star</a></div></section></footer></div></body></html>

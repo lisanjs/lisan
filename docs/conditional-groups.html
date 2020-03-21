@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Conditional Groups · Lisan</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Lisan provides a flexible and powerful way of having conditional translations."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Conditional Groups · Lisan"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lisanjs.com/"/><meta property="og:description" content="Lisan provides a flexible and powerful way of having conditional translations."/><meta property="og:image" content="https://lisanjs.com/img/logo/lisan-512.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lisanjs.com/img/logo/lisan-512.png"/><link rel="shortcut icon" href="/img/logo/lisan-512.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="/js/external-links.js"></script><script type="text/javascript" src="/js/code-mirror.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo/lisan-512.png" alt="Lisan"/><h2 class="headerTitleWithLogo">Lisan</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/what-is-lisan" target="_self">Docs</a></li><li class=""><a href="/try-it-out" target="_self">Try it out</a></li><li class=""><a href="https://github.com/lisanjs/lisan" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Components</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">About</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan">Lisan</a></li><li class="navListItem"><a class="navItem" href="/docs/how-lisan-works">How it works?</a></li><li class="navListItem"><a class="navItem" href="/docs/performance">Performance</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-compiler">Lisan Compiler</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-cli">Lisan CLI</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-locales">Lisan Locales</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-plugins">Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-adapters">Adapters</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/translations">Translations</a></li><li class="navListItem"><a class="navItem" href="/docs/dictionary">Dictionary</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/conditional-groups">Conditional Groups</a></li><li class="navListItem"><a class="navItem" href="/docs/formatters">Formatters</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugins</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/lisan-plugin-l10n">Localization</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-plugin-loader">Loader</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides &amp; Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/pluralization">Pluralization</a></li><li class="navListItem"><a class="navItem" href="/docs/multiple-instances">Multiple Instances</a></li><li class="navListItem"><a class="navItem" href="/docs/how-to-write-plugins">Write Plugins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/full-api-reference">Lisan</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-compiler">Lisan Compiler</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-cli">Lisan CLI</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/lisanjs/lisan/docs/conditional-groups.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Conditional Groups</h1></header><article><div><span><p>Lisan provides a flexible and powerful way of having conditional translations.</p>
+<p>If a Dictionary Entry is an <strong>object</strong>, it is considered as a <strong>Conditional Group</strong>.<br>
+In that case <strong>Entry Key</strong> of the object
+is also called <a href="#conditional-group-key">Conditional Group Key</a>.</p>
+<blockquote>
+<p>Conditional Groups are especially useful to achieve <a href="/docs/pluralization">Pluralization</a>.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="type-signature"></a><a href="#type-signature" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Type Signature</h2>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">interface</span> Dictionary {
+  entries: {
+    [ConditionalGroupKey: <span class="hljs-built_in">string</span>]: {
+      [ConditionTag: <span class="hljs-built_in">string</span>]: DictionaryEntry;
+    };
+  };
+}
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="vocabulary"></a><a href="#vocabulary" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Vocabulary</h2>
+<h3><a class="anchor" aria-hidden="true" id="conditional-group-key"></a><a href="#conditional-group-key" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conditional Group Key</h3>
+<p>A <code>Conditional Group Key</code> is a <strong>unique string</strong> defined in the Dictionary
+and its value can be <strong>anything</strong> defined by the user.</p>
+<h3><a class="anchor" aria-hidden="true" id="condition-tag"></a><a href="#condition-tag" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Condition Tag</h3>
+<p>A <code>Condition Tag</code> is a <strong>string</strong> and it has to have a corresponding
+<a href="#condition-function">Condition Function</a>.</p>
+<blockquote>
+<p>The tags <code>zero</code>, <code>one</code>, <code>other</code> is predefined and cannot be replaced.
+See: <a href="#reserved-words">Reserved Words</a></p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="condition-function"></a><a href="#condition-function" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Condition Function</h3>
+<p>A <code>Condition Function</code> can take <strong>any</strong> type of data as input
+and returns a <code>boolean</code> value.</p>
+<p>When a <a href="#condition-tag">Condition Tag</a> was linked to a
+<a href="/docs/dictionary#entries">Dictionary Entry</a>,
+the correspondent Condition Function will be invoked with the given value.
+If the Condition Function returns <code>true</code>, that
+Dictionary Entry will be used
+by the <a href="/docs/full-api-reference#lisanckey-value-placeholders"><code>lisan.c()</code></a> function.</p>
+<div class="warning-block">
+<blockquote>
+<p><strong>Warning</strong></p>
+<p>Condition Function must return a <strong>boolean</strong> value.
+The comparisson is done with strict equal.</p>
+</blockquote>
+</div>
+<h4><a class="anchor" aria-hidden="true" id="adding-new-conditions"></a><a href="#adding-new-conditions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Adding New Conditions</h4>
+<p>Condition functions can be added via
+<a href="/docs/full-api-reference#lisanaddconditionsconditions"><code>lisan.addConditions()</code></a>
+method, and must be added before adding dictionaries.</p>
+<blockquote>
+<p>If you are using
+<a href="/docs/lisan-plugin-l10n#locale-configuration">lisan-plugin-l10n</a>
+plugin, you can define condition tags and functions
+with <a href="/docs/lisan-plugin-l10n#conditions"><code>conditions</code></a> property.</p>
+</blockquote>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="how-do-conditional-tags-work"></a><a href="#how-do-conditional-tags-work" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How do Conditional Tags work?</h2>
+<p>When <a href="/docs/full-api-reference#lisanckey-value-placeholders"><code>c(conditionalGroupKey, value, placeholders)</code></a>
+method was invoked, the given <code>value</code> is passed to the <strong>Condition Function</strong>
+by the <strong>order of conditional tags</strong> defined in Conditional Group.</p>
+<blockquote>
+<p>The order of <code>other</code> tag in the group is not important
+because <code>other</code> is <strong>only</strong> invoked as a fallback function.</p>
+</blockquote>
+<p>If the Condition Function returns <code>true</code> for the given <code>value</code>,
+the <a href="/docs/full-api-reference#lisantkey-placeholders"><code>lisan.c()</code></a>
+method will return related Dictionary Entry.</p>
+<p>The <code>lisan.c()</code> method
+will return the first matching result and
+the rest of the conditional tags will be <strong>ignored</strong>.</p>
+<h3><a class="anchor" aria-hidden="true" id="example"></a><a href="#example" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Example</h3>
+<p>The example below may not be an ideal use case,
+however, it's a good example
+to demonstrate how <a href="/docs/full-api-reference#lisanckey-value-placeholders"><code>lisan.c()</code></a>
+method works.</p>
+<pre><code class="hljs css language-js"><span class="hljs-comment">// 1. First we are adding our condition tags &amp; functions</span>
+lisan.addConditions({
+  <span class="hljs-comment">// "Condition Tag": Condition Function,</span>
+  <span class="hljs-attr">success</span>: <span class="hljs-function"><span class="hljs-params">status</span> =&gt;</span> status === <span class="hljs-number">0</span>,
+  <span class="hljs-attr">error</span>: <span class="hljs-function"><span class="hljs-params">status</span> =&gt;</span> status === <span class="hljs-number">1</span>,
+  <span class="hljs-attr">blocked</span>: <span class="hljs-function"><span class="hljs-params">status</span> =&gt;</span> status === <span class="hljs-number">2</span>,
+});
+
+<span class="hljs-comment">// 2. Now we are adding a diftionary that</span>
+<span class="hljs-comment">// uses the condition tags we previously defined.</span>
+lisan.add({
+  <span class="hljs-attr">entries</span>: {
+    <span class="hljs-comment">// "Conditional Group Key":</span>
+    <span class="hljs-string">'signup.messages'</span>: {
+      <span class="hljs-comment">// "Condition Tag": Dictionary Entry,</span>
+      <span class="hljs-attr">other</span>: <span class="hljs-function">(<span class="hljs-params">{ code }</span>) =&gt;</span>
+        <span class="hljs-string">`Ooops, something really went wrong! Error Code: <span class="hljs-subst">${code}</span>.`</span>,
+      <span class="hljs-attr">success</span>: <span class="hljs-function">(<span class="hljs-params">{ name }</span>) =&gt;</span> <span class="hljs-string">`Hey <span class="hljs-subst">${name}</span>, you have succesfully logged in!`</span>,
+      <span class="hljs-attr">error</span>: <span class="hljs-string">'The email or password is wrong!'</span>,
+      <span class="hljs-attr">blocked</span>: <span class="hljs-function">(<span class="hljs-params">{ minutes }</span>) =&gt;</span>
+        <span class="hljs-string">`Sorry :( Your account has been blocked for the next <span class="hljs-subst">${minutes}</span> minutes.`</span>,
+    },
+  },
+});
+
+lisan.c(<span class="hljs-string">'signup.messages'</span>, <span class="hljs-number">0</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">'John'</span> });
+<span class="hljs-comment">// Returns: "Hey John, you have succesfully logged in!"</span>
+
+lisan.c(<span class="hljs-string">'signup.messages'</span>, <span class="hljs-number">1</span>);
+<span class="hljs-comment">// Returns: "The email or password is wrong!"</span>
+
+lisan.c(<span class="hljs-string">'signup.messages'</span>, <span class="hljs-number">2</span>, { <span class="hljs-attr">minutes</span>: <span class="hljs-number">10</span> });
+<span class="hljs-comment">// Returns: "Your account has been blocked for the next 10 minutes."</span>
+
+lisan.c(<span class="hljs-string">'signup.messages'</span>, <span class="hljs-string">'fatality'</span>, { <span class="hljs-attr">code</span>: <span class="hljs-string">'TS2029'</span> });
+<span class="hljs-comment">// Returns: "Ooops, something really went wrong! Error Code: TS2029."</span>
+</code></pre>
+<p>In the example above;</p>
+<ul>
+<li><code>signup.messages</code> is a <strong>Conditional Group Key</strong>.</li>
+<li><code>success</code>, <code>error</code> and <code>blocked</code> are <strong>Condition Tags</strong>.</li>
+</ul>
+<pre><code class="hljs css language-js">lisan.c(<span class="hljs-string">'signup.messages'</span>, <span class="hljs-string">'error'</span>);
+</code></pre>
+<p>When <a href="/docs/full-api-reference#lisanckey-value-placeholders"><code>lisan.c()</code></a> method
+was called with the arguments in the code piece above,</p>
+<ol>
+<li>Condition Function with key <code>success</code> will be will return <strong>false</strong>.</li>
+<li>Condition Function with key <code>error</code> will be will return <strong>true</strong>.</li>
+<li>The rest of the conditional tags will be ignored since we have a match.</li>
+</ol>
+<blockquote>
+<p><strong>Notice</strong></p>
+<p>Even though <code>other</code> tag was defined as the first tag in the group,
+it was ignored by c function and used only when there were no
+matching case.</p>
+</blockquote>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="reserved-words"></a><a href="#reserved-words" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reserved Words</h2>
+<p>Following keys can not be used as Conditional Tags because they are being used
+by lisan internally.</p>
+<ul>
+<li><code>zero</code>, returns true if the given value is a <strong>number</strong> and equals to <code>0</code>.</li>
+<li><code>one</code>, returns true if the given value is a <strong>number</strong> and equals to <code>1</code>.</li>
+<li><code>other</code> is a <strong>fallback</strong> Condition Tag and being used
+if <strong>none</strong> of the conditions match for the given value.</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/21/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/dictionary"><span class="arrow-prev">← </span><span>Dictionary</span></a><a class="docs-next button" href="/docs/formatters"><span>Formatters</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#type-signature">Type Signature</a></li><li><a href="#vocabulary">Vocabulary</a><ul class="toc-headings"><li><a href="#conditional-group-key">Conditional Group Key</a></li><li><a href="#condition-tag">Condition Tag</a></li><li><a href="#condition-function">Condition Function</a></li></ul></li><li><a href="#how-do-conditional-tags-work">How do Conditional Tags work?</a><ul class="toc-headings"><li><a href="#example">Example</a></li></ul></li><li><a href="#reserved-words">Reserved Words</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/lisan-512.png" alt="Lisan" width="72" height="72"/></a><div><h5>Docs</h5><a href="/docs/what-is-lisan">About</a><a href="/docs/translations">Components</a><a href="/docs/lisan-plugins">Plugins</a><a href="/docs/pluralization">Guide &amp; Tips</a><a href="/docs/full-api-reference">API Reference</a></div><div><h5>Ecosystem</h5><a href="/docs/what-is-lisan#installation">Lisan</a><a href="/docs/what-is-lisan-locales">Lisan Locales</a><a href="/docs/what-is-lisan-compiler">Lisan Compiler</a><a href="/docs/what-is-lisan-cli">Lisan CLI</a><a href="/docs/lisan-plugin-l10n">Localization Plugin</a><a href="/docs/lisan-plugin-loader">Loader Plugin</a><a href="https://github.com/lisanjs/lisan-types" target="_blank">Lisan Types</a></div><div><h5>More</h5><a href="https://github.com/lisanjs/lisan" target="_blank" rel="noreferrer noopener">Issues</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/lisanjs/lisan" data-icon="octicon-star" data-show-count="true" aria-label="Star lisanjs/lisan on GitHub">Star</a></div></section></footer></div></body></html>

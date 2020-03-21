@@ -1,0 +1,243 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Lisan Compiler · Lisan</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Here you can find all supported options and methods provided by"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Lisan Compiler · Lisan"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lisanjs.com/"/><meta property="og:description" content="Here you can find all supported options and methods provided by"/><meta property="og:image" content="https://lisanjs.com/img/logo/lisan-512.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lisanjs.com/img/logo/lisan-512.png"/><link rel="shortcut icon" href="/img/logo/lisan-512.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="/js/external-links.js"></script><script type="text/javascript" src="/js/code-mirror.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/logo/lisan-512.png" alt="Lisan"/><h2 class="headerTitleWithLogo">Lisan</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/what-is-lisan" target="_self">Docs</a></li><li class=""><a href="/try-it-out" target="_self">Try it out</a></li><li class=""><a href="https://github.com/lisanjs/lisan" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>API</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">About</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan">Lisan</a></li><li class="navListItem"><a class="navItem" href="/docs/how-lisan-works">How it works?</a></li><li class="navListItem"><a class="navItem" href="/docs/performance">Performance</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-compiler">Lisan Compiler</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-cli">Lisan CLI</a></li><li class="navListItem"><a class="navItem" href="/docs/what-is-lisan-locales">Lisan Locales</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-plugins">Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-adapters">Adapters</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Components</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/translations">Translations</a></li><li class="navListItem"><a class="navItem" href="/docs/dictionary">Dictionary</a></li><li class="navListItem"><a class="navItem" href="/docs/conditional-groups">Conditional Groups</a></li><li class="navListItem"><a class="navItem" href="/docs/formatters">Formatters</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Plugins</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/lisan-plugin-l10n">Localization</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-plugin-loader">Loader</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides &amp; Tips</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/pluralization">Pluralization</a></li><li class="navListItem"><a class="navItem" href="/docs/multiple-instances">Multiple Instances</a></li><li class="navListItem"><a class="navItem" href="/docs/how-to-write-plugins">Write Plugins</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">API</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/full-api-reference">Lisan</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/lisan-compiler">Lisan Compiler</a></li><li class="navListItem"><a class="navItem" href="/docs/lisan-cli">Lisan CLI</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/lisanjs/lisan/docs/lisan-compiler.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Lisan Compiler</h1></header><article><div><span><p>Here you can find all supported options and methods provided by
+<a href="/docs/what-is-lisan-compiler"><code>lisan-compiler</code></a> library.</p>
+<h2><a class="anchor" aria-hidden="true" id="methods"></a><a href="#methods" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Methods</h2>
+<ul>
+<li><a href="#parselisanliterallisanliteral"><code>parseLisanLiteral(lisanLiteral)</code></a></li>
+<li><a href="#parsejson-parseoptions"><code>parse(json, parseOptions)</code></a></li>
+<li><a href="#generateparseddictionary-generateoptions"><code>generate(parsedDictionary, generateOptions)</code></a></li>
+</ul>
+<!-- markdownlint-disable MD036 -->
+<h2><a class="anchor" aria-hidden="true" id="parselisanliterallisanliteral"></a><a href="#parselisanliterallisanliteral" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>parseLisanLiteral(lisanLiteral)</code></h2>
+<p>Parses a single <a href="/docs/translations#lisan-literal">Lisan Literal</a> string.</p>
+<p><strong>Input</strong></p>
+<table>
+<thead>
+<tr><th>parameter</th><th>type</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>lisanLiteral</td><td>string</td><td>A valid lisan literal string</td></tr>
+</tbody>
+</table>
+<p><strong>Returns</strong>: <code>object</code> - returns <code>ParsedLisanLiteral</code> object
+that has the following type signature:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">interface</span> ParsedLisanLiteral {
+  input: <span class="hljs-built_in">string</span>;
+  output: <span class="hljs-built_in">string</span>;
+  variables: <span class="hljs-built_in">string</span>[];
+  functions: <span class="hljs-built_in">string</span>[];
+  conditionalGroupKeys: <span class="hljs-built_in">string</span>[];
+  entryKeys: <span class="hljs-built_in">string</span>[];
+}
+</code></pre>
+<p><strong>Throws:</strong> exception if the given entry is not valid.</p>
+<p><strong>Usage</strong></p>
+<!-- markdownlint-disable MD013 -->
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">import</span> { parseLisanLiteral } <span class="hljs-keyword">from</span> <span class="hljs-string">'lisan-compiler'</span>;
+
+<span class="hljs-keyword">const</span> lisanLiteral =
+  <span class="hljs-string">"Some text ${c('conditionKey1', value1)} ${t('entryKey1', value4)} dateLong(value5) ${c('conditionKey2', value3, {value2})}"</span>;
+
+<span class="hljs-keyword">const</span> options = {};
+<span class="hljs-keyword">const</span> parsedEntry = parseLisanLiteral(lisanLiteral);
+
+<span class="hljs-built_in">console</span>.log(parsedEntry);
+</code></pre>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"input"</span>: <span class="hljs-string">"Some text ${c('conditionKey1', value1)} ${t('entryKey1', value4)} dateLong(value5) ${c('conditionKey2', value3, {value2})}"</span>,
+  <span class="hljs-attr">"output"</span>: <span class="hljs-string">"({ value1, value4, value5, value3, value2 }, { c, t, dateLong }) =&gt; `Some text ${c('conditionKey1', value1)}  ${t('entryKey1', {value4})} ${dateLong(value5)} ${c('conditionKey2', value3, {value2})}`"</span>,
+  <span class="hljs-attr">"variables"</span>: [<span class="hljs-string">"value1"</span>, <span class="hljs-string">"value4"</span>, <span class="hljs-string">"value5"</span>, <span class="hljs-string">"value3"</span>, <span class="hljs-string">"value2"</span>],
+  <span class="hljs-attr">"functions"</span>: [<span class="hljs-string">"c"</span>, <span class="hljs-string">"t"</span>, <span class="hljs-string">"dateLong"</span>],
+  <span class="hljs-attr">"conditionalGroupKeys"</span>: [<span class="hljs-string">"conditionKey1"</span>, <span class="hljs-string">"conditionKey2"</span>],
+  <span class="hljs-attr">"entryKeys"</span>: [<span class="hljs-string">"entryKey1"</span>]
+}
+</code></pre>
+<!-- markdownlint-enable MD013 -->
+<h2><a class="anchor" aria-hidden="true" id="parsejson-parseoptions"></a><a href="#parsejson-parseoptions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>parse(json, parseOptions?)</code></h2>
+<p>Parses a <a href="/docs/translations">Translation JSON</a> object into a
+<code>parsedDictionary</code> object that has following type signature:</p>
+<pre><code class="hljs css language-ts"><span class="hljs-keyword">interface</span> ParsedEntry {
+  input: <span class="hljs-built_in">string</span>;
+  output: <span class="hljs-built_in">string</span>;
+  variables: <span class="hljs-built_in">string</span>[];
+  functions: <span class="hljs-built_in">string</span>[];
+  entryKeys: <span class="hljs-built_in">string</span>[];
+  conditionalGroupKeys: <span class="hljs-built_in">string</span>[];
+  key: <span class="hljs-built_in">string</span>;
+  groupKey?: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-keyword">interface</span> ParsedDictionary {
+  locale: <span class="hljs-built_in">string</span>;
+  entries: ParsedEntry[];
+}
+</code></pre>
+<blockquote>
+<p><code>parse</code> function also does a lot of semantic checks. That's why please <strong>always</strong>
+use this function to generate your dictionaries.</p>
+</blockquote>
+<p><strong>Input</strong></p>
+<table>
+<thead>
+<tr><th>parameter</th><th>type</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>json</td><td>object</td><td>A valid Translation JSON Object</td></tr>
+<tr><td>parseOptions</td><td>object (optional)</td><td>Parse Options</td></tr>
+</tbody>
+</table>
+<p><strong>Returns</strong>: <code>string</code> - returns the source code for the dictionary file.</p>
+<p><strong>Throws:</strong> exception if the given JSON contains errors.</p>
+<p><strong>Usage</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { parse } <span class="hljs-keyword">from</span> <span class="hljs-string">'lisan-compiler'</span>;
+
+<span class="hljs-keyword">const</span> source = fs.readFileSync(<span class="hljs-string">'main.json'</span>, <span class="hljs-string">'utf-8'</span>);
+<span class="hljs-keyword">const</span> json = <span class="hljs-built_in">JSON</span>.parse(source);
+
+<span class="hljs-keyword">const</span> parsedDictionary = parse(json);
+
+<span class="hljs-built_in">console</span>.log(parsedDictionary);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="parse-options"></a><a href="#parse-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parse Options</h3>
+<h4><a class="anchor" aria-hidden="true" id="allownonexistingkeys"></a><a href="#allownonexistingkeys" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>allowNonExistingKeys</code></h4>
+<p>Type: <code>boolean</code><br>
+CLI: <code>--compilerOptions.allowNonExistingKeys</code><br>
+Default: <code>false</code>,</p>
+<p>When set to <code>false</code>, compiler validates all the key usages in the dictionary.
+If Lisan Literal has <code>t()</code> or <code>c()</code> functions that
+are calling a non-existing entry, compiler throws exception.</p>
+<p>You may want to set it to <code>true</code>, if you split your dictionaries into seperate
+chunks and use a key that was created in another dictionary file. However,
+in that case, dictionary containing the entry must be loaded before!</p>
+<h4><a class="anchor" aria-hidden="true" id="autotrimvalues"></a><a href="#autotrimvalues" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>autoTrimValues</code></h4>
+<p>Type: <code>boolean</code><br>
+CLI: <code>--compilerOptions.autoTrimValues</code><br>
+Default: <code>true</code></p>
+<p>AUtomatically trims the whitespace characters
+from both sides for every Lisan Literal entry.</p>
+<h4><a class="anchor" aria-hidden="true" id="sortentrykeys"></a><a href="#sortentrykeys" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>sortEntryKeys</code></h4>
+<p>Type: <code>boolean</code><br>
+CLI: <code>--compilerOptions.sortEntryKeys</code><br>
+Default: <code>true</code></p>
+<p>Sorts dictionary keys by alphabetical order.</p>
+<h2><a class="anchor" aria-hidden="true" id="generateparseddictionary-generateoptions"></a><a href="#generateparseddictionary-generateoptions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>generate(parsedDictionary, generateOptions?)</code></h2>
+<p>Generate function always renders a Javascript ES2015 (ES6) code.<br>
+If you wish to have ES5 code, you can use
+<a href="/docs/what-is-lisan-cli"><code>lisan-cli</code></a></p>
+<p><strong>Input</strong></p>
+<table>
+<thead>
+<tr><th>parameter</th><th>type</th><th>description</th></tr>
+</thead>
+<tbody>
+<tr><td>parsedDictionary</td><td>object</td><td>A valid Parsed Dictionary Object</td></tr>
+<tr><td>parseOptions</td><td>object (optional)</td><td>Compile Options</td></tr>
+</tbody>
+</table>
+<p><strong>Returns</strong>: <code>string</code> - returns the source code for the dictionary file.</p>
+<p><strong>Throws:</strong> exception if the given options are not valid.</p>
+<p><strong>Usage</strong></p>
+<pre><code class="hljs css language-js"><span class="hljs-keyword">import</span> { parse, generate } <span class="hljs-keyword">from</span> <span class="hljs-string">'lisan-compiler'</span>;
+
+<span class="hljs-keyword">const</span> source = fs.readFileSync(<span class="hljs-string">'main.json'</span>, <span class="hljs-string">'utf-8'</span>);
+<span class="hljs-keyword">const</span> json = <span class="hljs-built_in">JSON</span>.parse(source);
+
+<span class="hljs-keyword">const</span> parsedDictionary = parse(json);
+<span class="hljs-keyword">const</span> dictionarySource = generate(parsedDictionary, {
+  <span class="hljs-attr">module</span>: <span class="hljs-string">'cjs'</span>,
+});
+
+fs.writeFileSync(<span class="hljs-string">'main.js'</span>, dictionarySource, <span class="hljs-string">'utf-8'</span>);
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="compile-options"></a><a href="#compile-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Compile Options</h3>
+<h4><a class="anchor" aria-hidden="true" id="module"></a><a href="#module" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>module</code></h4>
+<p>Type: <code>string</code><br>
+CLI: <code>--compilerOptions.module &lt;moduleType&gt;</code><br>
+Default: <code>&quot;lisan&quot;</code></p>
+<p>Specifies the module format of the generated bundle. One of the following:</p>
+<ul>
+<li><code>none</code> – returns plain dictionary object as a string.</li>
+<li><code>cjs</code> – CommonJS, suitable for Node and other bundlers.</li>
+<li><code>esm</code> – Keep the bundle as an ES module file, suitable for other bundlers
+and inclusion as a &lt;script type=module&gt; tag in modern browsers.</li>
+<li><code>lisan</code> - extends CommonJS module definition with an <a href="https://developer.mozilla.org/en-US/docs/Glossary/IIFE">iife</a>
+so that the module can be used with
+<a href="/docs/lisan-plugin-loader"><code>lisan-plugin-loader</code></a>.</li>
+</ul>
+<p><code>lisan</code> module looks like below:</p>
+<pre><code class="hljs css language-js">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module</span>) </span>{
+  <span class="hljs-comment">// exports the dictionary object</span>
+  <span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">locale</span>: <span class="hljs-string">'en-US'</span>,
+    <span class="hljs-attr">entries</span>: {
+      <span class="hljs-comment">// entries</span>
+    },
+  };
+})(
+  <span class="hljs-keyword">typeof</span> <span class="hljs-built_in">module</span> === <span class="hljs-string">'object'</span> &amp;&amp; <span class="hljs-built_in">module</span>.exports
+    ? <span class="hljs-built_in">module</span>
+    : <span class="hljs-built_in">window</span>.lisanLoaderListener,
+);
+</code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/21/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/full-api-reference"><span class="arrow-prev">← </span><span>Lisan</span></a><a class="docs-next button" href="/docs/lisan-cli"><span>Lisan CLI</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#methods">Methods</a></li><li><a href="#parselisanliterallisanliteral"><code>parseLisanLiteral(lisanLiteral)</code></a></li><li><a href="#parsejson-parseoptions"><code>parse(json, parseOptions?)</code></a><ul class="toc-headings"><li><a href="#parse-options">Parse Options</a></li></ul></li><li><a href="#generateparseddictionary-generateoptions"><code>generate(parsedDictionary, generateOptions?)</code></a><ul class="toc-headings"><li><a href="#compile-options">Compile Options</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/lisan-512.png" alt="Lisan" width="72" height="72"/></a><div><h5>Docs</h5><a href="/docs/what-is-lisan">About</a><a href="/docs/translations">Components</a><a href="/docs/lisan-plugins">Plugins</a><a href="/docs/pluralization">Guide &amp; Tips</a><a href="/docs/full-api-reference">API Reference</a></div><div><h5>Ecosystem</h5><a href="/docs/what-is-lisan#installation">Lisan</a><a href="/docs/what-is-lisan-locales">Lisan Locales</a><a href="/docs/what-is-lisan-compiler">Lisan Compiler</a><a href="/docs/what-is-lisan-cli">Lisan CLI</a><a href="/docs/lisan-plugin-l10n">Localization Plugin</a><a href="/docs/lisan-plugin-loader">Loader Plugin</a><a href="https://github.com/lisanjs/lisan-types" target="_blank">Lisan Types</a></div><div><h5>More</h5><a href="https://github.com/lisanjs/lisan" target="_blank" rel="noreferrer noopener">Issues</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/lisanjs/lisan" data-icon="octicon-star" data-show-count="true" aria-label="Star lisanjs/lisan on GitHub">Star</a></div></section></footer></div></body></html>
