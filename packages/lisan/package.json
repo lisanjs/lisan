@@ -36,6 +36,6 @@
     "url": "https://github.com/lisanjs/lisan/issues"
   },
   "dependencies": {
-    "lisan-types": "^0.0.34-alpha.0"
+    "lisan-types": "0.0.34-alpha.0"
   }
 }

@@ -38,11 +38,11 @@
     "url": "https://github.com/lisanjs/lisan/issues"
   },
   "devDependencies": {
-    "lisan": "^0.0.34-alpha.0",
-    "lisan-plugin-l10n": "^0.0.34-alpha.0"
+    "lisan": "0.0.34-alpha.0",
+    "lisan-plugin-l10n": "0.0.34-alpha.0"
   },
   "dependencies": {
-    "lisan-types": "^0.0.34-alpha.0",
-    "ordinalize-tr": "^1.0.1"
+    "lisan-types": "0.0.34-alpha.0",
+    "ordinalize-tr": "1.0.1"
   }
 }
