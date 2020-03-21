@@ -3,7 +3,6 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import typescript from 'rollup-plugin-typescript2';
-import json from 'rollup-plugin-json';
 import cleanup from 'rollup-plugin-cleanup';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -26,8 +25,6 @@ const config = [
       include: 'src/**',
     },
     plugins: [
-      // Allow json resolution
-      json(),
       resolve({ mainFields: ['module', 'main'] }),
       // Compile TypeScript files
       typescript(),
