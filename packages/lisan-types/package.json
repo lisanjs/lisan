@@ -1,0 +1,27 @@
+{
+  "name": "lisan-types",
+  "version": "0.0.3",
+  "description": "Lisan Typescript Type Declarations",
+  "keywords": [
+    "i18n",
+    "l10n",
+    "lisan",
+    "translation",
+    "internationalization",
+    "localization",
+    "typescript",
+    "declarations",
+    "js"
+  ],
+  "author": "Mehmet Yatkı <mehmet@yatki.com>",
+  "homepage": "https://gitlab.com/lisanjs/lerna-ts-boilerplate/packages/lisan-types#readme",
+  "license": "MIT",
+  "main": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/lisanjs/lisan.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/lisanjs/lisan/issues"
+  }
+}

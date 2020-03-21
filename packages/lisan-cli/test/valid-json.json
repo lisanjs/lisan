@@ -1,0 +1,54 @@
+{
+  "name": "A Valid Dictionary",
+  "locale": "en-Us",
+  "entries": {
+    "key0": "",
+    "key1": "   ",
+    "key2": "Hello world",
+    "key3": "Hello {world}",
+    "key4": "Hello ${name}",
+    "key5": "Hello ${name}",
+    "key6": "Hello ${same} ${same}",
+    "key7": "Hello ${name} ${surname}",
+    "key8": "Hello ${name} ${surname} ${name}",
+    "key9": "Hello ${info.name}",
+    "key10": "Hello ${info.person.name} ${info.person.surname}",
+    "key11": "Hello ${deep.nested.object}",
+    "key12": "Hello ${deep.nested.object} ${info.person.name.x.y.z}",
+    "key13": "Hello ${info.t.x}",
+    "key14": "Hello ${info.c.x}",
+    "key15": "Hello ${info.l.x}",
+    "key16": "Hello ${name} ${surname} \\${escaped}",
+    "key17": "This is a ${t('another.key')}",
+    "key18": "This is a ${t('key')} ${t('another.key')}",
+    "key19": "This is a ${t('same.key')} ${t('same.key')}",
+    "key20": "Today is ${day}! ${t('key', {name, surname})}",
+    "key21": "Multiple ${day}! ${t('key', {name})}  ${t('another.key', {surname, birthday})}",
+    "key22": "There is ${c('key', number_Of_Kids)}",
+    "key23": "There is ${c('key', myVar1)} ${c('key', myVar2)}",
+    "key24": "There is ${c('key1', numberOfKids)} ${myVar} some ${c('key2', anotherVar)}",
+    "key25": "There ${numberOfKids} ${c('child', numberOfKids)}",
+    "key26": "There ${c('present.be', numberOfKids)} ${numberOfKids} ${c('child', numberOfKids)}",
+    "key27": "Ooops! ${c('item.error', numberOfItems, {item})}",
+    "key28": "Localization ${currency(myValue)}",
+    "conditional": {
+      "one": "Hello ${name3} ${surname3}",
+      "many": "Hello ${name2} ${surname2}"
+    },
+    "another.key": "So key17 can pass allowNonExistingKeys: false option",
+    "key": "So key18 can pass allowNonExistingKeys: false option",
+    "same.key": "So key19 can pass allowNonExistingKeys: false option",
+    "child": {
+      "one": "So that key25 can pass",
+      "many": "Hello ${name2} ${surname2}"
+    },
+    "present.be": {
+      "one": "So that key26 can pass",
+      "many": "Hello ${name2} ${surname2}"
+    },
+    "item.error": {
+      "one": "So that key27 can pass",
+      "many": "Hello ${name2} ${surname2}"
+    }
+  }
+}

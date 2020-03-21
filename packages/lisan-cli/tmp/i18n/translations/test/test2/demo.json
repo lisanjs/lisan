@@ -1,0 +1,13 @@
+{
+  "name": "A Valid Dictionary",
+  "locale": "en-Us",
+  "entries": {
+    "key0": "",
+    "key1": "   ",
+    "key2": "Hello world",
+    "key3": "Hello {world}",
+    "key4": "Hello ${name24}",
+    "key5": "Hello ${name}",
+    "key6": "Hello ${same} ${same}"
+  }
+}

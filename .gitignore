@@ -1,0 +1,24 @@
+node_modules/
+.rpt2_cache/
+.tsc_cache/
+coverage/
+
+dist/
+
+.lisan_out/
+
+*.log
+*.tsbuildinfo
+
+!.vscode
+
+
+# docusaurus
+lib/core/metadata.js
+lib/core/MetadataBlog.js
+
+website/translated_docs
+website/build/
+website/yarn.lock
+website/node_modules
+website/i18n/*

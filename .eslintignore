@@ -1,0 +1,11 @@
+node_modules/
+
+dist/
+
+website/
+example/
+
+
+packages/lisan-locales/*.js
+
+packages/lisan-plugin-loader/**/*.js

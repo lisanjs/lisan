@@ -1,0 +1,8 @@
+{
+  "MD002": false,
+  "MD041": false,
+  "MD033": false,
+  "no-trailing-punctuation": {
+    "punctuation": ".,;:!"
+  }
+}

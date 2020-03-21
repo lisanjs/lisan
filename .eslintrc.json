@@ -1,0 +1,34 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "import"],
+  "extends": [
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "rules": {
+    "no-undef": "off",
+    "implicit-arrow-linebreak": "off",
+    "operator-linebreak": "off",
+    "function-paren-newline": "off",
+    "arrow-parens": "off",
+    "no-underscore-dangle": "off",
+    "import/group-exports": 2,
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "import/namespace": [2, { "allowComputed": true }],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/test/**/*.ts"] }
+    ],
+    "@typescript-eslint/indent": ["error", 2],
+    "object-curly-newline": [
+      "error",
+      {
+        "ExportDeclaration": { "multiline": true, "minProperties": 5 }
+      }
+    ]
+  }
+}

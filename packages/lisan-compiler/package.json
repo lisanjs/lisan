@@ -1,0 +1,43 @@
+{
+  "name": "lisan-compiler",
+  "version": "0.0.3",
+  "description": "Lisan compiler compiles Translations into Dictionaries",
+  "keywords": [
+    "i18n",
+    "l10n",
+    "cli",
+    "lisan",
+    "translation",
+    "internationalization",
+    "localization",
+    "compiler",
+    "js"
+  ],
+  "author": "Mehmet Yatkı <mehmet@yatki.com>",
+  "homepage": "https://gitlab.com/lisanjs/lerna-ts-boilerplate/packages/lisan-compiler#readme",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "browser": "./dist/index.umd.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/lisanjs/lisan.git"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.ts",
+    "start": "rollup -c rollup.config.ts -w"
+  },
+  "dependencies": {
+    "@types/estree": "^0.0.42",
+    "acorn": "^7.1.0"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/lisanjs/lisan/issues"
+  }
+}

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Constants should always match the snapshot! 1`] = `
+Object {
+  "ERRORS": Object {
+    "BacktickNotAllowed": "Backticks are not allowed in lisan literals. Please use backspace \\"\\\\\\" to escape backtick characters. Example: \\"\\\\\`\\"",
+    "ConditionalValueIsMandatory": "\\"c\\" requires a conditional value pick conditional entry.",
+    "ConflictingFunctionName": [Function],
+    "EntryKeyMustBeString": "Entry key must be valid string.",
+    "FirstArgumentMustBeAValidIdentifier": "First argument must be valid identifier. Example: \`timeShort(myValue)\`",
+    "ForbiddenFunctionName": [Function],
+    "ForbiddenVariableName": [Function],
+    "InvalidCFnArgumentCount": "\\"c\\" function cannot take more than 3 arguments.",
+    "InvalidExpression": "Entry contains invalid Expression statement.",
+    "InvalidFnArgument": "Provided argument can only be an object expression with shorthand properties. Example: \`{prop1, prop2, prop3}\`",
+    "InvalidFormatterFnArgumentCount": "Formatters cannot take more than 1 arguments.",
+    "InvalidMemberExpression": "A member expression cannot contain call expressions or dynamic property accessing!",
+    "InvalidTFnArgumentCount": "\\"t\\" function cannot take more than 2 arguments.",
+    "InvalidTemplateLiteral": "Provided Lisan literal has to be a valid javascript template literal.",
+    "NoParentKeyCall": "Lisan literal cannot have a function call with its own entry key",
+    "SecondArgumentMustBeObjectExpression": "Second argument must be an object expression.",
+    "ThirdArgumentMustBeObjectExpression": "Third argument must be an object expression.",
+    "invalidCallExpression": "Entry contains invalid call expression.",
+  },
+  "FORBIDDEN_FUNCTION_NAMES": Array [
+    "eval",
+  ],
+  "FORBIDDEN_VARIABLE_NAMES": Array [
+    "t",
+    "c",
+  ],
+  "LOCALIZATION_METHODS": Array [
+    "currency",
+    "ordinal",
+    "number",
+    "dateTime",
+    "dateShort",
+    "dateMedium",
+    "dateLong",
+    "dateFull",
+    "timeShort",
+    "timeMedium",
+    "timeLong",
+  ],
+}
+`;

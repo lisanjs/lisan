@@ -1,0 +1,404 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generate() Given entries do not have conditional groups should successfully generate javascript source code 1`] = `
+"(function(module){
+
+module.exports = {
+  \\"locale\\": \\"undefined\\",
+  \\"entries\\": {
+    \\"key1\\": \\"key1 value\\",
+    \\"key2\\": \\"key2 value\\",
+    \\"key3\\": \\"key2 value\\",
+  },
+};
+
+})(typeof module === 'object' && module.exports ? module : window.lisanLoaderListener);
+"
+`;
+
+exports[`generate() Given entries ends with conditional group should successfully generate javascript source code 1`] = `
+"(function(module){
+
+module.exports = {
+  \\"locale\\": \\"undefined\\",
+  \\"entries\\": {
+    \\"key1\\": \\"key1 value\\",
+    \\"key2\\": \\"key2 value\\",
+    \\"group\\": {
+      \\"one\\": \\"one value\\",
+      \\"other\\": \\"other value\\",
+    },
+  },
+};
+
+})(typeof module === 'object' && module.exports ? module : window.lisanLoaderListener);
+"
+`;
+
+exports[`generate() Given entries starts and ends with conditional groups should successfully generate javascript source code 1`] = `
+"(function(module){
+
+module.exports = {
+  \\"locale\\": \\"undefined\\",
+  \\"entries\\": {
+    \\"group1\\": {
+      \\"one\\": \\"one value\\",
+      \\"other\\": \\"other value\\",
+    },
+    \\"key1\\": \\"key1 value\\",
+    \\"key2\\": \\"key2 value\\",
+    \\"group3\\": {
+      \\"one\\": \\"one value\\",
+      \\"other\\": \\"other value\\",
+    },
+    \\"group2\\": {
+      \\"one\\": \\"one value\\",
+      \\"other\\": \\"other value\\",
+    },
+  },
+};
+
+})(typeof module === 'object' && module.exports ? module : window.lisanLoaderListener);
+"
+`;
+
+exports[`generate() Given entries starts with conditional group should successfully generate javascript source code 1`] = `
+"(function(module){
+
+module.exports = {
+  \\"locale\\": \\"undefined\\",
+  \\"entries\\": {
+    \\"group1\\": {
+      \\"one\\": \\"one value\\",
+      \\"other\\": \\"other value\\",
+    },
+    \\"key1\\": \\"key1 value\\",
+    \\"key2\\": \\"key2 value\\",
+  },
+};
+
+})(typeof module === 'object' && module.exports ? module : window.lisanLoaderListener);
+"
+`;
+
+exports[`generate() Given module is "cjs" should successfully generate source code as CommonJS module 1`] = `
+"module.exports = {
+  \\"locale\\": \\"en-Us\\",
+  \\"entries\\": {
+    \\"child\\": {
+      \\"one\\": \\"child\\",
+      \\"many\\": \\"children\\",
+    },
+    \\"color1\\": \\"red\\",
+    \\"color2\\": \\"blue\\",
+    \\"conditional\\": {
+      \\"one\\": ({ name3, surname3 }) => \`Hello \${name3} \${surname3}\`,
+      \\"many\\": ({ name2, surname2 }) => \`Hello \${name2} \${surname2}\`,
+    },
+    \\"item.error\\": {
+      \\"one\\": \\"So that key27 can pass\\",
+      \\"many\\": ({ name2, surname2 }) => \`Hello \${name2} \${surname2}\`,
+    },
+    \\"key\\": \\"So key18 can pass allowNonExistingKeys: false option\\",
+    \\"key0\\": \\"\\",
+    \\"key1\\": \\"\\",
+    \\"key10\\": ({ info }) => \`Hello \${info.person.name} \${info.person.surname}\`,
+    \\"key11\\": ({ surname, birthday }) => \`Your surname is \${surname}, your birthday is \${birthday}\`,
+    \\"key12\\": ({ deep, info }) => \`Hello \${deep.nested.key} \${info.person.name.x.y.z}\`,
+    \\"key13\\": ({ info }) => \`Hello \${info.t.x}\`,
+    \\"key14\\": ({ info }) => \`Hello \${info.c.x}\`,
+    \\"key15\\": ({ info }) => \`Hello \${info.l.x}\`,
+    \\"key16\\": ({ name, surname }) => \`Hello \${name} \${surname} \\\\\${escaped}\`,
+    \\"key17\\": ({}, { t }) => \`This is a \${t('key3')} message.\`,
+    \\"key18\\": ({}, { t }) => \`This is a \${t('color1')} \${t('color2')}\`,
+    \\"key19\\": ({}, { t }) => \`This is a \${t('same.key')} \${t('same.key')}\`,
+    \\"key2\\": \\"Hello world\\",
+    \\"key20\\": ({ day, name, surname }, { t }) => \`Today is \${day}! \${t('key7', {name, surname})}\`,
+    \\"key21\\": ({ today, name, surname, birthday }, { t }) => \`Today is \${today}! \${t('key4', {name})}  \${t('key11', {surname, birthday})}\`,
+    \\"key22\\": ({ number_Of_Records }, { c }) => \`yes yes.. \${c('records', number_Of_Records)}, there \${c('present.be', number_Of_Records)}...\`,
+    \\"key23\\": ({ myVar1, myVar2 }, { c }) => \`There \${c('present.be', myVar1)} \${c('records', myVar2)}.\`,
+    \\"key24\\": ({ numberOfKids, myVar, anotherVar }, { c }) => \`There is \${c('child', numberOfKids)} \${myVar} some \${c('child', anotherVar)}\`,
+    \\"key25\\": ({ numberOfKids }, { c }) => \`There \${numberOfKids} \${c('child', numberOfKids)}\`,
+    \\"key26\\": ({ numberOfKids }, { c }) => \`There \${c('present.be', numberOfKids)} \${numberOfKids} \${c('child', numberOfKids)}\`,
+    \\"key27\\": ({ numberOfItems, item }, { c }) => \`Ooops! \${c('item.error', numberOfItems, {item})}\`,
+    \\"key28\\": ({ myValue }, { currency }) => \`Localization \${currency(myValue)}\`,
+    \\"key3\\": \\"Hello {world}\\",
+    \\"key4\\": ({ name }) => \`Hello \${name}\`,
+    \\"key5\\": ({ _name }) => \`Hello \${_name}\`,
+    \\"key6\\": ({ same }) => \`Hello \${same} \${same}\`,
+    \\"key7\\": ({ name, surname }) => \`Hello \${name} \${surname}\`,
+    \\"key8\\": ({ name, surname }) => \`Hello \${name} \${surname} \${name}\`,
+    \\"key9\\": ({ info }) => \`Hello \${info.name}\`,
+    \\"present.be\\": {
+      \\"one\\": \\"is\\",
+      \\"many\\": \\"are\\",
+    },
+    \\"records\\": {
+      \\"one\\": \\"one record\\",
+      \\"many\\": \\"many records\\",
+    },
+    \\"same.key\\": \\"mirror mirror\\",
+    \\"string.key\\": \\"a string key\\",
+  },
+};
+"
+`;
+
+exports[`generate() Given module is "esm" should successfully generate source code as ECMA Script module 1`] = `
+"export default {
+  \\"locale\\": \\"en-Us\\",
+  \\"entries\\": {
+    \\"child\\": {
+      \\"one\\": \\"child\\",
+      \\"many\\": \\"children\\",
+    },
+    \\"color1\\": \\"red\\",
+    \\"color2\\": \\"blue\\",
+    \\"conditional\\": {
+      \\"one\\": ({ name3, surname3 }) => \`Hello \${name3} \${surname3}\`,
+      \\"many\\": ({ name2, surname2 }) => \`Hello \${name2} \${surname2}\`,
+    },
+    \\"item.error\\": {
+      \\"one\\": \\"So that key27 can pass\\",
+      \\"many\\": ({ name2, surname2 }) => \`Hello \${name2} \${surname2}\`,
+    },
+    \\"key\\": \\"So key18 can pass allowNonExistingKeys: false option\\",
+    \\"key0\\": \\"\\",
+    \\"key1\\": \\"\\",
+    \\"key10\\": ({ info }) => \`Hello \${info.person.name} \${info.person.surname}\`,
+    \\"key11\\": ({ surname, birthday }) => \`Your surname is \${surname}, your birthday is \${birthday}\`,
+    \\"key12\\": ({ deep, info }) => \`Hello \${deep.nested.key} \${info.person.name.x.y.z}\`,
+    \\"key13\\": ({ info }) => \`Hello \${info.t.x}\`,
+    \\"key14\\": ({ info }) => \`Hello \${info.c.x}\`,
+    \\"key15\\": ({ info }) => \`Hello \${info.l.x}\`,
+    \\"key16\\": ({ name, surname }) => \`Hello \${name} \${surname} \\\\\${escaped}\`,
+    \\"key17\\": ({}, { t }) => \`This is a \${t('key3')} message.\`,
+    \\"key18\\": ({}, { t }) => \`This is a \${t('color1')} \${t('color2')}\`,
+    \\"key19\\": ({}, { t }) => \`This is a \${t('same.key')} \${t('same.key')}\`,
+    \\"key2\\": \\"Hello world\\",
+    \\"key20\\": ({ day, name, surname }, { t }) => \`Today is \${day}! \${t('key7', {name, surname})}\`,
+    \\"key21\\": ({ today, name, surname, birthday }, { t }) => \`Today is \${today}! \${t('key4', {name})}  \${t('key11', {surname, birthday})}\`,
+    \\"key22\\": ({ number_Of_Records }, { c }) => \`yes yes.. \${c('records', number_Of_Records)}, there \${c('present.be', number_Of_Records)}...\`,
+    \\"key23\\": ({ myVar1, myVar2 }, { c }) => \`There \${c('present.be', myVar1)} \${c('records', myVar2)}.\`,
+    \\"key24\\": ({ numberOfKids, myVar, anotherVar }, { c }) => \`There is \${c('child', numberOfKids)} \${myVar} some \${c('child', anotherVar)}\`,
+    \\"key25\\": ({ numberOfKids }, { c }) => \`There \${numberOfKids} \${c('child', numberOfKids)}\`,
+    \\"key26\\": ({ numberOfKids }, { c }) => \`There \${c('present.be', numberOfKids)} \${numberOfKids} \${c('child', numberOfKids)}\`,
+    \\"key27\\": ({ numberOfItems, item }, { c }) => \`Ooops! \${c('item.error', numberOfItems, {item})}\`,
+    \\"key28\\": ({ myValue }, { currency }) => \`Localization \${currency(myValue)}\`,
+    \\"key3\\": \\"Hello {world}\\",
+    \\"key4\\": ({ name }) => \`Hello \${name}\`,
+    \\"key5\\": ({ _name }) => \`Hello \${_name}\`,
+    \\"key6\\": ({ same }) => \`Hello \${same} \${same}\`,
+    \\"key7\\": ({ name, surname }) => \`Hello \${name} \${surname}\`,
+    \\"key8\\": ({ name, surname }) => \`Hello \${name} \${surname} \${name}\`,
+    \\"key9\\": ({ info }) => \`Hello \${info.name}\`,
+    \\"present.be\\": {
+      \\"one\\": \\"is\\",
+      \\"many\\": \\"are\\",
+    },
+    \\"records\\": {
+      \\"one\\": \\"one record\\",
+      \\"many\\": \\"many records\\",
+    },
+    \\"same.key\\": \\"mirror mirror\\",
+    \\"string.key\\": \\"a string key\\",
+  },
+};
+"
+`;
+
+exports[`generate() Given module is "lisan" should successfully generate source code as lisan module 1`] = `
+"(function(module){
+
+module.exports = {
+  \\"locale\\": \\"en-Us\\",
+  \\"entries\\": {
+    \\"child\\": {
+      \\"one\\": \\"child\\",
+      \\"many\\": \\"children\\",
+    },
+    \\"color1\\": \\"red\\",
+    \\"color2\\": \\"blue\\",
+    \\"conditional\\": {
+      \\"one\\": ({ name3, surname3 }) => \`Hello \${name3} \${surname3}\`,
+      \\"many\\": ({ name2, surname2 }) => \`Hello \${name2} \${surname2}\`,
+    },
+    \\"item.error\\": {
+      \\"one\\": \\"So that key27 can pass\\",
+      \\"many\\": ({ name2, surname2 }) => \`Hello \${name2} \${surname2}\`,
+    },
+    \\"key\\": \\"So key18 can pass allowNonExistingKeys: false option\\",
+    \\"key0\\": \\"\\",
+    \\"key1\\": \\"\\",
+    \\"key10\\": ({ info }) => \`Hello \${info.person.name} \${info.person.surname}\`,
+    \\"key11\\": ({ surname, birthday }) => \`Your surname is \${surname}, your birthday is \${birthday}\`,
+    \\"key12\\": ({ deep, info }) => \`Hello \${deep.nested.key} \${info.person.name.x.y.z}\`,
+    \\"key13\\": ({ info }) => \`Hello \${info.t.x}\`,
+    \\"key14\\": ({ info }) => \`Hello \${info.c.x}\`,
+    \\"key15\\": ({ info }) => \`Hello \${info.l.x}\`,
+    \\"key16\\": ({ name, surname }) => \`Hello \${name} \${surname} \\\\\${escaped}\`,
+    \\"key17\\": ({}, { t }) => \`This is a \${t('key3')} message.\`,
+    \\"key18\\": ({}, { t }) => \`This is a \${t('color1')} \${t('color2')}\`,
+    \\"key19\\": ({}, { t }) => \`This is a \${t('same.key')} \${t('same.key')}\`,
+    \\"key2\\": \\"Hello world\\",
+    \\"key20\\": ({ day, name, surname }, { t }) => \`Today is \${day}! \${t('key7', {name, surname})}\`,
+    \\"key21\\": ({ today, name, surname, birthday }, { t }) => \`Today is \${today}! \${t('key4', {name})}  \${t('key11', {surname, birthday})}\`,
+    \\"key22\\": ({ number_Of_Records }, { c }) => \`yes yes.. \${c('records', number_Of_Records)}, there \${c('present.be', number_Of_Records)}...\`,
+    \\"key23\\": ({ myVar1, myVar2 }, { c }) => \`There \${c('present.be', myVar1)} \${c('records', myVar2)}.\`,
+    \\"key24\\": ({ numberOfKids, myVar, anotherVar }, { c }) => \`There is \${c('child', numberOfKids)} \${myVar} some \${c('child', anotherVar)}\`,
+    \\"key25\\": ({ numberOfKids }, { c }) => \`There \${numberOfKids} \${c('child', numberOfKids)}\`,
+    \\"key26\\": ({ numberOfKids }, { c }) => \`There \${c('present.be', numberOfKids)} \${numberOfKids} \${c('child', numberOfKids)}\`,
+    \\"key27\\": ({ numberOfItems, item }, { c }) => \`Ooops! \${c('item.error', numberOfItems, {item})}\`,
+    \\"key28\\": ({ myValue }, { currency }) => \`Localization \${currency(myValue)}\`,
+    \\"key3\\": \\"Hello {world}\\",
+    \\"key4\\": ({ name }) => \`Hello \${name}\`,
+    \\"key5\\": ({ _name }) => \`Hello \${_name}\`,
+    \\"key6\\": ({ same }) => \`Hello \${same} \${same}\`,
+    \\"key7\\": ({ name, surname }) => \`Hello \${name} \${surname}\`,
+    \\"key8\\": ({ name, surname }) => \`Hello \${name} \${surname} \${name}\`,
+    \\"key9\\": ({ info }) => \`Hello \${info.name}\`,
+    \\"present.be\\": {
+      \\"one\\": \\"is\\",
+      \\"many\\": \\"are\\",
+    },
+    \\"records\\": {
+      \\"one\\": \\"one record\\",
+      \\"many\\": \\"many records\\",
+    },
+    \\"same.key\\": \\"mirror mirror\\",
+    \\"string.key\\": \\"a string key\\",
+  },
+};
+
+})(typeof module === 'object' && module.exports ? module : window.lisanLoaderListener);
+"
+`;
+
+exports[`generate() Given module is "none" should successfully generate source code as javascript object 1`] = `
+"{
+  \\"locale\\": \\"en-Us\\",
+  \\"entries\\": {
+    \\"child\\": {
+      \\"one\\": \\"child\\",
+      \\"many\\": \\"children\\",
+    },
+    \\"color1\\": \\"red\\",
+    \\"color2\\": \\"blue\\",
+    \\"conditional\\": {
+      \\"one\\": ({ name3, surname3 }) => \`Hello \${name3} \${surname3}\`,
+      \\"many\\": ({ name2, surname2 }) => \`Hello \${name2} \${surname2}\`,
+    },
+    \\"item.error\\": {
+      \\"one\\": \\"So that key27 can pass\\",
+      \\"many\\": ({ name2, surname2 }) => \`Hello \${name2} \${surname2}\`,
+    },
+    \\"key\\": \\"So key18 can pass allowNonExistingKeys: false option\\",
+    \\"key0\\": \\"\\",
+    \\"key1\\": \\"\\",
+    \\"key10\\": ({ info }) => \`Hello \${info.person.name} \${info.person.surname}\`,
+    \\"key11\\": ({ surname, birthday }) => \`Your surname is \${surname}, your birthday is \${birthday}\`,
+    \\"key12\\": ({ deep, info }) => \`Hello \${deep.nested.key} \${info.person.name.x.y.z}\`,
+    \\"key13\\": ({ info }) => \`Hello \${info.t.x}\`,
+    \\"key14\\": ({ info }) => \`Hello \${info.c.x}\`,
+    \\"key15\\": ({ info }) => \`Hello \${info.l.x}\`,
+    \\"key16\\": ({ name, surname }) => \`Hello \${name} \${surname} \\\\\${escaped}\`,
+    \\"key17\\": ({}, { t }) => \`This is a \${t('key3')} message.\`,
+    \\"key18\\": ({}, { t }) => \`This is a \${t('color1')} \${t('color2')}\`,
+    \\"key19\\": ({}, { t }) => \`This is a \${t('same.key')} \${t('same.key')}\`,
+    \\"key2\\": \\"Hello world\\",
+    \\"key20\\": ({ day, name, surname }, { t }) => \`Today is \${day}! \${t('key7', {name, surname})}\`,
+    \\"key21\\": ({ today, name, surname, birthday }, { t }) => \`Today is \${today}! \${t('key4', {name})}  \${t('key11', {surname, birthday})}\`,
+    \\"key22\\": ({ number_Of_Records }, { c }) => \`yes yes.. \${c('records', number_Of_Records)}, there \${c('present.be', number_Of_Records)}...\`,
+    \\"key23\\": ({ myVar1, myVar2 }, { c }) => \`There \${c('present.be', myVar1)} \${c('records', myVar2)}.\`,
+    \\"key24\\": ({ numberOfKids, myVar, anotherVar }, { c }) => \`There is \${c('child', numberOfKids)} \${myVar} some \${c('child', anotherVar)}\`,
+    \\"key25\\": ({ numberOfKids }, { c }) => \`There \${numberOfKids} \${c('child', numberOfKids)}\`,
+    \\"key26\\": ({ numberOfKids }, { c }) => \`There \${c('present.be', numberOfKids)} \${numberOfKids} \${c('child', numberOfKids)}\`,
+    \\"key27\\": ({ numberOfItems, item }, { c }) => \`Ooops! \${c('item.error', numberOfItems, {item})}\`,
+    \\"key28\\": ({ myValue }, { currency }) => \`Localization \${currency(myValue)}\`,
+    \\"key3\\": \\"Hello {world}\\",
+    \\"key4\\": ({ name }) => \`Hello \${name}\`,
+    \\"key5\\": ({ _name }) => \`Hello \${_name}\`,
+    \\"key6\\": ({ same }) => \`Hello \${same} \${same}\`,
+    \\"key7\\": ({ name, surname }) => \`Hello \${name} \${surname}\`,
+    \\"key8\\": ({ name, surname }) => \`Hello \${name} \${surname} \${name}\`,
+    \\"key9\\": ({ info }) => \`Hello \${info.name}\`,
+    \\"present.be\\": {
+      \\"one\\": \\"is\\",
+      \\"many\\": \\"are\\",
+    },
+    \\"records\\": {
+      \\"one\\": \\"one record\\",
+      \\"many\\": \\"many records\\",
+    },
+    \\"same.key\\": \\"mirror mirror\\",
+    \\"string.key\\": \\"a string key\\",
+  },
+}"
+`;
+
+exports[`generate() Given no options were provided should successfully generate javascript source code 1`] = `
+"(function(module){
+
+module.exports = {
+  \\"locale\\": \\"en-Us\\",
+  \\"entries\\": {
+    \\"child\\": {
+      \\"one\\": \\"child\\",
+      \\"many\\": \\"children\\",
+    },
+    \\"color1\\": \\"red\\",
+    \\"color2\\": \\"blue\\",
+    \\"conditional\\": {
+      \\"one\\": ({ name3, surname3 }) => \`Hello \${name3} \${surname3}\`,
+      \\"many\\": ({ name2, surname2 }) => \`Hello \${name2} \${surname2}\`,
+    },
+    \\"item.error\\": {
+      \\"one\\": \\"So that key27 can pass\\",
+      \\"many\\": ({ name2, surname2 }) => \`Hello \${name2} \${surname2}\`,
+    },
+    \\"key\\": \\"So key18 can pass allowNonExistingKeys: false option\\",
+    \\"key0\\": \\"\\",
+    \\"key1\\": \\"\\",
+    \\"key10\\": ({ info }) => \`Hello \${info.person.name} \${info.person.surname}\`,
+    \\"key11\\": ({ surname, birthday }) => \`Your surname is \${surname}, your birthday is \${birthday}\`,
+    \\"key12\\": ({ deep, info }) => \`Hello \${deep.nested.key} \${info.person.name.x.y.z}\`,
+    \\"key13\\": ({ info }) => \`Hello \${info.t.x}\`,
+    \\"key14\\": ({ info }) => \`Hello \${info.c.x}\`,
+    \\"key15\\": ({ info }) => \`Hello \${info.l.x}\`,
+    \\"key16\\": ({ name, surname }) => \`Hello \${name} \${surname} \\\\\${escaped}\`,
+    \\"key17\\": ({}, { t }) => \`This is a \${t('key3')} message.\`,
+    \\"key18\\": ({}, { t }) => \`This is a \${t('color1')} \${t('color2')}\`,
+    \\"key19\\": ({}, { t }) => \`This is a \${t('same.key')} \${t('same.key')}\`,
+    \\"key2\\": \\"Hello world\\",
+    \\"key20\\": ({ day, name, surname }, { t }) => \`Today is \${day}! \${t('key7', {name, surname})}\`,
+    \\"key21\\": ({ today, name, surname, birthday }, { t }) => \`Today is \${today}! \${t('key4', {name})}  \${t('key11', {surname, birthday})}\`,
+    \\"key22\\": ({ number_Of_Records }, { c }) => \`yes yes.. \${c('records', number_Of_Records)}, there \${c('present.be', number_Of_Records)}...\`,
+    \\"key23\\": ({ myVar1, myVar2 }, { c }) => \`There \${c('present.be', myVar1)} \${c('records', myVar2)}.\`,
+    \\"key24\\": ({ numberOfKids, myVar, anotherVar }, { c }) => \`There is \${c('child', numberOfKids)} \${myVar} some \${c('child', anotherVar)}\`,
+    \\"key25\\": ({ numberOfKids }, { c }) => \`There \${numberOfKids} \${c('child', numberOfKids)}\`,
+    \\"key26\\": ({ numberOfKids }, { c }) => \`There \${c('present.be', numberOfKids)} \${numberOfKids} \${c('child', numberOfKids)}\`,
+    \\"key27\\": ({ numberOfItems, item }, { c }) => \`Ooops! \${c('item.error', numberOfItems, {item})}\`,
+    \\"key28\\": ({ myValue }, { currency }) => \`Localization \${currency(myValue)}\`,
+    \\"key3\\": \\"Hello {world}\\",
+    \\"key4\\": ({ name }) => \`Hello \${name}\`,
+    \\"key5\\": ({ _name }) => \`Hello \${_name}\`,
+    \\"key6\\": ({ same }) => \`Hello \${same} \${same}\`,
+    \\"key7\\": ({ name, surname }) => \`Hello \${name} \${surname}\`,
+    \\"key8\\": ({ name, surname }) => \`Hello \${name} \${surname} \${name}\`,
+    \\"key9\\": ({ info }) => \`Hello \${info.name}\`,
+    \\"present.be\\": {
+      \\"one\\": \\"is\\",
+      \\"many\\": \\"are\\",
+    },
+    \\"records\\": {
+      \\"one\\": \\"one record\\",
+      \\"many\\": \\"many records\\",
+    },
+    \\"same.key\\": \\"mirror mirror\\",
+    \\"string.key\\": \\"a string key\\",
+  },
+};
+
+})(typeof module === 'object' && module.exports ? module : window.lisanLoaderListener);
+"
+`;

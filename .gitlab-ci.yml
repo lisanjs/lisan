@@ -1,0 +1,20 @@
+image: docker:stable-git
+services:
+  - docker:dind
+
+stages:
+  - release
+
+variables:
+  CONTAINER_RELEASE_IMAGE: registry.gitlab.com/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME:latest
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
+
+build_and_release:
+  stage: release
+  script:
+    - docker build -t $CONTAINER_RELEASE_IMAGE .
+    - docker push $CONTAINER_RELEASE_IMAGE
+  only:
+    - development

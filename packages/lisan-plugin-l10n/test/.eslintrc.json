@@ -1,0 +1,10 @@
+{
+  "extends": ["../../../.eslintrc.json", "plugin:jest/recommended"],
+  "plugins": ["jest"],
+  "env": {
+    "jest/globals": true
+  },
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off"
+  }
+}

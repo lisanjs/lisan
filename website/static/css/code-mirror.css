@@ -1,0 +1,52 @@
+.code-mirror {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.code-mirror__input,
+.code-mirror__output {
+  border: 1px solid #dfe2e5;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  line-height: initial;
+}
+
+.code-mirror__input textarea {
+  width: 100%;
+  resize: none;
+  padding: 5px;
+  font-size: 12px;
+  height: 100%;
+}
+
+.code-mirror__input textarea,
+.code-mirror__output code {
+  min-height: 200px;
+}
+
+.code-mirror__output pre {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media only screen and (min-width: 1024px) {
+  .code-mirror {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .code-mirror__input {
+    margin-right: 5px;
+    width: 50%;
+  }
+  .code-mirror__output {
+    margin-left: 5px;
+    width: 50%;
+  }
+
+  .code-mirror__input textarea {
+    font-size: 14px;
+  }
+}

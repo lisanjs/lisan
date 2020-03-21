@@ -1,0 +1,40 @@
+{
+  "name": "lisan",
+  "version": "0.0.3",
+  "description": "Lisan - A Blazing fast i18n library",
+  "keywords": [
+    "i18n",
+    "l10n",
+    "lisan",
+    "translation",
+    "internationalization",
+    "localization",
+    "js"
+  ],
+  "author": "Mehmet Yatkı <mehmet@yatki.com>",
+  "homepage": "https://gitlab.com/lisanjs/lisan/packages/lisan",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/lisanjs/lisan.git"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.ts",
+    "start": "rollup -c rollup.config.ts -w"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/lisanjs/lisan/issues"
+  },
+  "dependencies": {
+    "lisan-types": "^0.0.3"
+  }
+}

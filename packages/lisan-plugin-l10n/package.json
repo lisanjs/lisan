@@ -1,0 +1,44 @@
+{
+  "name": "lisan-plugin-l10n",
+  "version": "0.0.3",
+  "description": "Lisan Localization Plugin",
+  "author": "Mehmet Yatkı <mehmet@yatki.com>",
+  "keywords": [
+    "i18n",
+    "l10n",
+    "lisan",
+    "translation",
+    "internationalization",
+    "localization",
+    "plugin",
+    "js"
+  ],
+  "homepage": "https://gitlab.com/lisanjs/lerna-ts-boilerplate/packages/lisan-plugin-l10n#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/lisanjs/lisan.git"
+  },
+  "scripts": {
+    "build": "rollup -c rollup.config.ts",
+    "start": "rollup -c rollup.config.ts -w"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/lisanjs/lisan/issues"
+  },
+  "dependencies": {
+    "lisan-types": "^0.0.3"
+  },
+  "devDependencies": {
+    "lisan": "^0.0.3"
+  }
+}

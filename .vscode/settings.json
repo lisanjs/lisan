@@ -1,0 +1,34 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#2C2F1D",
+    "titleBar.activeBackground": "#3E4228",
+    "titleBar.activeForeground": "#FAFBF8"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "typescript.validate.enable": true,
+  "grammarly.userWords": [
+    "Lisan",
+    "api",
+    "cli",
+    "lisan",
+    "webpack",
+    "resolvePattern",
+    "dateTime",
+    "dateFull",
+    "dateLong",
+    "dateMedium",
+    "dateShort",
+    "timeLong",
+    "timeMedium",
+    "timeShort",
+    "commonjs",
+    "esm",
+    "umd",
+    "Lisan's"
+  ]
+}

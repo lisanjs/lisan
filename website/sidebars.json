@@ -1,0 +1,27 @@
+{
+  "docs": {
+    "About": [
+      "what-is-lisan",
+      "how-lisan-works",
+      "performance",
+      "what-is-lisan-compiler",
+      "what-is-lisan-cli",
+      "what-is-lisan-locales",
+      "lisan-plugins",
+      "lisan-adapters"
+    ],
+    "Components": [
+      "translations",
+      "dictionary",
+      "conditional-groups",
+      "formatters"
+    ],
+    "Plugins": ["lisan-plugin-l10n", "lisan-plugin-loader"],
+    "Guides & Tips": [
+      "pluralization",
+      "multiple-instances",
+      "how-to-write-plugins"
+    ],
+    "API": ["full-api-reference", "lisan-compiler", "lisan-cli"]
+  }
+}

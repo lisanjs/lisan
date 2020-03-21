@@ -1,0 +1,47 @@
+{
+  "name": "lisan-locales",
+  "version": "0.0.3",
+  "description": "The repository containing Lisan Locale Configurations",
+  "keywords": [
+    "i18n",
+    "l10n",
+    "lisan",
+    "translation",
+    "internationalization",
+    "localization",
+    "locale",
+    "configuration",
+    "js"
+  ],
+  "author": "Mehmet Yatkı <mehmet@yatki.com>",
+  "homepage": "https://gitlab.com/lisanjs/lerna-ts-boilerplate/packages/lisan-locales#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "browser": "dist/index.umd.js",
+  "files": [
+    "dist/",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/lisanjs/lisan.git"
+  },
+  "scripts": {
+    "prebuild": "rimraf ./dist",
+    "build": "rollup -c rollup.config.ts",
+    "start": "rollup -c rollup.config.ts -w"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/lisanjs/lisan/issues"
+  },
+  "devDependencies": {
+    "lisan": "^0.0.3",
+    "lisan-plugin-l10n": "^0.0.3"
+  },
+  "dependencies": {
+    "lisan-types": "^0.0.3",
+    "ordinalize-tr": "^1.0.1"
+  }
+}
