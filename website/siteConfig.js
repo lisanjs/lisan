@@ -102,8 +102,8 @@ const siteConfig = {
   cleanUrl: true,
 
   // Open Graph and Twitter card images.
-  ogImage: 'img/logo/lisan-512.png',
-  twitterImage: 'img/logo/lisan-512.png',
+  ogImage: 'img/lisan-og.png',
+  twitterImage: 'img/lisan-og.png',
 
   // Show documentation's last contributor's name.
   enableUpdateBy: false,
