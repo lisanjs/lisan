@@ -56,7 +56,12 @@ class Footer extends React.Component {
               Localization Plugin
             </a>
             <a href={this.pageUrl('docs/lisan-plugin-loader')}>Loader Plugin</a>
-            <a href={'https://github.com/lisanjs/lisan-types'} target="_blank">
+            <a
+              href={
+                'https://github.com/lisanjs/lisan/tree/master/packages/lisan-types'
+              }
+              target="_blank"
+            >
               Lisan Types
             </a>
           </div>
