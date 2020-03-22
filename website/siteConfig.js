@@ -32,6 +32,8 @@ const siteConfig = {
 
   editUrl: 'https://github.com/lisanjs/lisan/docs/',
 
+  cname: 'lisanjs.com',
+
   // Used for publishing and more
   projectName: 'lisan',
   organizationName: 'lisanjs',
