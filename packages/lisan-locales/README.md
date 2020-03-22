@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="Lisan.js" src="../../website/static/img/logo/banners/5_big.png" width="480">
+  <img alt="Lisan.js" src="https://lisanjs.com/img/logo/banners/5_big.png" width="480">
   <br>
   <strong>i18n</strong>, Reimagined!
 </p>
