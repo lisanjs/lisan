@@ -30,7 +30,7 @@ const siteConfig = {
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
-  editUrl: 'https://github.com/lisanjs/lisan/docs/',
+  editUrl: 'https://github.com/lisanjs/lisan/edit/development/docs/',
 
   cname: 'lisanjs.com',
 
