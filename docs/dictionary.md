@@ -102,6 +102,7 @@ const { tr } = require('lisan-locales');
 
 console.log(tr.name); // Outputs: "tr"
 
+lisan.use(Localization);
 lisan.setLocale(tr);
 
 lisan.add({
