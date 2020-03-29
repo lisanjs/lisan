@@ -64,7 +64,11 @@ const Loader = ({
     idPrefix: string = 'Lisan_Dictionary',
   ): Promise<string> {
     const target = dictionaryUrlFn(dictionaryName, lisan.locale?.name);
-    const scriptId = `${idPrefix}__${lisan.locale?.name}__${dictionaryName}`;
+    if (lisan.locale?.name) {
+      // eslint-disable-next-line no-param-reassign
+      idPrefix += `__${lisan.locale.name}`;
+    }
+    const scriptId = `${idPrefix}__${dictionaryName}`;
 
     if (isNode()) {
       const dictionary = req(target) as TSLisan.Dictionary;
