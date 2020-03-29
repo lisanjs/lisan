@@ -69,8 +69,10 @@ const handler = async (argv: yargs.Arguments): Promise<void> => {
     compile: CompileCommandArgs;
   };
 
-  const compileOptions = (fileConfig?.compile ||
-    (compileCommandOptions as unknown)) as CompileCommandArgs;
+  let compileOptions = (compileCommandOptions as unknown) as CompileCommandArgs;
+  if (fileConfig?.compile) {
+    compileOptions = { ...fileConfig.compile, ...compileOptions };
+  }
 
   try {
     compile(compileOptions);
