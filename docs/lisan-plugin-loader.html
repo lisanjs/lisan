@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Lisan Loader Plugin · Lisan</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Lisan Loader allows you dynamically load your dictionaries and locale configurations."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Lisan Loader Plugin · Lisan"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lisanjs.com/"/><meta property="og:description" content="Lisan Loader allows you dynamically load your dictionaries and locale configurations."/><meta property="og:image" content="https://lisanjs.com/img/lisan-og.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lisanjs.com/img/lisan-og.png"/><link rel="shortcut icon" href="/img/logo/lisan-512.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="/js/external-links.js"></script><script type="text/javascript" src="/js/code-mirror.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Lisan Loader Plugin · Lisan</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Lisan Loader allows you dynamically load your dictionaries and locale configurations."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Lisan Loader Plugin · Lisan"/><meta property="og:type" content="website"/><meta property="og:url" content="https://lisanjs.com/"/><meta property="og:description" content="Lisan Loader allows you dynamically load your dictionaries and locale configurations."/><meta property="og:image" content="https://lisanjs.com/img/lisan-og.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://lisanjs.com/img/lisan-og.png"/><link rel="shortcut icon" href="/img/logo/lisan-512.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/darcula.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script type="text/javascript" src="/js/external-links.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
         document.addEventListener('DOMContentLoaded', function() {
           addBackToTop(
             {"zIndex":100}
@@ -87,23 +87,19 @@ will be accessible via <code>window.lisanPluginLoader</code> variables.</p>
 
 lisan.use(
   Loader({
-    <span class="hljs-attr">localeUrlFn</span>: <span class="hljs-function"><span class="hljs-params">localeName</span> =&gt;</span>
-      <span class="hljs-string">`https://cdn.mydomain.com/static/locales/<span class="hljs-subst">${localeName}</span>.js`</span>,
     <span class="hljs-attr">dictionaryUrlFn</span>: <span class="hljs-function">(<span class="hljs-params">dictionaryName, localeName</span>) =&gt;</span>
       <span class="hljs-string">`https://cdn.mydomain.com/static/<span class="hljs-subst">${localeName}</span>/dictionaries/<span class="hljs-subst">${dictionaryName}</span>.js`</span>,
   }),
 );
 
-lisan.loadLocale(<span class="hljs-string">'tr-TR'</span>).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-  <span class="hljs-comment">// Loaded https://cdn.mydomain.com/static/locales/tr-TR.js</span>
+lisan.localeName(<span class="hljs-string">'tr'</span>);
 
-  lisan.load(<span class="hljs-string">'main'</span>).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
-    <span class="hljs-comment">// Loaded https://cdn.mydomain.com/static/tr-TR/dictionaries/main.js</span>
-    <span class="hljs-keyword">const</span> translated = lisan.t(<span class="hljs-string">'hello.person'</span>, {
-      <span class="hljs-attr">name</span>: <span class="hljs-string">'John Doe'</span>,
-    });
-    <span class="hljs-built_in">console</span>.log(translated); <span class="hljs-comment">// Merhaba John Doe</span>
+lisan.load(<span class="hljs-string">'main'</span>).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-comment">// Loaded https://cdn.mydomain.com/static/tr/dictionaries/main.js</span>
+  <span class="hljs-keyword">const</span> translated = lisan.t(<span class="hljs-string">'hello.person'</span>, {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'John Doe'</span>,
   });
+  <span class="hljs-built_in">console</span>.log(translated); <span class="hljs-comment">// Merhaba John Doe</span>
 });
 </code></pre>
 <p><strong>Type Signature</strong></p>
@@ -126,6 +122,12 @@ Default: <code>undefined</code></p>
 <!-- markdownlint-disable MD038 MD013 -->
 <p>Type: <strong>LocaleURLResolverFunction</strong><br>
 Default: <code>({ localeName }) =&gt; `https://unpkg.com/lisan-locales/dist/${localeName}.lisan.js`</code></p>
+<div class="warning-block">
+<blockquote>
+<p><strong>Warning</strong></p>
+<p><code>localeUrlFn</code> only works if <a href="/docs/lisan-plugin-l10n"><code>lisan-plugin-l10n</code></a> is used.</p>
+</blockquote>
+</div>
 <!-- markdownlint-enable MD038 MD013 -->
 <p><strong>Type Signature</strong></p>
 <pre><code class="hljs css language-ts"><span class="hljs-keyword">type</span> LocaleURLResolverFunction = <span class="hljs-function">(<span class="hljs-params">localeName: <span class="hljs-built_in">string</span></span>) =&gt;</span> <span class="hljs-built_in">string</span>;
@@ -186,7 +188,11 @@ which are compatible with <strong>Lisan Loader</strong>.</p>
 <pre><code class="hljs css language-js"><span class="hljs-comment">// src/index.js</span>
 <span class="hljs-keyword">const</span> { lisan } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lisan'</span>);
 <span class="hljs-keyword">const</span> { Loader } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lisan-plugin-loader'</span>);
+<span class="hljs-keyword">const</span> { Localization } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'lisan-plugin-l10n'</span>);
 <span class="hljs-keyword">const</span> renderHome = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./pages/home.js'</span>);
+
+<span class="hljs-comment">// Localization is needed to use loadLocale function.</span>
+lisan.use(Localization);
 
 lisan.use(
   Loader({
@@ -210,10 +216,10 @@ lisan.use(
 <!-- prettier-ignore-start -->
 <p>Please note that,</p>
 <p><code>lisan.loadLocale(&quot;en-US&quot;)</code> method will append the script element below:</p>
-<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lisan-locale-en-US"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.mydomain.com/static/locales/en-US.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Lisan_Locale__en-US"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.mydomain.com/static/locales/en-US.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
 <p><code>lisan.load(&quot;main&quot;)</code> method will append the script element below:</p>
-<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"lisan-dictionary-en-US-main"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">" https://cdn.mydomain.com/static/en-US/dictionaries/main.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Lisan_Dictionary__en-US__main"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">" https://cdn.mydomain.com/static/en-US/dictionaries/main.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
 <!-- prettier-ignore-end -->
 <h3><a class="anchor" aria-hidden="true" id="using-another-dynamic-import-strategy"></a><a href="#using-another-dynamic-import-strategy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using another dynamic import strategy</h3>
@@ -272,4 +278,4 @@ lisan.load(<span class="hljs-string">'about-v1.0.0'</span>).then(<span class="hl
   <span class="hljs-comment">// All entries can be used by `lisan.t()` and `lisan.c()` methods</span>
 });
 </code></pre>
-</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/21/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/lisan-plugin-l10n"><span class="arrow-prev">← </span><span>Localization</span></a><a class="docs-next button" href="/docs/pluralization"><span>Pluralization</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installation">Installation</a><ul class="toc-headings"><li><a href="#from-npm">from npm</a></li><li><a href="#from-cdn">from CDN</a></li></ul></li><li><a href="#usage">Usage</a></li><li><a href="#options">Options</a><ul class="toc-headings"><li><a href="#dictionaryurlfn"><code>dictionaryUrlFn</code></a></li><li><a href="#localeurlfn"><code>localeUrlFn</code></a></li></ul></li><li><a href="#methods">Methods</a></li><li><a href="#compatibility">Compatibility</a></li><li><a href="#guide">Guide</a><ul class="toc-headings"><li><a href="#why-might-you-need-a-dynamic-loader">Why might you need a dynamic loader?</a></li><li><a href="#using-another-dynamic-import-strategy">Using another dynamic import strategy</a></li><li><a href="#caching">Caching</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/lisan-512.png" alt="Lisan" width="72" height="72"/></a><div><h5>Docs</h5><a href="/docs/what-is-lisan">About</a><a href="/docs/translations">Components</a><a href="/docs/lisan-plugins">Plugins</a><a href="/docs/pluralization">Guide &amp; Tips</a><a href="/docs/full-api-reference">API Reference</a></div><div><h5>Ecosystem</h5><a href="/docs/what-is-lisan#installation">Lisan</a><a href="/docs/what-is-lisan-locales">Lisan Locales</a><a href="/docs/what-is-lisan-compiler">Lisan Compiler</a><a href="/docs/what-is-lisan-cli">Lisan CLI</a><a href="/docs/lisan-plugin-l10n">Localization Plugin</a><a href="/docs/lisan-plugin-loader">Loader Plugin</a><a href="https://github.com/lisanjs/lisan/tree/master/packages/lisan-types" target="_blank">Lisan Types</a></div><div><h5>More</h5><a href="https://github.com/lisanjs/lisan" target="_blank" rel="noreferrer noopener">Issues</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/lisanjs/lisan" data-icon="octicon-star" data-show-count="true" aria-label="Star lisanjs/lisan on GitHub">Star</a></div></section></footer></div></body></html>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 3/31/2020</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/lisan-plugin-l10n"><span class="arrow-prev">← </span><span>Localization</span></a><a class="docs-next button" href="/docs/pluralization"><span>Pluralization</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#installation">Installation</a><ul class="toc-headings"><li><a href="#from-npm">from npm</a></li><li><a href="#from-cdn">from CDN</a></li></ul></li><li><a href="#usage">Usage</a></li><li><a href="#options">Options</a><ul class="toc-headings"><li><a href="#dictionaryurlfn"><code>dictionaryUrlFn</code></a></li><li><a href="#localeurlfn"><code>localeUrlFn</code></a></li></ul></li><li><a href="#methods">Methods</a></li><li><a href="#compatibility">Compatibility</a></li><li><a href="#guide">Guide</a><ul class="toc-headings"><li><a href="#why-might-you-need-a-dynamic-loader">Why might you need a dynamic loader?</a></li><li><a href="#using-another-dynamic-import-strategy">Using another dynamic import strategy</a></li><li><a href="#caching">Caching</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/lisan-512.png" alt="Lisan" width="72" height="72"/></a><div><h5>Docs</h5><a href="/docs/what-is-lisan">About</a><a href="/docs/translations">Components</a><a href="/docs/lisan-plugins">Plugins</a><a href="/docs/pluralization">Guide &amp; Tips</a><a href="/docs/full-api-reference">API Reference</a></div><div><h5>Ecosystem</h5><a href="/docs/what-is-lisan#installation">Lisan</a><a href="/docs/what-is-lisan-locales">Lisan Locales</a><a href="/docs/what-is-lisan-compiler">Lisan Compiler</a><a href="/docs/what-is-lisan-cli">Lisan CLI</a><a href="/docs/lisan-plugin-l10n">Localization Plugin</a><a href="/docs/lisan-plugin-loader">Loader Plugin</a><a href="https://github.com/lisanjs/lisan/tree/master/packages/lisan-types" target="_blank">Lisan Types</a></div><div><h5>More</h5><a href="https://github.com/lisanjs/lisan" target="_blank" rel="noreferrer noopener">Issues</a><a href="https://github.com/">GitHub</a><a class="github-button" href="https://github.com/lisanjs/lisan" data-icon="octicon-star" data-show-count="true" aria-label="Star lisanjs/lisan on GitHub">Star</a></div></section></footer></div></body></html>
