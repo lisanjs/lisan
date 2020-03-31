@@ -110,6 +110,7 @@ function CodeMirror() {
         src="https://unpkg.com/lisan-compiler/dist/index.umd.js"
         type="text/javascript"
       ></script>
+      <script src="/js/code-mirror.js" type="text/javascript"></script>
     </div>
   );
 }
