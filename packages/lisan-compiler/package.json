@@ -1,6 +1,6 @@
 {
   "name": "lisan-compiler",
-  "version": "0.0.34",
+  "version": "0.0.35",
   "description": "Lisan compiler compiles Translations into Dictionaries",
   "keywords": [
     "i18n",
@@ -35,7 +35,7 @@
     "start": "rollup -c rollup.config.ts -w"
   },
   "dependencies": {
-    "@types/estree": "0.0.42",
+    "@types/estree": "0.0.44",
     "acorn": "7.1.1"
   },
   "bugs": {
