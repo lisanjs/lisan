@@ -47,6 +47,30 @@ lisan.newMethod();
 
 > For more information, See: [How to write Plugins](/docs/how-to-write-plugins).
 
+### `lisan.localeName(name?)`
+
+When `name` argument is provided, updates the locale name of lisan instance.
+
+**Input**
+
+| parameter       | type   | description                        |
+| --------------- | ------ | ---------------------------------- |
+| name (optional) | string | Updates locale name to given value |
+
+**Returns**: `string`, returns configured locale name.
+
+**Usage**
+
+```js
+const { lisan } = require('lisan');
+
+console.log(lisan.localeName()); // Outputs: "undefined"
+
+lisan.localeName('en-US');
+
+console.log(lisan.localeName()); // Outputs: "en-US"
+```
+
 ### `lisan.add(dictionary)`
 
 Registers dictionary object to Lisan instance.
@@ -54,13 +78,12 @@ New dictionary entries are merged with existing dictionary entries.
 
 Existing dictionary keys will be **overwritten** by the latest ones.
 
-When using [`lisan-plugin-l10n`](/docs/lisan-plugin-l10n),
-if dictionary locale is **defined and different** than
+If dictionary locale is **defined and different** than
 the selected locale name, then
-the dictionary object **will not** be registered. (see: [`lisan.setLocale`](/docs/full-api-reference#lisansetlocalelocale))<br>
+the dictionary object **will not** be registered.
 This mechanism is there to prevent
 loading a dictionary created explicitly
-for another language or locale.
+for another language or locale. See: [`lisan.localeName()`](/docs/full-api-reference#lisanlocalenamename)<br>
 
 **Input**
 
@@ -255,36 +278,6 @@ The methods below are introduced by using
 
 You can find the setup instructions and available options [here](/docs/lisan-plugin-loader).
 
-### `lisan.loadLocale(localeName)`
-
-**Input**
-
-| parameter  | type   | description             |
-| ---------- | ------ | ----------------------- |
-| localeName | string | name of the locale file |
-
-**Returns**: `Promise<string>`, loaded script element id as string.
-
-**Usage**
-
-```js
-const { lisan } = require('lisan');
-const { Loader } = require('lisan-plugin-loader');
-
-lisan.use(
-  Loader({
-    localeUrlFn: ({ localeName }) =>
-      `https://cdn.mydomain.com/static/locales/${localeName}.js`,
-  }),
-);
-
-lisan.loadLocale('tr-TR').then(() => {
-  // Loaded https://cdn.mydomain.com/static/locales/tr-TR.js
-
-  lisan.toOrdinal(3); // Returns: 3'üncü
-});
-```
-
 ### `lisan.load(dictionaryName)`
 
 **Input**
@@ -320,6 +313,38 @@ lisan.loadLocale('tr-TR').then(() => {
     });
     console.log(translated); // Merhaba John Doe
   });
+});
+```
+
+### `lisan.loadLocale(localeName)`
+
+**Input**
+
+| parameter  | type   | description             |
+| ---------- | ------ | ----------------------- |
+| localeName | string | name of the locale file |
+
+**Returns**: `Promise<string>`, loaded script element id as string.
+
+**Usage**
+
+```js
+const { lisan } = require('lisan');
+const { Localization } = require('lisan-plugin-l10n');
+const { Loader } = require('lisan-plugin-loader');
+
+lisan.use(Localization);
+lisan.use(
+  Loader({
+    localeUrlFn: localeName =>
+      `https://unpkg.com/lisan-locales/dist/${localeName}.lisan.js`,
+  }),
+);
+
+lisan.loadLocale('tr').then(() => {
+  // Loaded https://unpkg.com/lisan-locales/dist/tr.lisan.js
+
+  lisan.toOrdinal(3); // Returns: 3'üncü
 });
 ```
 

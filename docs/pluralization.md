@@ -53,11 +53,6 @@ lisan.t('sentence', { numChild: 3, numToy: 2, toy: 'computer' });
 
 ## Supporting Complex Pluralization Forms
 
-When you need to support more plural forms,
-you can use [`lisan-plugin-l10`](/docs/lisan-plugin-l10).
-
-### Example
-
 Here, you can find the pluralization for [Arabic](<https://developer.mozilla.org/en-US/docs/Mozilla/Localization/Localization_and_Plurals#Plural_rule_12_(6_forms)>)
 
 The Arabic language has **6** pluralization forms.
@@ -68,18 +63,12 @@ in locale configuration because
 
 ```js
 const { lisan } = require('lisan');
-const { Localization } = require('lisan-plugin-l10n');
 
-lisan.use(Localization);
-
-lisan.setLocale({
-  name: 'ar',
-  conditions: {
-    // pluralization for Arabic
-    two: num => num === 2,
-    '00-02': num => (num % 100 >= 0 || num % 100 <= 2) && num > 2,
-    '03-10': num => num % 100 >= 3 || num % 100 <= 9,
-  },
+lisan.addConditions({
+  // pluralization for Arabic
+  two: num => num === 2,
+  '00-02': num => (num % 100 >= 0 || num % 100 <= 2) && num > 2,
+  '03-10': num => num % 100 >= 3 || num % 100 <= 9,
 });
 
 lisan.add({

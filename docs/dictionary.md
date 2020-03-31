@@ -85,25 +85,19 @@ language tag.
 It is optional. **However**, when defined it might **change** [`lisan.add()`](/docs/full-api-reference#lisanadddictionary)
 method's behaviour.
 
-When using [`lisan-plugin-l10n`](/docs/lisan-plugin-l10n),
-if dictionary locale is **defined and different** than
+If dictionary locale is **defined and different** than
 the selected locale name, then
-the dictionary object **will not** be registered. (see: [`lisan.setLocale()`](/docs/full-api-reference#lisansetlocalelocale))<br>
+the dictionary object **will not** be registered.
 This mechanism is there to prevent
 loading a dictionary created explicitly
-for another language or locale.
+for another language or locale. See: [`lisan.localeName()`](/docs/full-api-reference#lisanlocalenamename)<br>
 
 **Example:**
 
 ```js
 const { lisan } = require('lisan');
-const { Localization } = require('lisan-plugin-l10n');
-const { tr } = require('lisan-locales');
 
-console.log(tr.name); // Outputs: "tr"
-
-lisan.use(Localization);
-lisan.setLocale(tr);
+lisan.localeName('tr');
 
 lisan.add({
   locale: 'en-US',
