@@ -1,6 +1,6 @@
 {
   "name": "lisan-cli",
-  "version": "0.0.34-aplha.1",
+  "version": "0.0.34",
   "description": "Lisan CLI - Automate generating dictionaries",
   "keywords": [
     "i18n",
@@ -44,7 +44,7 @@
     "glob": "7.1.6",
     "is-glob": "4.0.1",
     "json5": "2.1.1",
-    "lisan-compiler": "^0.0.34-aplha.1",
+    "lisan-compiler": "^0.0.34",
     "read-env": "1.3.0",
     "yargs": "15.1.0"
   },

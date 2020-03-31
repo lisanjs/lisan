@@ -1,6 +1,6 @@
 {
   "name": "lisan-plugin-l10n",
-  "version": "0.0.34-aplha.1",
+  "version": "0.0.34",
   "description": "Lisan Localization Plugin",
   "author": "Mehmet Yatkı <mehmet@yatki.com>",
   "keywords": [
@@ -40,6 +40,6 @@
     "lisan-types": "^0.0.34-aplha.1"
   },
   "devDependencies": {
-    "lisan": "^0.0.34-aplha.1"
+    "lisan": "^0.0.34"
   }
 }

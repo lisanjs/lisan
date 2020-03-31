@@ -1,6 +1,6 @@
 {
   "name": "lisan-compiler",
-  "version": "0.0.34-aplha.1",
+  "version": "0.0.34",
   "description": "Lisan compiler compiles Translations into Dictionaries",
   "keywords": [
     "i18n",
