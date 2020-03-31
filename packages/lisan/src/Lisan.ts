@@ -143,7 +143,11 @@ class Lisan {
       const conditionTag = keys[i];
       const conditionFn = this._c[conditionTag];
 
-      if (conditionTag !== 'other' && conditionFn(value) === true) {
+      if (
+        conditionTag !== 'other' &&
+        conditionFn &&
+        conditionFn(value) === true
+      ) {
         conditionalEntryKey = conditionTag;
         break;
       }

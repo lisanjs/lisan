@@ -60,4 +60,31 @@ describe('lisan.reset()', () => {
       );
     });
   });
+
+  describe('given contains were registered', () => {
+    it('should reset conditions', () => {
+      // Arrange
+      const conditionFn = jest.fn().mockReturnValue(true);
+      lisanInstance.addConditions({
+        myConditionFn: conditionFn,
+      });
+
+      // Act
+      lisanInstance.reset();
+
+      lisanInstance.add({
+        entries: {
+          myDummyGroup: {
+            one: 'one value',
+            myConditionFn: 'a condition value',
+            other: 'other value',
+          },
+        },
+      });
+
+      // Assert
+      expect(lisanInstance.c('myDummyGroup', 5)).toBe('other value');
+      expect(conditionFn).not.toHaveBeenCalled();
+    });
+  });
 });
