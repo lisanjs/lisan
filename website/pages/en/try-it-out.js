@@ -106,7 +106,10 @@ function CodeMirror() {
           </div>
         </div>
       </Container>
-      <script src="/js/lisan-compiler.min.js" type="text/javascript"></script>
+      <script
+        src="https://unpkg.com/lisan-compiler/dist/index.umd.js"
+        type="text/javascript"
+      ></script>
     </div>
   );
 }
