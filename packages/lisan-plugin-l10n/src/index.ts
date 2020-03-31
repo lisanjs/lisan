@@ -27,30 +27,13 @@ const Localization: TSLisan.Plugin<LisanClass> = lisan => {
       this[`to${ucFirst(formatterName)}`] = formatters[formatterName];
     });
 
-    this.localeName = locale.name;
-  };
-
-  const { add: addBase } = lisan;
-
-  lisan.add = function addWithLocale({
-    locale,
-    entries,
-  }: TSLisan.Dictionary): LisanClass {
-    if (lisan.localeName && locale && locale !== lisan.localeName) {
-      throw new Error(
-        `Dictionary locale "${locale}" is different than selected locale "${lisan.localeName}"`,
-      );
-    }
-
-    return addBase.call(this, { locale, entries });
+    this.localeName(locale.name);
   };
 };
 
 declare module 'lisan' {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   class Lisan extends LisanClass {
-    public localeName: string;
-
     setLocale(locale: TSLisan.Locale): void;
 
     toNumber(number: number): string;

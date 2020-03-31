@@ -33,7 +33,14 @@ class Lisan {
     fn.call(null, this);
   }
 
-  public add({ entries }: TSLisan.Dictionary): this {
+  public add({ locale, entries }: TSLisan.Dictionary): this {
+    const localeName = this._l;
+    if (localeName && locale && locale !== localeName) {
+      err(
+        `Dictionary locale "${locale}" is different than selected locale "${localeName}"`,
+      );
+    }
+
     // @todo validate dictionary
     this._e = {
       ...this._e,
