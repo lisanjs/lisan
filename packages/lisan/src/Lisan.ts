@@ -9,6 +9,8 @@ class Lisan {
 
   private _f!: TSLisan.FormatFunctions;
 
+  private _l?: string;
+
   public constructor() {
     this.reset();
   }
@@ -17,6 +19,14 @@ class Lisan {
     this._e = {};
     this._c = { ...defaultConditions };
     this._f = {};
+  }
+
+  public localeName(localeName?: string): string | undefined {
+    if (localeName) {
+      this._l = localeName;
+    }
+
+    return this._l;
   }
 
   public use(fn: TSLisan.Plugin<Lisan>): void {
