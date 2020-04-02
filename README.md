@@ -62,6 +62,11 @@ Show the world you are using _Lisan_.
 [![i18n: lisanjs](https://img.shields.io/badge/i18n-lisan-62cdc1.svg?style=flat-square)](https://github.com/lisanjs/lisan)
 ```
 
+## Contributors
+
+Special thanks to [Arif Aydoğmuş](https://github.com/arifaydogmus) for designing our awesome logo! 🙏
+
+
 ## License
 
 Lisan is [MIT licensed](./LICENCE).
