@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`generate() Given entries do not have conditional groups should successfully generate javascript source code 1`] = `
-";(function(module){
+"(function(module){
 
 module.exports = {
   \\"locale\\": \\"undefined\\",
@@ -17,7 +17,7 @@ module.exports = {
 `;
 
 exports[`generate() Given entries ends with conditional group should successfully generate javascript source code 1`] = `
-";(function(module){
+"(function(module){
 
 module.exports = {
   \\"locale\\": \\"undefined\\",
@@ -36,7 +36,7 @@ module.exports = {
 `;
 
 exports[`generate() Given entries starts and ends with conditional groups should successfully generate javascript source code 1`] = `
-";(function(module){
+"(function(module){
 
 module.exports = {
   \\"locale\\": \\"undefined\\",
@@ -63,7 +63,7 @@ module.exports = {
 `;
 
 exports[`generate() Given entries starts with conditional group should successfully generate javascript source code 1`] = `
-";(function(module){
+"(function(module){
 
 module.exports = {
   \\"locale\\": \\"undefined\\",
@@ -208,7 +208,7 @@ exports[`generate() Given module is "esm" should successfully generate source co
 `;
 
 exports[`generate() Given module is "lisan" should successfully generate source code as lisan module 1`] = `
-";(function(module){
+"(function(module){
 
 module.exports = {
   \\"locale\\": \\"en-Us\\",
@@ -337,7 +337,7 @@ exports[`generate() Given module is "none" should successfully generate source c
 `;
 
 exports[`generate() Given no options were provided should successfully generate javascript source code 1`] = `
-";(function(module){
+"(function(module){
 
 module.exports = {
   \\"locale\\": \\"en-Us\\",
