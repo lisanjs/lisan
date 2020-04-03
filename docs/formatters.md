@@ -11,7 +11,7 @@ Formatters can be very useful when you'd like to transform values
 into the desired format.
 
 If you are using [lisan-plugin-l10n](/docs/lisan-plugin-l10n),
-all [localization helper functions](/docs/full-api-reference#localization-plugin)
+all [localization formatters](/docs/full-api-reference#localization-plugin)
 will be available in Lisan Literal.
 
 ## Example 1 - Simple Number Formatting

@@ -13,7 +13,6 @@ const req = (path: string): TSLisan.Dictionary | TSLisan.Locale =>
   require(path);
 
 type LisanWithL10n = LisanClass & {
-  locale?: { name: string };
   setLocale(locale: TSLisan.Locale): void;
 };
 
@@ -63,8 +62,13 @@ const Loader = ({
     // eslint-disable-next-line @typescript-eslint/no-inferrable-types
     idPrefix: string = 'Lisan_Dictionary',
   ): Promise<string> {
-    const target = dictionaryUrlFn(dictionaryName, lisan.locale?.name);
-    const scriptId = `${idPrefix}__${lisan.locale?.name}__${dictionaryName}`;
+    const localeName = lisan.localeName();
+    const target = dictionaryUrlFn(dictionaryName, localeName);
+    if (localeName) {
+      // eslint-disable-next-line no-param-reassign
+      idPrefix += `__${localeName}`;
+    }
+    const scriptId = `${idPrefix}__${dictionaryName}`;
 
     if (isNode()) {
       const dictionary = req(target) as TSLisan.Dictionary;

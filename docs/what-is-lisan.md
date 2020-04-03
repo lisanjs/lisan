@@ -65,9 +65,9 @@ write your plugins
 to extend the capabilities of Lisan.
 
 - [`lisan-plugin-l10n`](/docs/lisan-plugin-l10n):
-  add helper functions for localization.
+  adds localization formatters.
 - [`lisan-plugin-loader`](/docs/lisan-plugin-loader):
-  add loading methods to _dynamically import_ javascript files.
+  adds loading methods to _dynamically import_ javascript files.
 
 ## Installation
 

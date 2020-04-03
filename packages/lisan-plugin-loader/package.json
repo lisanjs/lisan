@@ -1,6 +1,6 @@
 {
   "name": "lisan-plugin-loader",
-  "version": "0.0.34-aplha.1",
+  "version": "0.0.35",
   "description": "Lisan Loader Plugin for dynamic imports",
   "author": "Mehmet Yatkı <mehmet@yatki.com>",
   "keywords": [
@@ -37,9 +37,9 @@
     "url": "https://github.com/lisanjs/lisan/issues"
   },
   "dependencies": {
-    "lisan-types": "^0.0.34-aplha.1"
+    "lisan-types": "^0.0.35"
   },
   "devDependencies": {
-    "lisan": "^0.0.34-aplha.1"
+    "lisan": "^0.0.35"
   }
 }

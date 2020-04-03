@@ -78,6 +78,41 @@ describe('lisan.c(conditionalGroupKey, value, placeholders?)', () => {
     });
   });
 
+  describe('when a conditional tag is MISSING', () => {
+    it('should ignore the missing tag', () => {
+      // Arrange
+      lisanInstance.add({
+        entries: {
+          myGroup: {
+            one: 'value for 1',
+            missingTag: 'tag',
+            other: 'other value',
+          },
+        },
+      });
+
+      // Act && Assert
+      expect(lisanInstance.c('myGroup', 2)).toBe('other value');
+    });
+  });
+
+  describe('when there is no matching tag', () => {
+    it('return "conditionGroupKey.other" as result', () => {
+      // Arrange
+      lisanInstance.add({
+        entries: {
+          myGroup: {
+            one: 'value for 1',
+            missingTag: 'tag',
+          },
+        },
+      });
+
+      // Act && Assert
+      expect(lisanInstance.c('myGroup', 2)).toBe('myGroup.other');
+    });
+  });
+
   describe('when a conditional group is NOT missing', () => {
     const dict = {
       entries: {

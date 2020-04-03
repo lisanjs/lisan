@@ -69,7 +69,7 @@ class HomeSplash extends React.Component {
           <div className="wrapper homeWrapper">{props.children}</div>
         </div>
         <div className="homeSplashBottom">
-          {siteConfig.tagline} - Only 1.3kb
+          {siteConfig.tagline} - Only 1.7kb
         </div>
       </div>
     );

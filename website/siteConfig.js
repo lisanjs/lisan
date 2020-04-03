@@ -30,7 +30,7 @@ const siteConfig = {
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
-  editUrl: 'https://github.com/lisanjs/lisan/docs/',
+  editUrl: 'https://github.com/lisanjs/lisan/edit/development/docs/',
 
   cname: 'lisanjs.com',
 
@@ -95,7 +95,6 @@ const siteConfig = {
     'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js',
     '/js/code-block-buttons.js',
     '/js/external-links.js',
-    '/js/code-mirror.js',
   ],
 
   // On page navigation for the current documentation page.

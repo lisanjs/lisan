@@ -9,6 +9,8 @@ class Lisan {
 
   private _f!: TSLisan.FormatFunctions;
 
+  private _l?: string;
+
   public constructor() {
     this.reset();
   }
@@ -19,11 +21,26 @@ class Lisan {
     this._f = {};
   }
 
+  public localeName(localeName?: string): string | undefined {
+    if (localeName) {
+      this._l = localeName;
+    }
+
+    return this._l;
+  }
+
   public use(fn: TSLisan.Plugin<Lisan>): void {
     fn.call(null, this);
   }
 
-  public add({ entries }: TSLisan.Dictionary): this {
+  public add({ locale, entries }: TSLisan.Dictionary): this {
+    const localeName = this._l;
+    if (localeName && locale && locale !== localeName) {
+      err(
+        `Dictionary locale "${locale}" is different than selected locale "${localeName}"`,
+      );
+    }
+
     // @todo validate dictionary
     this._e = {
       ...this._e,
@@ -126,7 +143,11 @@ class Lisan {
       const conditionTag = keys[i];
       const conditionFn = this._c[conditionTag];
 
-      if (conditionTag !== 'other' && conditionFn(value) === true) {
+      if (
+        conditionTag !== 'other' &&
+        conditionFn &&
+        conditionFn(value) === true
+      ) {
         conditionalEntryKey = conditionTag;
         break;
       }

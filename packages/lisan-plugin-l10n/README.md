@@ -58,11 +58,11 @@ will be accessible via `window.lisanPluginL10n` variables.
 ```js
 const { lisan } = require('lisan');
 const { Localization } = require('lisan-plugin-l10n');
-const { trTR } = require('lisan-locales');
+const { tr } = require('lisan-locales');
 
 lisan.use(Localization);
 
-lisan.setLocale(trTR);
+lisan.setLocale(tr);
 
 lisan.toOrdinal(3); // Returns: 3'üncü
 ```
@@ -134,6 +134,10 @@ Default: `{}`
 [Condition Tag](https://lisanjs.com/docs/conditional-groups#condition-tag) and
 [Condition Functions](https://lisanjs.com/docs/conditional-groups#condition-function).
 
+`conditions` object will be passed down to
+[`lisan.addConditions`](https://lisanjs.com/docs/full-api-reference#lisanaddconditionsconditions)
+method.
+
 **Type Signature**
 
 ```ts
@@ -150,11 +154,12 @@ type Conditions = Record<string, ConditionFunction>;
 Type: **NumberFormatOptions** (Optional)<br>
 Default: `{}`
 
-`number` is being used to set the configuration for
-[`lisan.toNumber`](https://lisanjs.com/docs/full-api-reference#lisantonumbernumber) Localization Helper
-and it has the following type definition.
+`number` takes number formatting options. When defined,
+the `number` formatter will be available in translations and
+[`lisan.toNumber`](https://lisanjs.com/docs/full-api-reference#lisantonumbernumber)
+method will be added to lisan instance.
 
-> If this option is not set `lisan.toNumber` method won't be available.
+Number formatting options have the following type definition.
 
 **Type Signature**
 
@@ -318,11 +323,12 @@ This option is used to output a custom text when the given number equals to `nul
 Type: **CurrencyFormatOptions** (Optional)<br>
 Default: `{}`
 
-`currency` is being used to set the configuration for
-[`lisan.toCurrency`](https://lisanjs.com/docs/full-api-reference#lisantocurrencyamount)
-Localization Helper and it has the following type definition.
+`currency` takes currency formatting options. When defined,
+the `currency` formatter will be available in translations and
+[`lisan.toCurrency`](https://lisanjs.com/docs/full-api-reference#lisantocurrencyamount) method
+will be added to lisan instance.
 
-> If this option is not set `lisan.toCurrency` method won't be available.
+Currency formatting options have the following type definition.
 
 **Type Signature**
 
@@ -376,9 +382,10 @@ interface CurrencyFormatOptions {
 Type: **CurrencyFormatOptions** (Optional)<br>
 Default: `x => x.toString()`
 
-`ordinal` is being used to set the configuration for
-[`lisan.toOrdinal`](https://lisanjs.com/docs/full-api-reference#lisantoordinalnumber)
-Localization Helper and it has the following type definition.
+`ordinal` takes ordinal function.
+The `ordinal` formatter is always available in translations and
+[`lisan.toOrdinal`](https://lisanjs.com/docs/full-api-reference#lisantoordinalnumber) method
+is always added lisan instance.
 
 **Type Signature**
 
@@ -396,7 +403,7 @@ Type: **DateOptions** (Optional)<br>
 Default: `{}`
 
 `date` is being used to set the configuration for
-various date Localization Helpers and
+various date formatters and
 it has the following type definition.
 
 ```ts
@@ -426,7 +433,29 @@ interface DateOptions {
 
 #### date.masks
 
-`date.masks` is being used to modify listed localization helper formats.
+`date.masks` is being used to generate formatters with the same mask name:
+
+- `dateTime`
+- `dateShort`
+- `dateMedium`
+- `dateLong`
+- `dateFull`
+- `timeShort`
+- `timeMedium`
+- `timeLong`
+
+These formatters then can be used in dictionaries as below:
+
+```js
+lisan.add({
+  entries: {
+    simpleExample: ({ date }, { dateTime }) =>
+      `This is formatted ${dateTime(date)}`,
+  },
+});
+```
+
+Also a method is created for corresponding formatter.
 
 - [`lisan.toDateTime()`](https://lisanjs.com/docs/full-api-reference#lisantodatetimetime)
 - [`lisan.toDateFull()`](https://lisanjs.com/docs/full-api-reference#lisantodatefulltime)

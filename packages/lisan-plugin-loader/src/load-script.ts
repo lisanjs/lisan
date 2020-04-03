@@ -3,20 +3,20 @@ const loadScript = (url: string, scriptId: string): Promise<string> =>
     const bodyElement = document.getElementsByTagName('body')[0];
 
     const existingScript = document.getElementById(scriptId);
-    if (!existingScript) {
-      const dictionaryRef = document.createElement('script');
-      dictionaryRef.setAttribute('type', 'text/javascript');
-      dictionaryRef.setAttribute('id', scriptId);
-      dictionaryRef.setAttribute('src', url);
-
-      bodyElement.appendChild(dictionaryRef);
-
-      dictionaryRef.onload = (): void => {
-        resolve(scriptId);
-      };
+    if (existingScript) {
+      existingScript.remove();
     }
 
-    if (existingScript) resolve(scriptId);
+    const dictionaryRef = document.createElement('script');
+    dictionaryRef.setAttribute('type', 'text/javascript');
+    dictionaryRef.setAttribute('id', scriptId);
+    dictionaryRef.setAttribute('src', url);
+
+    bodyElement.appendChild(dictionaryRef);
+
+    dictionaryRef.onload = (): void => {
+      resolve(scriptId);
+    };
   });
 
 export default loadScript;

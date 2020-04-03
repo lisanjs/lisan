@@ -66,23 +66,19 @@ const { Loader } = require('lisan-plugin-loader');
 
 lisan.use(
   Loader({
-    localeUrlFn: localeName =>
-      `https://cdn.mydomain.com/static/locales/${localeName}.js`,
     dictionaryUrlFn: (dictionaryName, localeName) =>
       `https://cdn.mydomain.com/static/${localeName}/dictionaries/${dictionaryName}.js`,
   }),
 );
 
-lisan.loadLocale('tr-TR').then(() => {
-  // Loaded https://cdn.mydomain.com/static/locales/tr-TR.js
+lisan.localeName('tr');
 
-  lisan.load('main').then(() => {
-    // Loaded https://cdn.mydomain.com/static/tr-TR/dictionaries/main.js
-    const translated = lisan.t('hello.person', {
-      name: 'John Doe',
-    });
-    console.log(translated); // Merhaba John Doe
+lisan.load('main').then(() => {
+  // Loaded https://cdn.mydomain.com/static/tr/dictionaries/main.js
+  const translated = lisan.t('hello.person', {
+    name: 'John Doe',
   });
+  console.log(translated); // Merhaba John Doe
 });
 ```
 
@@ -117,6 +113,14 @@ type DictionaryURLResolverFunction = (
 
 Type: **LocaleURLResolverFunction**<br>
 Default: `` ({ localeName }) => `https://unpkg.com/lisan-locales/dist/${localeName}.lisan.js` ``
+
+<div class="warning-block">
+
+> **Warning**
+>
+> `localeUrlFn` only works if [`lisan-plugin-l10n`](https://lisanjs.com/docs/lisan-plugin-l10n) is used.
+
+</div>
 
 <!-- markdownlint-enable MD038 MD013 -->
 
@@ -200,7 +204,11 @@ Lisan Loader will load dictionaries and locales by appending
 // src/index.js
 const { lisan } = require('lisan');
 const { Loader } = require('lisan-plugin-loader');
+const { Localization } = require('lisan-plugin-l10n');
 const renderHome = require('./pages/home.js');
+
+// Localization is needed to use loadLocale function.
+lisan.use(Localization);
 
 lisan.use(
   Loader({
@@ -229,13 +237,13 @@ Please note that,
 `lisan.loadLocale("en-US")` method will append the script element below:
 
 ```html
-<script id="lisan-locale-en-US" src="https://cdn.mydomain.com/static/locales/en-US.js"></script>
+<script id="Lisan_Locale__en-US" src="https://cdn.mydomain.com/static/locales/en-US.js"></script>
 ```
 
 `lisan.load("main")` method will append the script element below:
 
 ```html
-<script id="lisan-dictionary-en-US-main" src=" https://cdn.mydomain.com/static/en-US/dictionaries/main.js"></script>
+<script id="Lisan_Dictionary__en-US__main" src=" https://cdn.mydomain.com/static/en-US/dictionaries/main.js"></script>
 ```
 
 <!-- prettier-ignore-end -->

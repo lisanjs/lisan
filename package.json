@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "publish": "lerna publish --registry http://localhost:4873",
     "clean": "rimraf coverage packages/**/{.rpt2_cache,dist,.tsc_cache} website/build/",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
