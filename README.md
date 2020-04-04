@@ -20,8 +20,8 @@
 <p align="center">
 <a href="https://lisanjs.com"><strong>Website</strong></a><br><br>
 <a href="https://lisanjs.com/docs/what-is-lisan#installation">Installation</a> ·
-<a href="https://lisanjs.com/docs/docs/full-api-reference">API</a> ·
-<a href="https://lisanjs.com/docs/docs/pluralization">Guides & Tips</a>
+<a href="https://lisanjs.com/docs/full-api-reference">API</a> ·
+<a href="https://lisanjs.com/docs/pluralization">Guides & Tips</a>
 </p>
 
 <hr>
