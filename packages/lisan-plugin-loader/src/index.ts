@@ -12,9 +12,9 @@ const req = (path: string): TSLisan.Dictionary | TSLisan.Locale =>
   /* eslint-disable-next-line global-require, import/no-dynamic-require */
   require(path);
 
-type LisanWithL10n = LisanClass & {
-  setLocale(locale: TSLisan.Locale): void;
-};
+interface LisanWithL10n extends LisanClass {
+  setLocale?(locale: TSLisan.Locale): void;
+}
 
 const Loader = ({
   dictionaryUrlFn,
@@ -29,7 +29,8 @@ const Loader = ({
         if ((obj as TSLisan.Dictionary).entries) {
           lisan.add(obj as TSLisan.Dictionary);
         } else if ((obj as TSLisan.Locale).name) {
-          lisan.setLocale(obj as TSLisan.Locale);
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          lisan.setLocale!(obj as TSLisan.Locale);
         }
       },
     };
@@ -49,7 +50,8 @@ const Loader = ({
 
     if (isNode()) {
       const locale = req(target) as TSLisan.Locale;
-      lisan.setLocale(locale);
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      lisan.setLocale!(locale);
       return Promise.resolve(scriptId);
     }
 
