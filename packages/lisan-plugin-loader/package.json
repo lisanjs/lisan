@@ -37,9 +37,7 @@
     "url": "https://github.com/lisanjs/lisan/issues"
   },
   "dependencies": {
-    "lisan-types": "^0.0.35"
-  },
-  "devDependencies": {
+    "lisan-types": "^0.0.35",
     "lisan": "^0.0.35"
   }
 }

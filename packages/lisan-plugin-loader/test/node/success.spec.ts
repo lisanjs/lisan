@@ -11,7 +11,7 @@ describe('lisan-plugin-loader > on node', () => {
     lisanInstance.use(
       Loader({
         dictionaryUrlFn: dictionaryName =>
-          `${__dirname}/../data/${dictionaryName}.js`,
+          `packages/lisan-plugin-loader/test/data/${dictionaryName}.js`,
       }),
     );
 
@@ -29,7 +29,7 @@ describe('lisan-plugin-loader > on node', () => {
     lisanInstance.use(
       Loader({
         dictionaryUrlFn: dictionaryName =>
-          `${__dirname}/../data/${dictionaryName}.js`,
+          `packages/lisan-plugin-loader/test/data/${dictionaryName}.js`,
       }),
     );
 

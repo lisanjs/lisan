@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Lisan as LisanClass } from 'lisan';
 import * as TSLisan from 'lisan-types';
 import loadScript from './load-script';
@@ -8,9 +7,18 @@ const isNode = new Function(
   'try {return this===global;}catch(e){ return false;}',
 );
 
-const req = (path: string): TSLisan.Dictionary | TSLisan.Locale =>
-  /* eslint-disable-next-line global-require, import/no-dynamic-require */
-  require(path);
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
+/* eslint-disable @typescript-eslint/no-var-requires */
+const req = (filePath: string): TSLisan.Dictionary | TSLisan.Locale => {
+  const path = require('path');
+  const cwd = process.cwd();
+  const resolvedPath = path.resolve(path.join(cwd, filePath));
+  return require(resolvedPath);
+};
+/* eslint-enable import/no-dynamic-require */
+/* eslint-enable global-require */
+/* eslint-enable @typescript-eslint/no-var-requires */
 
 interface LisanWithL10n extends LisanClass {
   setLocale?(locale: TSLisan.Locale): void;
