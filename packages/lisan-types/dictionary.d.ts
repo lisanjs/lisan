@@ -7,17 +7,23 @@ interface Placeholders {
 type FormatFunction = (value: any) => string;
 type FormatFunctions = Record<string, FormatFunction>;
 
-type TMethod = (entryKey: string, placeholders: Placeholders) => string;
+type TMethod = (entryKey: string, placeholders?: Placeholders) => string;
 
 type CMethod = (
   entryKey: string,
-  value: string | number,
-  placeholders: Placeholders,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  value: any,
+  placeholders?: Placeholders,
 ) => string;
+
+interface DictionaryEntryHelpers {
+  t: TMethod;
+  c: CMethod;
+}
 
 type DictionaryEntryFunction = (
   placeholders: Placeholders,
-  fns?: { t: TMethod; c: CMethod } | Record<string, FormatFunction>,
+  fns: FormatFunctions & DictionaryEntryHelpers,
 ) => string;
 
 type DictionaryEntry = string | DictionaryEntryFunction;
