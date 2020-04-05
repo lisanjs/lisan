@@ -193,7 +193,41 @@ method to load **dictionaries**.
 
 #### Loading on Node Environment
 
-Under development, will respect to [`.lisanrc`](https://lisanjs.com/docs/lisan-cli#configuration-file);
+When doing server side rendering, Lisan Loader will use [`require`](https://nodejs.org/api/modules.html#modules_require_id)
+function to load desired file.
+
+It is important to know that the file paths
+will be added to **current working directory**
+path. See: [process.cwd()](https://nodejs.org/api/process.html#process_process_cwd)
+
+**Example:**
+
+Let's assume you are working on a project
+located in `/Users/me/workspace/myproject` folder.
+
+```js
+// src/index.js
+const { lisan } = require('lisan');
+const { Loader } = require('lisan-plugin-loader');
+
+lisan.use(
+  Loader({
+    dictionaryUrlFn: (dictionaryName, localeName) =>
+      `/static/${localeName}/dictionaries/${dictionaryName}.js`,
+  }),
+);
+
+lisan.localeName('en-US');
+lisan.load('main').then(() => {
+  /*
+   * 1. On Node Environment, dictionary will be REQUIRED from:
+   * - "/Users/me/workspace/myproject/static/en-US/dictionaries/main.js"
+   * 2. On Browser environment,  dictionary will be LOADED from:
+   * - "http://<HOSTNAME>/static/en-US/dictionaries/main.js"
+   */
+  lisan.t('hello.world');
+});
+```
 
 #### Loading on Browser Environment
 
