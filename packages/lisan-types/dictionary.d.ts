@@ -16,14 +16,16 @@ type CMethod = (
   placeholders?: Placeholders,
 ) => string;
 
-interface DictionaryEntryHelpers {
+interface TranslateFunctions {
   t: TMethod;
   c: CMethod;
 }
 
+type DictionaryEntryHelpers = FormatFunctions & TranslateFunctions;
+
 type DictionaryEntryFunction = (
   placeholders: Placeholders,
-  fns: FormatFunctions & DictionaryEntryHelpers,
+  fns: DictionaryEntryHelpers,
 ) => string;
 
 type DictionaryEntry = string | DictionaryEntryFunction;
@@ -47,4 +49,5 @@ export {
   Dictionary,
   FormatFunction,
   FormatFunctions,
+  DictionaryEntryHelpers,
 };

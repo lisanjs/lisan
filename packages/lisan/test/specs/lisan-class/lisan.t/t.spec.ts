@@ -42,12 +42,30 @@ describe('lisan.t(dictionaryEntryKey, placeholders?)', () => {
       // Arrange
       const dict = {
         entries: {
-          fakeEntry: jest.fn(),
+          'hello.world': 'Hello World!',
+          myGroup: {
+            one: 'value 1',
+            other: 'value other',
+          },
+          simpleEntry: jest
+            .fn()
+            .mockImplementation(
+              (
+                { name, number, value1, value2 },
+                { t, c, myFormatter1, myFormatter2 },
+              ) =>
+                `Hello ${name}, ${t('hello.world')}, ${c(
+                  'myGroup',
+                  number,
+                )}, ${myFormatter1(value1)}, ${myFormatter2(value2)}`,
+            ),
         },
       };
       const placeholders = {
-        random: '##value',
-        test: '##placeholder',
+        name: '##name',
+        number: 3,
+        value1: new Date('2020-01-01'),
+        value2: 4.556,
       };
 
       const formatters = {
@@ -55,17 +73,20 @@ describe('lisan.t(dictionaryEntryKey, placeholders?)', () => {
         myFormatter2: x => x.toString(),
       };
 
-      const helpers = { ...formatters, t: lisanInstance.t, c: lisanInstance.c };
       lisanInstance.addFormatters(formatters);
       lisanInstance.add(dict);
 
       // Act
-      lisanInstance.t('fakeEntry', placeholders);
+      const result = lisanInstance.t('simpleEntry', placeholders);
 
       // Assert
-      expect(dict.entries.fakeEntry).toHaveBeenCalledWith(
-        placeholders,
-        helpers,
+      expect(dict.entries.simpleEntry).toHaveBeenCalledWith(placeholders, {
+        ...formatters,
+        t: expect.any(Function),
+        c: expect.any(Function),
+      });
+      expect(result).toBe(
+        'Hello ##name, Hello World!, value other, Wed Jan 01 2020 03:00:00 GMT+0300 (GMT+03:00), 4.556',
       );
     });
 
@@ -84,7 +105,7 @@ describe('lisan.t(dictionaryEntryKey, placeholders?)', () => {
       // Assert
       expect(dict.entries.entry2).toHaveBeenCalledWith(
         { name: '##John' },
-        { t: lisanInstance.t, c: lisanInstance.c },
+        { t: expect.any(Function), c: expect.any(Function) },
       );
       expect(result).toBe('Hello ##John!');
     });

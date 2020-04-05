@@ -11,8 +11,14 @@ class Lisan {
 
   private _l?: string;
 
+  private _h: TSLisan.DictionaryEntryHelpers;
+
   public constructor() {
     this.reset();
+    this._h = {
+      t: this.t.bind(this),
+      c: this.c.bind(this),
+    } as TSLisan.DictionaryEntryHelpers;
   }
 
   public reset(): void {
@@ -78,17 +84,15 @@ class Lisan {
   private r(
     dictionaryEntryKey: string,
     dictionaryEntry: TSLisan.DictionaryEntry,
-    placeholders: TSLisan.Placeholders,
+    placeholders: TSLisan.Placeholders = {},
   ): string {
     if (typeof dictionaryEntry === 'undefined') {
       return dictionaryEntryKey;
     }
     if (typeof dictionaryEntry === 'function') {
       return dictionaryEntry(placeholders, {
-        // @todo check bind performance impact
         ...this._f,
-        t: this.t,
-        c: this.c,
+        ...this._h,
       });
     }
 
@@ -105,7 +109,7 @@ class Lisan {
    */
   public t(
     dictionaryEntryKey: string,
-    placeholders: TSLisan.Placeholders = {},
+    placeholders?: TSLisan.Placeholders,
   ): string {
     const dictionaryEntry = this._e[
       dictionaryEntryKey
@@ -125,7 +129,7 @@ class Lisan {
     conditionalGroupKey: string,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     value: any,
-    placeholders: TSLisan.Placeholders = {},
+    placeholders?: TSLisan.Placeholders,
   ): string {
     const conditionalGroup = this._e[
       conditionalGroupKey
