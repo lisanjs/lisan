@@ -90,9 +90,9 @@ const siteConfig = {
 
   // Add custom scripts here that would be placed in <script> tags.
   scripts: [
-    'https://buttons.github.io/buttons.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js',
+    '/js/buttons.js',
+    '/js/clipboard.min.js',
+    '/js/highlight.min.js',
     '/js/code-block-buttons.js',
     '/js/external-links.js',
   ],
