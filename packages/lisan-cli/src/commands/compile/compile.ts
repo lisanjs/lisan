@@ -36,10 +36,12 @@ const compileFile = (
   {
     inputDir,
     outputDir,
+    declaration,
     compilerOptions,
   }: {
     inputDir: string;
     outputDir: string;
+    declaration: boolean;
     compilerOptions: GenerateOptions | ParseOptions;
   },
 ): void => {
@@ -67,6 +69,14 @@ const compileFile = (
   });
 
   fs.writeFileSync(outFile, dictionarySource, 'utf-8');
+  if (declaration) {
+    const outDTSFile = path.join(targetPath.dir, `${targetPath.name}.d.ts`);
+    fs.writeFileSync(
+      outDTSFile,
+      "import { Dictionary } from 'lisan-types';\n\ndeclare const _default: Dictionary;\nexport default _default;\n",
+      'utf-8',
+    );
+  }
 };
 
 const compileCommand = (commandArgs: CompileCommandArgs): void => {
@@ -74,6 +84,7 @@ const compileCommand = (commandArgs: CompileCommandArgs): void => {
     inputDir,
     exclude,
     outputDir,
+    declaration,
     watch,
     ...compilerOptions
   } = commandArgs;
@@ -103,17 +114,27 @@ const compileCommand = (commandArgs: CompileCommandArgs): void => {
       watcher
         .on('add', file => {
           console.log(`File ${file} has been added`);
-          compileFile(file, { inputDir, outputDir, compilerOptions });
+          compileFile(file, {
+            inputDir,
+            outputDir,
+            declaration,
+            compilerOptions,
+          });
         })
         .on('change', file => {
           console.log(`File ${file} has been changed`);
-          compileFile(file, { inputDir, outputDir, compilerOptions });
+          compileFile(file, {
+            inputDir,
+            outputDir,
+            declaration,
+            compilerOptions,
+          });
         });
     });
   }
 
   files.forEach(file =>
-    compileFile(file, { inputDir, outputDir, compilerOptions }),
+    compileFile(file, { inputDir, outputDir, declaration, compilerOptions }),
   );
 };
 

@@ -53,6 +53,12 @@ const builder = {
     default: 'lisan',
     choices: ['none', 'cjs', 'esm', 'lisan'],
   },
+  declaration: {
+    group: 'Compiler Options',
+    desc: 'Generate Typescript declaration files.',
+    boolean: true,
+    default: false,
+  },
   w: {
     alias: 'watch',
     desc: 'Enable watching source directory for changes!',
