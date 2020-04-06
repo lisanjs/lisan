@@ -105,6 +105,16 @@ class HomeSplash extends React.Component {
       </div>
     );
 
+    const starMessages = [
+      'Star us, bitte :)',
+      'Join our Stargazers :)',
+      'Twinkle, Twinkle, Little Star',
+    ];
+
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }
+
     return (
       <SplashContainer>
         <div className="inner">
@@ -124,7 +134,7 @@ class HomeSplash extends React.Component {
             data-show-count="true"
             aria-label="Star lisanjs/lisan on GitHub"
           >
-            Star
+            {starMessages[getRandomInt(0, starMessages.length)]}
           </a>
         </div>
       </SplashContainer>
