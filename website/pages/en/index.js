@@ -109,6 +109,7 @@ class HomeSplash extends React.Component {
       'Star us, bitte :)',
       'Join our Stargazers :)',
       'Twinkle, Twinkle, Little Star',
+      'Yıldız',
     ];
 
     function getRandomInt(min, max) {
