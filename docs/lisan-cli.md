@@ -55,6 +55,8 @@ Compiler Options
                                                        [boolean] [default: true]
   --module                Sorts dictionary keys by alphabetical order.
             [string] [choices: "none", "cjs", "esm", "lisan"] [default: "lisan"]
+  --declarations          Generate Typescript declaration files.
+                                                      [boolean] [default: false]
 
 Development
   -w, --watch  Enable watching source directory for changes!
@@ -86,6 +88,7 @@ named as `.lisanrc` or `.lisanrc.json` file.
     "inputDir": "i18n/translations/",
     "exclude": ["**/*skip.json"],
     "outputDir": ".lisan_out/dictionaries/",
+    "declaration": false,
     "watch": true
   }
 }
