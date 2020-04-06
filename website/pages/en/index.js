@@ -127,16 +127,23 @@ class HomeSplash extends React.Component {
             <Button href={docUrl('full-api-reference')}>API</Button>
           </PromoSection>
         </div>
-        <div className="githubButton" style={{ minHeight: '20px' }}>
-          <a
-            className="github-button"
-            href="https://github.com/lisanjs/lisan"
-            data-icon="octicon-star"
-            data-show-count="true"
-            aria-label="Star lisanjs/lisan on GitHub"
-          >
-            {starMessages[getRandomInt(0, starMessages.length)]}
-          </a>
+        <div
+          className="githubButton"
+          style={{ minHeight: '26px', marginTop: '10px' }}
+        >
+          {starMessages.map(message => (
+            <div key={message} className="githubHomeButton">
+              <a
+                className="github-button"
+                href="https://github.com/lisanjs/lisan"
+                data-icon="octicon-star"
+                data-show-count="true"
+                aria-label="Star lisanjs/lisan on GitHub"
+              >
+                {message}
+              </a>
+            </div>
+          ))}
         </div>
       </SplashContainer>
     );
@@ -204,6 +211,7 @@ class Index extends React.Component {
           <CodingExample />
           <Features />
         </div>
+        <script src="/js/home.button.js" type="text/javascript"></script>
       </div>
     );
   }

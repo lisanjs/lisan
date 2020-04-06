@@ -22,6 +22,10 @@ body {
   border-color: #edfbff;
 }
 
+.githubHomeButton {
+  display: none;
+}
+
 .nav-footer {
   background: #02728e;
 }
