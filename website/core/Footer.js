@@ -82,7 +82,7 @@ class Footer extends React.Component {
               data-show-count="true"
               aria-label="Star lisanjs/lisan on GitHub"
             >
-              Star
+              Support Us
             </a>
           </div>
         </section>
