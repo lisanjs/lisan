@@ -20,7 +20,7 @@ const render = (
   functions: string[],
 ): string => {
   if (!variables.length && !functions.length) {
-    return lisanLiteral;
+    return lisanLiteral.replace(new RegExp('"', 'g'), '\\"');
   }
   return renderES6(lisanLiteral, variables, functions);
 };

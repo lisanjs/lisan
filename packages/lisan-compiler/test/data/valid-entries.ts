@@ -177,6 +177,19 @@ const validCases: ValidCase[] = [
     variables: ['myValue'],
     functions: ['currency'],
   }),
+  // Escaping quotes
+  parsedEntry('Example "quoted"', {
+    output: 'Example \\"quoted\\"',
+  }),
+  parsedEntry('<a href="#link">link</a>', {
+    output: '<a href=\\"#link\\">link</a>',
+  }),
+  parsedEntry('<a href="${link}">${t("another.key")}</a>', {
+    output: '({ link }, { t }) => `<a href="${link}">${t("another.key")}</a>`',
+    variables: ['link'],
+    functions: ['t'],
+    entryKeys: ['another.key'],
+  }),
 ];
 
 export default validCases;
