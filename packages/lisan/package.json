@@ -1,6 +1,6 @@
 {
   "name": "lisan",
-  "version": "0.0.37",
+  "version": "0.0.38",
   "description": "Lisan - A Blazing fast i18n library",
   "keywords": [
     "i18n",
@@ -36,6 +36,6 @@
     "url": "https://github.com/lisanjs/lisan/issues"
   },
   "dependencies": {
-    "lisan-types": "^0.0.37"
+    "lisan-types": "^0.0.38"
   }
 }
