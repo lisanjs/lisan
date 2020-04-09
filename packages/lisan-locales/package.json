@@ -1,6 +1,6 @@
 {
   "name": "lisan-locales",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "description": "The repository containing Lisan Locale Configurations",
   "keywords": [
     "i18n",
@@ -38,11 +38,11 @@
     "url": "https://github.com/lisanjs/lisan/issues"
   },
   "devDependencies": {
-    "lisan": "^0.0.39",
-    "lisan-plugin-l10n": "^0.0.39"
+    "lisan": "^0.0.40",
+    "lisan-plugin-l10n": "^0.0.40"
   },
   "dependencies": {
-    "lisan-types": "^0.0.39",
+    "lisan-types": "^0.0.40",
     "ordinalize-tr": "1.0.1"
   }
 }

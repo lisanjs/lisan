@@ -1,6 +1,6 @@
 {
   "name": "lisan-plugin-loader",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "description": "Lisan Loader Plugin for dynamic imports",
   "author": "Mehmet Yatkı <mehmet@yatki.com>",
   "keywords": [
@@ -37,7 +37,7 @@
     "url": "https://github.com/lisanjs/lisan/issues"
   },
   "dependencies": {
-    "lisan": "^0.0.39",
-    "lisan-types": "^0.0.39"
+    "lisan": "^0.0.40",
+    "lisan-types": "^0.0.40"
   }
 }
