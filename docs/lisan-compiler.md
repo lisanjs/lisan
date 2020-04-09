@@ -14,15 +14,16 @@ Here you can find all supported options and methods provided by
 
 <!-- markdownlint-disable MD036 -->
 
-## `parseLisanLiteral(lisanLiteral)`
+## `parseLisanLiteral(lisanLiteral, options?)`
 
 Parses a single [Lisan Literal](/docs/translations#lisan-literal) string.
 
 **Input**
 
-| parameter    | type   | description                  |
-| ------------ | ------ | ---------------------------- |
-| lisanLiteral | string | A valid lisan literal string |
+| parameter          | type   | description                  |
+| ------------------ | ------ | ---------------------------- |
+| lisanLiteral       | string | A valid lisan literal string |
+| options (optional) | string | Changes parsing behaviour    |
 
 **Returns**: `object` - returns `ParsedLisanLiteral` object
 that has the following type signature:
@@ -66,6 +67,22 @@ console.log(parsedEntry);
   "entryKeys": ["entryKey1"]
 }
 ```
+
+### ParseLisanLiteral Options
+
+#### `returnArray`
+
+Type: `boolean`<br>
+CLI: `--returnArray`<br>
+Default: `false`,
+
+Instead of interpolating the output as a string,
+it returns HTML elements in an array to make it compatible
+with JSX syntax.
+
+> All elements of array can be also rendered by
+> [`Array.join`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+> .
 
 <!-- markdownlint-enable MD013 -->
 
@@ -121,10 +138,24 @@ console.log(parsedDictionary);
 
 ### Parse Options
 
+#### `returnArray`
+
+Type: `boolean`<br>
+CLI: `--returnArray`<br>
+Default: `false`,
+
+Instead of interpolating the output as a string,
+it returns HTML elements in an array to make it compatible
+with JSX syntax.
+
+> All elements of array can be also rendered by
+> [`Array.join`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+> .
+
 #### `allowNonExistingKeys`
 
 Type: `boolean`<br>
-CLI: `--compilerOptions.allowNonExistingKeys`<br>
+CLI: `--allowNonExistingKeys`<br>
 Default: `false`,
 
 When set to `false`, compiler validates all the key usages in the dictionary.
@@ -138,7 +169,7 @@ in that case, dictionary containing the entry must be loaded before!
 #### `autoTrimValues`
 
 Type: `boolean`<br>
-CLI: `--compilerOptions.autoTrimValues`<br>
+CLI: `--autoTrimValues`<br>
 Default: `true`
 
 AUtomatically trims the whitespace characters
@@ -147,7 +178,7 @@ from both sides for every Lisan Literal entry.
 #### `sortEntryKeys`
 
 Type: `boolean`<br>
-CLI: `--compilerOptions.sortEntryKeys`<br>
+CLI: `--sortEntryKeys`<br>
 Default: `true`
 
 Sorts dictionary keys by alphabetical order.
@@ -185,12 +216,12 @@ const dictionarySource = generate(parsedDictionary, {
 fs.writeFileSync('main.js', dictionarySource, 'utf-8');
 ```
 
-### Compile Options
+### Generate Options
 
 #### `module`
 
 Type: `string`<br>
-CLI: `--compilerOptions.module <moduleType>`<br>
+CLI: `--module <moduleType>`<br>
 Default: `"lisan"`
 
 Specifies the module format of the generated bundle. One of the following:

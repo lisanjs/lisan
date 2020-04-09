@@ -44,19 +44,19 @@ Main
   -i, --inputDir   Source directory where translation files are located.[string]
   -o, --outputDir  Directory where dictionary files will be generated!  [string]
   -e, --exclude    Exclude all json files matching with glob-like file pattern.
-                                                           [array] [default: []]
+                                                                         [array]
+  --declaration    Generate Typescript declaration files.              [boolean]
 
 Compiler Options
   --allowNonExistingKeys  Allows using non-existing keys in t() and c()
-                          functions.                  [boolean] [default: false]
+                          functions.                                   [boolean]
   --autoTrimValues        Trims the whitespace chars from every Lisan Literal
-                          entry.                       [boolean] [default: true]
-  --sortEntryKeys         Sorts dictionary keys by alphabetical order.
-                                                       [boolean] [default: true]
+                          entry.                                       [boolean]
+  --sortEntryKeys         Sorts dictionary keys by alphabetical order. [boolean]
   --module                Sorts dictionary keys by alphabetical order.
-            [string] [choices: "none", "cjs", "esm", "lisan"] [default: "lisan"]
-  --declarations          Generate Typescript declaration files.
-                                                      [boolean] [default: false]
+                               [string] [choices: "none", "cjs", "esm", "lisan"]
+  --returnArray           Returns literal elements as an array (JSX Compatible).
+                                                                       [boolean]
 
 Development
   -w, --watch  Enable watching source directory for changes!

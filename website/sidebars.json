@@ -19,6 +19,7 @@
     "Plugins": ["lisan-plugin-l10n", "lisan-plugin-loader"],
     "Guides & Tips": [
       "pluralization",
+      "jsx-interpolation",
       "multiple-instances",
       "how-to-write-plugins"
     ],
