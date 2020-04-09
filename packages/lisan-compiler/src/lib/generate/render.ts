@@ -7,7 +7,8 @@ const renderEntry = (entry: ParsedEntry, indent: number): string => {
 };
 
 const render = ({ locale, entries }: ParsedDictionary): string => {
-  let outputStr = `{\n${TAB()}"locale": "${locale}",\n${TAB()}"entries": {`;
+  const localeStr = locale ? `${TAB()}"locale": "${locale}",\n` : '';
+  let outputStr = `{\n${localeStr}${TAB()}"entries": {`;
 
   let lastGroupKey: string | null = null;
   let indent = 4;

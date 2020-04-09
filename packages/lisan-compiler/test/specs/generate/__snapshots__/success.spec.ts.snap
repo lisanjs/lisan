@@ -4,7 +4,6 @@ exports[`generate() Given entries do not have conditional groups should successf
 "(function(module){
 
 module.exports = {
-  \\"locale\\": \\"undefined\\",
   \\"entries\\": {
     \\"key1\\": \\"key1 value\\",
     \\"key2\\": \\"key2 value\\",
@@ -20,7 +19,6 @@ exports[`generate() Given entries ends with conditional group should successfull
 "(function(module){
 
 module.exports = {
-  \\"locale\\": \\"undefined\\",
   \\"entries\\": {
     \\"key1\\": \\"key1 value\\",
     \\"key2\\": \\"key2 value\\",
@@ -39,7 +37,6 @@ exports[`generate() Given entries starts and ends with conditional groups should
 "(function(module){
 
 module.exports = {
-  \\"locale\\": \\"undefined\\",
   \\"entries\\": {
     \\"group1\\": {
       \\"one\\": \\"one value\\",
@@ -66,7 +63,6 @@ exports[`generate() Given entries starts with conditional group should successfu
 "(function(module){
 
 module.exports = {
-  \\"locale\\": \\"undefined\\",
   \\"entries\\": {
     \\"group1\\": {
       \\"one\\": \\"one value\\",
