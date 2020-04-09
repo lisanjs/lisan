@@ -2,13 +2,8 @@ import { ParsedDictionary, ParsedEntry } from '../../typings';
 
 const TAB = (indent = 2): string => ' '.repeat(indent);
 const renderEntry = (entry: ParsedEntry, indent: number): string => {
-  const { key, output, functions, variables } = entry;
-  let value = output;
-  if (!functions.length && !variables.length) {
-    // plain text must have double quotes around
-    value = `"${value}"`;
-  }
-  return `\n${TAB(indent)}"${key}": ${value},`;
+  const { key, output } = entry;
+  return `\n${TAB(indent)}"${key}": ${output},`;
 };
 
 const render = ({ locale, entries }: ParsedDictionary): string => {

@@ -15,6 +15,7 @@ const parse = (
     sortEntryKeys: true,
     allowNonExistingKeys: false,
     autoTrimValues: true,
+    returnArray: false,
   };
 
   const options = {
@@ -49,6 +50,7 @@ const parse = (
     if (typeof entry === 'string') {
       const parsedEntry = parseLisanLiteral(
         options.autoTrimValues ? entry.trim() : entry,
+        { returnArray: options.returnArray },
       );
 
       parsedEntries.push({
@@ -69,6 +71,7 @@ const parse = (
         const conditionalEntry = entry[conditionalTag];
         const parsedEntry = parseLisanLiteral(
           options.autoTrimValues ? conditionalEntry.trim() : conditionalEntry,
+          { returnArray: options.returnArray },
         );
 
         parsedEntries.push({

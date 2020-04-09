@@ -4,6 +4,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import sourceMaps from 'rollup-plugin-sourcemaps';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
+import json from '@rollup/plugin-json';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require('./package.json');
@@ -71,6 +72,7 @@ const config = [
       typescript(),
       // translate commonjs module to ES6 module to be handle from Rollup and tree-shake
       commonjs(),
+      json(),
 
       // Resolve source maps to the original source
       sourceMaps(),

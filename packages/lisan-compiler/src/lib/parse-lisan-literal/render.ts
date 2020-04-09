@@ -1,28 +1,39 @@
-import { LisanLiteral } from '../../typings';
-
-const renderES6 = (
-  lisanLiteral: LisanLiteral,
-  variables: string[],
-  functions: string[],
-): string => {
-  const templateLiteral = `\`${lisanLiteral}\``;
+const renderFnHead = (variables: string[], functions: string[]): string => {
   const lisanFunctions = functions.length
     ? `, { ${functions.join(', ')} }`
     : '';
   const variablesStr = variables.length ? ` ${variables.join(', ')} ` : '';
-  const fnPrefix = `({${variablesStr}}${lisanFunctions})`;
-  return `${fnPrefix} => ${templateLiteral}`;
+  return `({${variablesStr}}${lisanFunctions})`;
 };
 
-const render = (
-  lisanLiteral: LisanLiteral,
-  variables: string[],
-  functions: string[],
-): string => {
-  if (!variables.length && !functions.length) {
-    return lisanLiteral.replace(new RegExp('"', 'g'), '\\"');
+const renderFnBody = (input: string, returnArray: boolean): string => {
+  if (!returnArray) {
+    return `\`${input}\``;
   }
-  return renderES6(lisanLiteral, variables, functions);
+
+  return input;
+};
+
+const render = ({
+  input,
+  variables,
+  functions,
+  returnArray,
+}: {
+  input: string;
+  returnArray: boolean;
+  variables: string[];
+  functions: string[];
+}): string => {
+  if (!variables.length && !functions.length) {
+    const plainText = input.replace(new RegExp('"', 'g'), '\\"');
+    return returnArray ? `["${plainText}"]` : `"${plainText}"`;
+  }
+
+  const head = renderFnHead(variables, functions);
+  const body = renderFnBody(input, returnArray);
+
+  return `${head} => ${body}`;
 };
 
 export default render;

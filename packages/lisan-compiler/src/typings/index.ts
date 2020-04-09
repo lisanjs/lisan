@@ -39,6 +39,7 @@ interface ParseOptions {
   sortEntryKeys?: boolean;
   allowNonExistingKeys?: boolean;
   autoTrimValues?: boolean;
+  returnArray?: boolean;
 }
 
 interface GenerateOptions {

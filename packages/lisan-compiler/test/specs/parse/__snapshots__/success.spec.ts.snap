@@ -10,7 +10,7 @@ Object {
       "groupKey": "child",
       "input": "child",
       "key": "one",
-      "output": "child",
+      "output": "\\"child\\"",
       "variables": Array [],
     },
     Object {
@@ -20,7 +20,7 @@ Object {
       "groupKey": "child",
       "input": "children",
       "key": "many",
-      "output": "children",
+      "output": "\\"children\\"",
       "variables": Array [],
     },
     Object {
@@ -29,7 +29,7 @@ Object {
       "functions": Array [],
       "input": "red",
       "key": "color1",
-      "output": "red",
+      "output": "\\"red\\"",
       "variables": Array [],
     },
     Object {
@@ -38,7 +38,7 @@ Object {
       "functions": Array [],
       "input": "blue",
       "key": "color2",
-      "output": "blue",
+      "output": "\\"blue\\"",
       "variables": Array [],
     },
     Object {
@@ -87,7 +87,7 @@ Object {
       "groupKey": "item.error",
       "input": "So that key27 can pass",
       "key": "one",
-      "output": "So that key27 can pass",
+      "output": "\\"So that key27 can pass\\"",
       "variables": Array [],
     },
     Object {
@@ -109,7 +109,7 @@ Object {
       "functions": Array [],
       "input": "So key18 can pass allowNonExistingKeys: false option",
       "key": "key",
-      "output": "So key18 can pass allowNonExistingKeys: false option",
+      "output": "\\"So key18 can pass allowNonExistingKeys: false option\\"",
       "variables": Array [],
     },
     Object {
@@ -118,7 +118,7 @@ Object {
       "functions": Array [],
       "input": "",
       "key": "key0",
-      "output": "",
+      "output": "\\"\\"",
       "variables": Array [],
     },
     Object {
@@ -127,7 +127,7 @@ Object {
       "functions": Array [],
       "input": "",
       "key": "key1",
-      "output": "",
+      "output": "\\"\\"",
       "variables": Array [],
     },
     Object {
@@ -256,7 +256,7 @@ Object {
       "functions": Array [],
       "input": "Hello world",
       "key": "key2",
-      "output": "Hello world",
+      "output": "\\"Hello world\\"",
       "variables": Array [],
     },
     Object {
@@ -411,7 +411,7 @@ Object {
       "functions": Array [],
       "input": "Hello {world}",
       "key": "key3",
-      "output": "Hello {world}",
+      "output": "\\"Hello {world}\\"",
       "variables": Array [],
     },
     Object {
@@ -489,7 +489,7 @@ Object {
       "groupKey": "present.be",
       "input": "is",
       "key": "one",
-      "output": "is",
+      "output": "\\"is\\"",
       "variables": Array [],
     },
     Object {
@@ -499,7 +499,7 @@ Object {
       "groupKey": "present.be",
       "input": "are",
       "key": "many",
-      "output": "are",
+      "output": "\\"are\\"",
       "variables": Array [],
     },
     Object {
@@ -509,7 +509,7 @@ Object {
       "groupKey": "records",
       "input": "one record",
       "key": "one",
-      "output": "one record",
+      "output": "\\"one record\\"",
       "variables": Array [],
     },
     Object {
@@ -519,7 +519,7 @@ Object {
       "groupKey": "records",
       "input": "many records",
       "key": "many",
-      "output": "many records",
+      "output": "\\"many records\\"",
       "variables": Array [],
     },
     Object {
@@ -528,7 +528,7 @@ Object {
       "functions": Array [],
       "input": "mirror mirror",
       "key": "same.key",
-      "output": "mirror mirror",
+      "output": "\\"mirror mirror\\"",
       "variables": Array [],
     },
     Object {
@@ -537,7 +537,7 @@ Object {
       "functions": Array [],
       "input": "a string key",
       "key": "string.key",
-      "output": "a string key",
+      "output": "\\"a string key\\"",
       "variables": Array [],
     },
   ],
@@ -555,7 +555,7 @@ Object {
       "groupKey": "child",
       "input": "child",
       "key": "one",
-      "output": "child",
+      "output": "\\"child\\"",
       "variables": Array [],
     },
     Object {
@@ -565,7 +565,7 @@ Object {
       "groupKey": "child",
       "input": "children",
       "key": "many",
-      "output": "children",
+      "output": "\\"children\\"",
       "variables": Array [],
     },
     Object {
@@ -574,7 +574,7 @@ Object {
       "functions": Array [],
       "input": "red",
       "key": "color1",
-      "output": "red",
+      "output": "\\"red\\"",
       "variables": Array [],
     },
     Object {
@@ -583,7 +583,7 @@ Object {
       "functions": Array [],
       "input": "blue",
       "key": "color2",
-      "output": "blue",
+      "output": "\\"blue\\"",
       "variables": Array [],
     },
     Object {
@@ -619,7 +619,7 @@ Object {
       "groupKey": "item.error",
       "input": "So that key27 can pass",
       "key": "one",
-      "output": "So that key27 can pass",
+      "output": "\\"So that key27 can pass\\"",
       "variables": Array [],
     },
     Object {
@@ -641,7 +641,7 @@ Object {
       "functions": Array [],
       "input": "So key18 can pass allowNonExistingKeys: false option",
       "key": "key",
-      "output": "So key18 can pass allowNonExistingKeys: false option",
+      "output": "\\"So key18 can pass allowNonExistingKeys: false option\\"",
       "variables": Array [],
     },
     Object {
@@ -650,7 +650,7 @@ Object {
       "functions": Array [],
       "input": "",
       "key": "key0",
-      "output": "",
+      "output": "\\"\\"",
       "variables": Array [],
     },
     Object {
@@ -659,7 +659,7 @@ Object {
       "functions": Array [],
       "input": "   ",
       "key": "key1",
-      "output": "   ",
+      "output": "\\"   \\"",
       "variables": Array [],
     },
     Object {
@@ -788,7 +788,7 @@ Object {
       "functions": Array [],
       "input": "Hello world",
       "key": "key2",
-      "output": "Hello world",
+      "output": "\\"Hello world\\"",
       "variables": Array [],
     },
     Object {
@@ -943,7 +943,7 @@ Object {
       "functions": Array [],
       "input": "Hello {world}",
       "key": "key3",
-      "output": "Hello {world}",
+      "output": "\\"Hello {world}\\"",
       "variables": Array [],
     },
     Object {
@@ -1021,7 +1021,7 @@ Object {
       "groupKey": "present.be",
       "input": "is",
       "key": "one",
-      "output": "is",
+      "output": "\\"is\\"",
       "variables": Array [],
     },
     Object {
@@ -1031,7 +1031,7 @@ Object {
       "groupKey": "present.be",
       "input": "are",
       "key": "many",
-      "output": "are",
+      "output": "\\"are\\"",
       "variables": Array [],
     },
     Object {
@@ -1041,7 +1041,7 @@ Object {
       "groupKey": "records",
       "input": "one record",
       "key": "one",
-      "output": "one record",
+      "output": "\\"one record\\"",
       "variables": Array [],
     },
     Object {
@@ -1051,7 +1051,7 @@ Object {
       "groupKey": "records",
       "input": "many records",
       "key": "many",
-      "output": "many records",
+      "output": "\\"many records\\"",
       "variables": Array [],
     },
     Object {
@@ -1060,7 +1060,7 @@ Object {
       "functions": Array [],
       "input": "mirror mirror",
       "key": "same.key",
-      "output": "mirror mirror",
+      "output": "\\"mirror mirror\\"",
       "variables": Array [],
     },
     Object {
@@ -1069,7 +1069,7 @@ Object {
       "functions": Array [],
       "input": "a string key",
       "key": "string.key",
-      "output": "a string key",
+      "output": "\\"a string key\\"",
       "variables": Array [],
     },
   ],
@@ -1087,7 +1087,7 @@ Object {
       "groupKey": "child",
       "input": "child",
       "key": "one",
-      "output": "child",
+      "output": "\\"child\\"",
       "variables": Array [],
     },
     Object {
@@ -1097,7 +1097,7 @@ Object {
       "groupKey": "child",
       "input": "children",
       "key": "many",
-      "output": "children",
+      "output": "\\"children\\"",
       "variables": Array [],
     },
     Object {
@@ -1106,7 +1106,7 @@ Object {
       "functions": Array [],
       "input": "red",
       "key": "color1",
-      "output": "red",
+      "output": "\\"red\\"",
       "variables": Array [],
     },
     Object {
@@ -1115,7 +1115,7 @@ Object {
       "functions": Array [],
       "input": "blue",
       "key": "color2",
-      "output": "blue",
+      "output": "\\"blue\\"",
       "variables": Array [],
     },
     Object {
@@ -1151,7 +1151,7 @@ Object {
       "groupKey": "item.error",
       "input": "So that key27 can pass",
       "key": "one",
-      "output": "So that key27 can pass",
+      "output": "\\"So that key27 can pass\\"",
       "variables": Array [],
     },
     Object {
@@ -1173,7 +1173,7 @@ Object {
       "functions": Array [],
       "input": "So key18 can pass allowNonExistingKeys: false option",
       "key": "key",
-      "output": "So key18 can pass allowNonExistingKeys: false option",
+      "output": "\\"So key18 can pass allowNonExistingKeys: false option\\"",
       "variables": Array [],
     },
     Object {
@@ -1182,7 +1182,7 @@ Object {
       "functions": Array [],
       "input": "",
       "key": "key0",
-      "output": "",
+      "output": "\\"\\"",
       "variables": Array [],
     },
     Object {
@@ -1191,7 +1191,7 @@ Object {
       "functions": Array [],
       "input": "",
       "key": "key1",
-      "output": "",
+      "output": "\\"\\"",
       "variables": Array [],
     },
     Object {
@@ -1320,7 +1320,7 @@ Object {
       "functions": Array [],
       "input": "Hello world",
       "key": "key2",
-      "output": "Hello world",
+      "output": "\\"Hello world\\"",
       "variables": Array [],
     },
     Object {
@@ -1475,7 +1475,7 @@ Object {
       "functions": Array [],
       "input": "Hello {world}",
       "key": "key3",
-      "output": "Hello {world}",
+      "output": "\\"Hello {world}\\"",
       "variables": Array [],
     },
     Object {
@@ -1553,7 +1553,7 @@ Object {
       "groupKey": "present.be",
       "input": "is",
       "key": "one",
-      "output": "is",
+      "output": "\\"is\\"",
       "variables": Array [],
     },
     Object {
@@ -1563,7 +1563,7 @@ Object {
       "groupKey": "present.be",
       "input": "are",
       "key": "many",
-      "output": "are",
+      "output": "\\"are\\"",
       "variables": Array [],
     },
     Object {
@@ -1573,7 +1573,7 @@ Object {
       "groupKey": "records",
       "input": "one record",
       "key": "one",
-      "output": "one record",
+      "output": "\\"one record\\"",
       "variables": Array [],
     },
     Object {
@@ -1583,7 +1583,7 @@ Object {
       "groupKey": "records",
       "input": "many records",
       "key": "many",
-      "output": "many records",
+      "output": "\\"many records\\"",
       "variables": Array [],
     },
     Object {
@@ -1592,7 +1592,7 @@ Object {
       "functions": Array [],
       "input": "mirror mirror",
       "key": "same.key",
-      "output": "mirror mirror",
+      "output": "\\"mirror mirror\\"",
       "variables": Array [],
     },
     Object {
@@ -1601,7 +1601,7 @@ Object {
       "functions": Array [],
       "input": "a string key",
       "key": "string.key",
-      "output": "a string key",
+      "output": "\\"a string key\\"",
       "variables": Array [],
     },
   ],
@@ -1618,7 +1618,7 @@ Object {
       "functions": Array [],
       "input": "red",
       "key": "color1",
-      "output": "red",
+      "output": "\\"red\\"",
       "variables": Array [],
     },
     Object {
@@ -1627,7 +1627,7 @@ Object {
       "functions": Array [],
       "input": "blue",
       "key": "color2",
-      "output": "blue",
+      "output": "\\"blue\\"",
       "variables": Array [],
     },
     Object {
@@ -1636,7 +1636,7 @@ Object {
       "functions": Array [],
       "input": "a string key",
       "key": "string.key",
-      "output": "a string key",
+      "output": "\\"a string key\\"",
       "variables": Array [],
     },
     Object {
@@ -1645,7 +1645,7 @@ Object {
       "functions": Array [],
       "input": "mirror mirror",
       "key": "same.key",
-      "output": "mirror mirror",
+      "output": "\\"mirror mirror\\"",
       "variables": Array [],
     },
     Object {
@@ -1654,7 +1654,7 @@ Object {
       "functions": Array [],
       "input": "",
       "key": "key0",
-      "output": "",
+      "output": "\\"\\"",
       "variables": Array [],
     },
     Object {
@@ -1663,7 +1663,7 @@ Object {
       "functions": Array [],
       "input": "",
       "key": "key1",
-      "output": "",
+      "output": "\\"\\"",
       "variables": Array [],
     },
     Object {
@@ -1672,7 +1672,7 @@ Object {
       "functions": Array [],
       "input": "Hello world",
       "key": "key2",
-      "output": "Hello world",
+      "output": "\\"Hello world\\"",
       "variables": Array [],
     },
     Object {
@@ -1681,7 +1681,7 @@ Object {
       "functions": Array [],
       "input": "Hello {world}",
       "key": "key3",
-      "output": "Hello {world}",
+      "output": "\\"Hello {world}\\"",
       "variables": Array [],
     },
     Object {
@@ -1915,7 +1915,7 @@ Object {
       "groupKey": "present.be",
       "input": "is",
       "key": "one",
-      "output": "is",
+      "output": "\\"is\\"",
       "variables": Array [],
     },
     Object {
@@ -1925,7 +1925,7 @@ Object {
       "groupKey": "present.be",
       "input": "are",
       "key": "many",
-      "output": "are",
+      "output": "\\"are\\"",
       "variables": Array [],
     },
     Object {
@@ -1935,7 +1935,7 @@ Object {
       "groupKey": "records",
       "input": "one record",
       "key": "one",
-      "output": "one record",
+      "output": "\\"one record\\"",
       "variables": Array [],
     },
     Object {
@@ -1945,7 +1945,7 @@ Object {
       "groupKey": "records",
       "input": "many records",
       "key": "many",
-      "output": "many records",
+      "output": "\\"many records\\"",
       "variables": Array [],
     },
     Object {
@@ -1955,7 +1955,7 @@ Object {
       "groupKey": "child",
       "input": "child",
       "key": "one",
-      "output": "child",
+      "output": "\\"child\\"",
       "variables": Array [],
     },
     Object {
@@ -1965,7 +1965,7 @@ Object {
       "groupKey": "child",
       "input": "children",
       "key": "many",
-      "output": "children",
+      "output": "\\"children\\"",
       "variables": Array [],
     },
     Object {
@@ -2110,7 +2110,7 @@ Object {
       "functions": Array [],
       "input": "So key18 can pass allowNonExistingKeys: false option",
       "key": "key",
-      "output": "So key18 can pass allowNonExistingKeys: false option",
+      "output": "\\"So key18 can pass allowNonExistingKeys: false option\\"",
       "variables": Array [],
     },
     Object {
@@ -2120,7 +2120,7 @@ Object {
       "groupKey": "item.error",
       "input": "So that key27 can pass",
       "key": "one",
-      "output": "So that key27 can pass",
+      "output": "\\"So that key27 can pass\\"",
       "variables": Array [],
     },
     Object {

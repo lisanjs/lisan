@@ -29,6 +29,9 @@ function CodeMirror() {
           <div id="lisan-option-container">
             <h2>Options</h2>
             <span>
+              <input type="checkbox" name="lisan-returnArray" /> returnArray
+            </span>
+            <span>
               <input
                 type="checkbox"
                 name="lisan-sortEntryKeys"
