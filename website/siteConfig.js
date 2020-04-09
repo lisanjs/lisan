@@ -45,6 +45,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'what-is-lisan', label: 'Docs' },
     { page: 'try-it-out', label: 'Try it out' },
+    { href: 'https://github.com/lisanjs/examples', label: 'Examples' },
     // { doc: 'examples/react', label: 'Tutorials' },
     // { search: true },
     // Links to href destination
