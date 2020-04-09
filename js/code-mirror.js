@@ -4,6 +4,9 @@
     const codeMirrorOutput = document.getElementById('code-output');
     const executionTimeContainer = document.getElementById('execution-time');
 
+    const lisanReturnArrayInput = document.querySelector(
+      '[name="lisan-returnArray"]',
+    );
     const lisanAllowNonExistingEntryKeysInput = document.querySelector(
       '[name="lisan-allowNonExistingKeys"]',
     );
@@ -27,6 +30,7 @@
           sortEntryKeys: lisanSortEntryKeysInput.checked,
           allowNonExistingKeys: lisanAllowNonExistingEntryKeysInput.checked,
           autoTrimValues: lisanAutoTrimValues.checked,
+          returnArray: lisanReturnArrayInput.checked,
         };
 
         var obj = null;
