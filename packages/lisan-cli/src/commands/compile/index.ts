@@ -27,6 +27,12 @@ const builder = {
     default: [],
     group: 'Main',
   },
+  declaration: {
+    desc: 'Generate Typescript declaration files.',
+    boolean: true,
+    default: false,
+    group: 'Main',
+  },
   allowNonExistingKeys: {
     group: 'Compiler Options',
     desc: 'Allows using non-existing keys in t() and c() functions.',
@@ -53,9 +59,9 @@ const builder = {
     default: 'lisan',
     choices: ['none', 'cjs', 'esm', 'lisan'],
   },
-  declaration: {
+  returnArray: {
     group: 'Compiler Options',
-    desc: 'Generate Typescript declaration files.',
+    desc: 'Returns literal elements as an array (JSX Compatible).',
     boolean: true,
     default: false,
   },
