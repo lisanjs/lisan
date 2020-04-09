@@ -24,52 +24,44 @@ const builder = {
     alias: 'exclude',
     desc: 'Exclude all json files matching with glob-like file pattern.',
     array: true,
-    default: [],
     group: 'Main',
   },
   declaration: {
     desc: 'Generate Typescript declaration files.',
     boolean: true,
-    default: false,
     group: 'Main',
   },
   allowNonExistingKeys: {
     group: 'Compiler Options',
     desc: 'Allows using non-existing keys in t() and c() functions.',
     boolean: true,
-    default: false,
   },
   autoTrimValues: {
     group: 'Compiler Options',
     desc: 'Trims the whitespace chars from every Lisan Literal entry.',
     boolean: true,
-    default: true,
   },
   sortEntryKeys: {
     group: 'Compiler Options',
     desc: 'Sorts dictionary keys by alphabetical order.',
     boolean: true,
-    default: true,
   },
   module: {
     group: 'Compiler Options',
     desc: 'Sorts dictionary keys by alphabetical order.',
     string: true,
     normalize: true,
-    default: 'lisan',
     choices: ['none', 'cjs', 'esm', 'lisan'],
   },
   returnArray: {
     group: 'Compiler Options',
     desc: 'Returns literal elements as an array (JSX Compatible).',
     boolean: true,
-    default: false,
   },
   w: {
     alias: 'watch',
     desc: 'Enable watching source directory for changes!',
     boolean: true,
-    default: false,
     group: 'Development',
   },
 };
@@ -81,9 +73,26 @@ const handler = async (argv: yargs.Arguments): Promise<void> => {
     compile: CompileCommandArgs;
   };
 
+  const defaultOptions: CompileCommandArgs = {
+    inputDir: '',
+    outputDir: '',
+    exclude: [],
+    declaration: false,
+    allowNonExistingKeys: false,
+    autoTrimValues: true,
+    sortEntryKeys: true,
+    module: 'lisan',
+    returnArray: false,
+    watch: false,
+  };
+
   let compileOptions = (compileCommandOptions as unknown) as CompileCommandArgs;
   if (fileConfig?.compile) {
-    compileOptions = { ...fileConfig.compile, ...compileOptions };
+    compileOptions = {
+      ...defaultOptions,
+      ...fileConfig.compile,
+      ...compileOptions,
+    };
   }
 
   try {
