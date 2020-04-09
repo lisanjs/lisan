@@ -71,6 +71,12 @@ class HomeSplash extends React.Component {
         <div className="homeSplashBottom">
           {siteConfig.tagline} - Only 1.7kb
         </div>
+        <div
+          style={{ background: 'rgba(255, 229, 100, 0.3)', padding: '5px 0' }}
+        >
+          🚀<strong>New!</strong> - Now supports{' '}
+          <a href="/docs/jsx-interpolation">JSX Interpolations</a>! 🎉
+        </div>
       </div>
     );
 
@@ -123,8 +129,10 @@ class HomeSplash extends React.Component {
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
             <Button href={docUrl('what-is-lisan')}>DOCS</Button>
-            <Button href="/try-it-out">TRY COMPILER</Button>
-            <Button href={docUrl('full-api-reference')}>API</Button>
+            <Button href="/try-it-out">TRY ONLINE COMPILER</Button>
+            <Button href={'https://github.com/lisanjs/examples'}>
+              EXAMPLES
+            </Button>
           </PromoSection>
         </div>
         <div

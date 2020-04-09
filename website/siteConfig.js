@@ -44,6 +44,7 @@ const siteConfig = {
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'what-is-lisan', label: 'Docs' },
+    { doc: 'full-api-reference', label: 'API' },
     { page: 'try-it-out', label: 'Try it out' },
     { href: 'https://github.com/lisanjs/examples', label: 'Examples' },
     // { doc: 'examples/react', label: 'Tutorials' },
