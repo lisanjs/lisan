@@ -42,7 +42,7 @@ when you have an event handler like `onClick`, where
 even `dangerouslySetInnerHTML` property is not the direct
 solution.
 
-## How Lisan Solves it?
+## How Lisan solves it?
 
 `lisan-compiler`, with `>v0.0.40` takes [`returnArray`](/docs/lisan-compiler#returnarray)
 option.
