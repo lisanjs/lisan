@@ -1,6 +1,6 @@
 {
   "name": "lisan-compiler",
-  "version": "0.0.40",
+  "version": "0.0.41",
   "description": "Lisan compiler compiles Translations into Dictionaries",
   "keywords": [
     "i18n",
