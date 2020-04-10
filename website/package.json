@@ -1,6 +1,5 @@
 {
   "scripts": {
-    "serve": "npx http-server build/lisan -p 8080",
     "examples": "docusaurus-examples",
     "start": "docusaurus-start",
     "build": "docusaurus-build",
@@ -10,7 +9,6 @@
     "rename-version": "docusaurus-rename-version"
   },
   "devDependencies": {
-    "docusaurus": "1.14.4",
-    "http-server": "0.12.1"
+    "docusaurus": "1.14.4"
   }
 }
