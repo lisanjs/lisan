@@ -90,14 +90,14 @@ the selected locale name, then
 the dictionary object **will not** be registered.
 This mechanism is there to prevent
 loading a dictionary created explicitly
-for another language or locale. See: [`lisan.localeName()`](/docs/full-api-reference#lisanlocalenamename)<br>
+for another language or locale. See: [`lisan.setLocaleName()`](/docs/full-api-reference#lisansetlocalenamename)<br>
 
 **Example:**
 
 ```js
 const { lisan } = require('lisan');
 
-lisan.localeName('tr');
+lisan.setLocaleName('tr');
 
 lisan.add({
   locale: 'en-US',

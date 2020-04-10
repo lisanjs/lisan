@@ -47,28 +47,42 @@ lisan.newMethod();
 
 > For more information, See: [How to write Plugins](/docs/how-to-write-plugins).
 
-### `lisan.localeName(name?)`
+### `lisan.setLocaleName(name)`
 
-When `name` argument is provided, updates the locale name of lisan instance.
+Updates the locale name of lisan instance.
 
 **Input**
 
-| parameter       | type   | description                        |
-| --------------- | ------ | ---------------------------------- |
-| name (optional) | string | Updates locale name to given value |
+| parameter | type   | description                        |
+| --------- | ------ | ---------------------------------- |
+| name      | string | Updates locale name to given value |
 
-**Returns**: `string`, returns configured locale name.
+**Returns**: `void`, returns configured locale name.
 
 **Usage**
 
 ```js
 const { lisan } = require('lisan');
 
-console.log(lisan.localeName()); // Outputs: "undefined"
+lisan.setLocaleName('en-US');
 
-lisan.localeName('en-US');
+console.log(lisan.getLocaleName()); // Outputs: "en-US"
+```
 
-console.log(lisan.localeName()); // Outputs: "en-US"
+### `lisan.getLocaleName()`
+
+Returns the configured locale name of lisan instance.
+
+**Returns**: `string`
+
+**Usage**
+
+```js
+const { lisan } = require('lisan');
+
+lisan.setLocaleName('en-US');
+
+console.log(lisan.getLocaleName()); // Outputs: "en-US"
 ```
 
 ### `lisan.add(dictionary)`
@@ -83,7 +97,7 @@ the selected locale name, then
 the dictionary object **will not** be registered.
 This mechanism is there to prevent
 loading a dictionary created explicitly
-for another language or locale. See: [`lisan.localeName()`](/docs/full-api-reference#lisanlocalenamename)<br>
+for another language or locale. See: [`lisan.setLocaleName()`](/docs/full-api-reference#lisansetlocalenamename)<br>
 
 **Input**
 

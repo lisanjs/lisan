@@ -27,11 +27,13 @@ class Lisan {
     this._f = {};
   }
 
-  public localeName(localeName?: string): string | undefined {
+  public setLocaleName(localeName: string): void {
     if (localeName) {
       this._l = localeName;
     }
+  }
 
+  public getLocaleName(): string | undefined {
     return this._l;
   }
 

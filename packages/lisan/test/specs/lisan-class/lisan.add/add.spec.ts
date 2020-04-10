@@ -88,7 +88,7 @@ describe('lisan.add(dictionary)', () => {
           },
         },
       };
-      lisanInstance.localeName('tr');
+      lisanInstance.setLocaleName('tr');
 
       // Act
       lisanInstance.add(dictionary);
@@ -121,7 +121,7 @@ describe('lisan.add(dictionary)', () => {
           },
         },
       };
-      lisanInstance.localeName('tr');
+      lisanInstance.setLocaleName('tr');
 
       // Act
       lisanInstance.add(dictionary);
@@ -155,7 +155,7 @@ describe('lisan.add(dictionary)', () => {
         },
       };
 
-      lisanInstance.localeName('tr');
+      lisanInstance.setLocaleName('tr');
 
       // Act && Assert
       expect(() => lisanInstance.add(dictionary)).toThrow(

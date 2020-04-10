@@ -1,25 +1,26 @@
 import { Lisan } from '../../../../src';
 
-describe('lisan.localeName(localeName)', () => {
+describe('lisan.localeName', () => {
   let lisanInstance;
   beforeEach(() => {
     lisanInstance = new Lisan();
   });
 
-  describe('given a previous localeName was NOT set and localeName was NOT provided', () => {
+  describe('given a previous localeName was NOT set', () => {
     it('should return "undefined"', () => {
       // Act && Assert
-      expect(lisanInstance.localeName()).toBeUndefined();
+      expect(lisanInstance.getLocaleName()).toBeUndefined();
     });
   });
 
-  describe('given localeName was provided', () => {
-    it('should set localeName to given value and return it', () => {
+  describe('given localeName was set', () => {
+    it('should return the given value', () => {
       // Arrange
       const localeName = 'someRandomLocaleName';
+      lisanInstance.setLocaleName(localeName);
+
       // Act && Assert
-      expect(lisanInstance.localeName(localeName)).toBe(localeName);
-      expect(lisanInstance.localeName()).toBe(localeName);
+      expect(lisanInstance.getLocaleName()).toBe(localeName);
     });
   });
 });

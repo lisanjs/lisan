@@ -72,7 +72,7 @@ lisan.use(
   }),
 );
 
-lisan.localeName('tr');
+lisan.setLocaleName('tr');
 
 lisan.load('main').then(() => {
   // Loaded https://cdn.mydomain.com/static/tr/dictionaries/main.js
@@ -218,7 +218,7 @@ lisan.use(
   }),
 );
 
-lisan.localeName('en-US');
+lisan.setLocaleName('en-US');
 lisan.load('main').then(() => {
   /*
    * 1. On Node Environment, dictionary will be REQUIRED from:

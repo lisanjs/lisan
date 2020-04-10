@@ -72,7 +72,7 @@ const Loader = ({
     // eslint-disable-next-line @typescript-eslint/no-inferrable-types
     idPrefix: string = 'Lisan_Dictionary',
   ): Promise<string> {
-    const localeName = lisan.localeName();
+    const localeName = lisan.getLocaleName();
     const target = dictionaryUrlFn(dictionaryName, localeName);
     if (localeName) {
       // eslint-disable-next-line no-param-reassign

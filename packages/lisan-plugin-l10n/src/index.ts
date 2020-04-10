@@ -27,7 +27,7 @@ const Localization: TSLisan.Plugin<LisanClass> = lisan => {
       this[`to${ucFirst(formatterName)}`] = formatters[formatterName];
     });
 
-    this.localeName(locale.name);
+    this.setLocaleName(locale.name);
   };
 };
 
