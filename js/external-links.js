@@ -1,7 +1,6 @@
 // Turn off ESLint for this file because it's sent down to users as-is.
 /* eslint-disable */
 window.addEventListener('load', function() {
-  console.log('loaded');
   const isExternal = function(url) {
     const domain = function(url) {
       return url
