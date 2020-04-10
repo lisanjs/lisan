@@ -10,7 +10,8 @@
     "start": "lerna run start",
     "lint": "eslint . --ext .js,.ts",
     "test": "jest",
-    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "publish": "npm test && npm run build && lerna publish"
   },
   "repository": {
     "type": "git",
