@@ -11,8 +11,8 @@
 <p align="center">
   <a href="https://www.npmjs.com/package/lisan"><img alt="NPM Status" src="https://img.shields.io/npm/v/lisan.svg?style=flat"></a>
   <a href="https://www.npmjs.com/package/lisan"><img alt="NPM Downloads" src="https://img.shields.io/npm/dt/lisan.svg"></a>
-  <a href="https://coveralls.io/github/lisanjs/lisan?branch=master"><img alt="Coverage"
-  src="https://coveralls.io/repos/github/lisanjs/lisan/badge.svg?branch=master&"></a>
+  <a href="https://coveralls.io/github/lisanjs/lisan?branch=development"><img alt="Coverage"
+  src="https://coveralls.io/repos/github/lisanjs/lisan/badge.svg?branch=development&"></a>
 </p>
 
 <hr>
