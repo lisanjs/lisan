@@ -396,11 +396,11 @@ You can find the setup instructions and available options [here](/docs/lisan-plu
 ```js
 const { lisan } = require('lisan');
 const { Localization } = require('lisan-plugin-l10n');
-const { trTR } = require('lisan-locales');
+const { tr } = require('lisan-locales');
 
 lisan.use(Localization);
 
-lisan.setLocale(trTR);
+lisan.setLocale(tr);
 
 lisan.toOrdinal(3); // Returns: 3'üncü
 ```
