@@ -83,24 +83,6 @@ class Lisan {
     return this;
   }
 
-  private r(
-    dictionaryEntryKey: string,
-    dictionaryEntry: TSLisan.DictionaryEntry,
-    placeholders: TSLisan.Placeholders = {},
-  ): string {
-    if (typeof dictionaryEntry === 'undefined') {
-      return dictionaryEntryKey;
-    }
-    if (typeof dictionaryEntry === 'function') {
-      return dictionaryEntry(placeholders, {
-        ...this._f,
-        ...this._h,
-      });
-    }
-
-    return dictionaryEntry as string;
-  }
-
   /**
    * Translate function is going to find the provided key
    * in loaded dictionaries and renders the template and returns a string.
@@ -168,6 +150,24 @@ class Lisan {
       dictionaryEntry,
       placeholders,
     );
+  }
+
+  private r(
+    dictionaryEntryKey: string,
+    dictionaryEntry: TSLisan.DictionaryEntry,
+    placeholders: TSLisan.Placeholders = {},
+  ): string {
+    if (typeof dictionaryEntry === 'undefined') {
+      return dictionaryEntryKey;
+    }
+    if (typeof dictionaryEntry === 'function') {
+      return dictionaryEntry(placeholders, {
+        ...this._f,
+        ...this._h,
+      });
+    }
+
+    return dictionaryEntry as string;
   }
 }
 
