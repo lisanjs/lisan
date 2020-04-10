@@ -1,6 +1,6 @@
 {
   "name": "lisan-compiler",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lisan compiler compiles Translations into Dictionaries",
   "keywords": [
     "i18n",
@@ -42,5 +42,6 @@
   },
   "bugs": {
     "url": "https://github.com/lisanjs/lisan/issues"
-  }
+  },
+  "gitHead": "f0ee2419c008b5d40cb5502a7ba9320260ef11d5"
 }
