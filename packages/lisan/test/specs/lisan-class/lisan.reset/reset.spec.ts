@@ -44,10 +44,7 @@ describe('lisan.reset()', () => {
 
       lisanInstance.add({
         entries: {
-          entryWithFormatter: (
-            { amount },
-            { myFormatter }: { myFormatter: (x: number) => string },
-          ) =>
+          entryWithFormatter: ({ amount }, { myFormatter }) =>
             `Amount "${amount}" is formatted to "${myFormatter(
               amount as number,
             )}"`,
@@ -61,7 +58,7 @@ describe('lisan.reset()', () => {
     });
   });
 
-  describe('given contains were registered', () => {
+  describe('given conditions were registered', () => {
     it('should reset conditions', () => {
       // Arrange
       const conditionFn = jest.fn().mockReturnValue(true);
@@ -85,6 +82,20 @@ describe('lisan.reset()', () => {
       // Assert
       expect(lisanInstance.c('myDummyGroup', 5)).toBe('other value');
       expect(conditionFn).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('given locale name was set', () => {
+    it('should NOT change locale name', () => {
+      // Arrange
+      const localeName = 'someLocalename...';
+      lisanInstance.setLocaleName(localeName);
+
+      // Act
+      lisanInstance.reset();
+
+      // Assert
+      expect(lisanInstance.getLocaleName()).toBe(localeName);
     });
   });
 });
