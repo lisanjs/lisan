@@ -12,14 +12,14 @@ const scenarios: Scenario[] = [];
 data.forEach(dateCase => {
   Object.keys(dateCase.tokens).forEach(token => {
     scenarios.push({
-      prepare: (locale): PrepareResult => {
-        const { date, ordinal } = prepareDateBase(locale);
+      prepare: (localeConfig): PrepareResult => {
+        const { date, ordinal } = prepareDateBase(localeConfig);
         date.masks = {
           ...date.masks,
           [method]: token,
         };
         return {
-          locale: { ...locale, date, ordinal },
+          localeConfig: { ...localeConfig, date, ordinal },
           delta: { method, token },
         };
       },

@@ -282,7 +282,7 @@ const generateLocalizationFormatters = ({
   ordinal = (x: number): string => x.toString(),
   number: numberOptions,
   currency: currencyOptions,
-}: TSLisan.Locale): TSLisan.FormatFunctions => {
+}: TSLisan.LocaleConfig): TSLisan.FormatFunctions => {
   const l = {} as TSLisan.FormatFunctions;
 
   if (numberOptions) {

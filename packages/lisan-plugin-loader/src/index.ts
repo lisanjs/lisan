@@ -10,7 +10,7 @@ const isNode = new Function(
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable global-require */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const req = (filePath: string): TSLisan.Dictionary | TSLisan.Locale => {
+const req = (filePath: string): TSLisan.Dictionary | TSLisan.LocaleConfig => {
   const path = require('path');
   const cwd = process.cwd();
   const resolvedPath = path.resolve(path.join(cwd, filePath));
@@ -21,7 +21,7 @@ const req = (filePath: string): TSLisan.Dictionary | TSLisan.Locale => {
 /* eslint-enable @typescript-eslint/no-var-requires */
 
 interface LisanWithL10n extends LisanClass {
-  setLocale?(locale: TSLisan.Locale): void;
+  setLocale?(locale: TSLisan.LocaleConfig): void;
 }
 
 const Loader = ({
@@ -33,12 +33,12 @@ const Loader = ({
   if (!isNode()) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).lisanLoaderListener = {
-      set exports(obj: TSLisan.Dictionary | TSLisan.Locale) {
+      set exports(obj: TSLisan.Dictionary | TSLisan.LocaleConfig) {
         if ((obj as TSLisan.Dictionary).entries) {
           lisan.add(obj as TSLisan.Dictionary);
-        } else if ((obj as TSLisan.Locale).name) {
+        } else if ((obj as TSLisan.LocaleConfig).name) {
           // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-          lisan.setLocale!(obj as TSLisan.Locale);
+          lisan.setLocale!(obj as TSLisan.LocaleConfig);
         }
       },
     };
@@ -57,7 +57,7 @@ const Loader = ({
     const target = localeUrlFn(localeName);
 
     if (isNode()) {
-      const locale = req(target) as TSLisan.Locale;
+      const locale = req(target) as TSLisan.LocaleConfig;
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       lisan.setLocale!(locale);
       return Promise.resolve(scriptId);

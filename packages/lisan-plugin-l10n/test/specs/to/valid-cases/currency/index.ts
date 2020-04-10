@@ -16,13 +16,13 @@ const templateFn = (str: string): string => `TEMPLATE#${str}#TEMPLATE`;
 export default cases.map(testCase => ({
   method: 'currency',
   scenarios: testCase.scenarios.map(scenario => ({
-    prepare: (locale): PrepareResult => {
-      const l = scenario.prepare(locale);
+    prepare: (localeConfig): PrepareResult => {
+      const l = scenario.prepare(localeConfig);
       l.delta = {
         ...l.delta,
         currency: true,
       };
-      l.locale.currency.template = templateFn;
+      l.localeConfig.currency.template = templateFn;
       return l;
     },
     expectations: scenario.expectations.map(expectation => ({

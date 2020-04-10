@@ -1,4 +1,4 @@
-import { Locale } from 'lisan-types';
+import * as TSLisan from 'lisan-types';
 
 interface Expectation {
   input: number | Date;
@@ -6,12 +6,12 @@ interface Expectation {
 }
 
 interface PrepareResult {
-  locale: Locale;
+  localeConfig: TSLisan.LocaleConfig;
   delta: object;
 }
 
 interface Scenario {
-  prepare: (locale: Locale) => PrepareResult;
+  prepare: (localeConfig: TSLisan.LocaleConfig) => PrepareResult;
   expectations: Expectation[];
 }
 
@@ -20,8 +20,10 @@ interface Case {
   scenarios: Scenario[];
 }
 
-const prepareDateBase = (locale: Locale): Locale => ({
-  ...locale,
+const prepareDateBase = (
+  localeConfig: TSLisan.LocaleConfig,
+): TSLisan.LocaleConfig => ({
+  ...localeConfig,
   ordinal: (num): string => `${num}#ORDINAL$`,
   date: {
     masks: {

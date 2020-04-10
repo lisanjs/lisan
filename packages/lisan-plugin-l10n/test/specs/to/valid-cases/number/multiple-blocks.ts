@@ -2,14 +2,14 @@ import { Scenario, PrepareResult } from '../../../../test-utils/localization';
 
 const scenarios: Scenario[] = [
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const grouping = {
         blocks: [2, 1],
         delimiters: ['#'],
       };
       number.grouping = grouping;
-      return { locale: { ...locale, number }, delta: { grouping } };
+      return { localeConfig: { ...localeConfig, number }, delta: { grouping } };
     },
     expectations: [
       {
@@ -35,14 +35,14 @@ const scenarios: Scenario[] = [
     ],
   },
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const grouping = {
         blocks: [2, 1],
         delimiters: [' ', '#'],
       };
       number.grouping = grouping;
-      return { locale: { ...locale, number }, delta: { grouping } };
+      return { localeConfig: { ...localeConfig, number }, delta: { grouping } };
     },
     expectations: [
       {
@@ -68,14 +68,14 @@ const scenarios: Scenario[] = [
     ],
   },
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const grouping = {
         blocks: [2, 1, 3],
         delimiters: ['-', ' ', '#'],
       };
       number.grouping = grouping;
-      return { locale: { ...locale, number }, delta: { grouping } };
+      return { localeConfig: { ...localeConfig, number }, delta: { grouping } };
     },
     expectations: [
       {
@@ -121,15 +121,15 @@ const scenarios: Scenario[] = [
     ],
   },
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const grouping = {
         blocks: [2, 3],
         delimiters: ['-', ' '],
       };
       number.grouping = grouping;
       return {
-        locale: { ...locale, number },
+        localeConfig: { ...localeConfig, number },
         delta: { grouping, negative: true },
       };
     },

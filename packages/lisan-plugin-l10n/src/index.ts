@@ -10,7 +10,7 @@ const ucFirst = (str: string): string =>
   str.charAt(0).toUpperCase() + str.slice(1);
 
 const Localization: TSLisan.Plugin<LisanClass> = lisan => {
-  lisan.setLocale = function setLocale(locale: TSLisan.Locale): void {
+  lisan.setLocale = function setLocale(locale: TSLisan.LocaleConfig): void {
     this.reset();
 
     // @locale validators
@@ -34,7 +34,7 @@ const Localization: TSLisan.Plugin<LisanClass> = lisan => {
 declare module 'lisan' {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   class Lisan extends LisanClass {
-    setLocale(locale: TSLisan.Locale): void;
+    setLocale(localeConfig: TSLisan.LocaleConfig): void;
 
     toNumber(number: number): string;
 

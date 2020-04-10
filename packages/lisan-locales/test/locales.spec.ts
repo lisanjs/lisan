@@ -31,7 +31,7 @@ localeNames.forEach((localeName, index) => {
 
   describe(`${index + 1} / ${
     localeNames.length
-  } ) Locale: ${localeName}`, () => {
+  } ) Locale Config For: ${localeName}`, () => {
     beforeAll(() => {
       lisan.use(Localization);
     });

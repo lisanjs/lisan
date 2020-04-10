@@ -2,14 +2,14 @@ import { Scenario, PrepareResult } from '../../../../test-utils/localization';
 
 const scenarios: Scenario[] = [
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const zeroFormat = '#ZERO_FORMAT#';
       const nullFormat = '#NULL_FORMAT#';
       number.zeroFormat = zeroFormat;
       number.nullFormat = nullFormat;
       return {
-        locale: { ...locale, number },
+        localeConfig: { ...localeConfig, number },
         delta: { zeroFormat, nullFormat },
       };
     },
@@ -29,14 +29,14 @@ const scenarios: Scenario[] = [
     ],
   },
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const zeroFormat = '';
       const nullFormat = '';
       number.zeroFormat = zeroFormat;
       number.nullFormat = nullFormat;
       return {
-        locale: { ...locale, number },
+        localeConfig: { ...localeConfig, number },
         delta: { zeroFormat, nullFormat },
       };
     },
@@ -56,14 +56,14 @@ const scenarios: Scenario[] = [
     ],
   },
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const zeroFormat = null;
       const nullFormat = null;
       number.zeroFormat = zeroFormat;
       number.nullFormat = nullFormat;
       return {
-        locale: { ...locale, number },
+        localeConfig: { ...localeConfig, number },
         delta: { zeroFormat, nullFormat },
       };
     },

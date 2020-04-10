@@ -71,7 +71,7 @@ For the full list of methods, see [Lisan Localization API](/docs/full-api-refere
 **Type Signature**
 
 ```ts
-interface Locale {
+interface LocaleConfig {
   name: string;
 
   conditions?: Conditions;

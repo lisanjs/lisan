@@ -40,7 +40,7 @@ interface DateMasks {
   timeLong: string;
 }
 
-interface Locale {
+interface LocaleConfig {
   name: string;
   conditions?: Conditions;
   number?: NumberFormatOptions;
@@ -77,7 +77,7 @@ type LocalizationFormatters = {
 };
 
 export {
-  Locale,
+  LocaleConfig,
   DateMasks,
   NumberFormatOptions,
   Conditions,

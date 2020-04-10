@@ -2,8 +2,8 @@ import { Scenario, PrepareResult } from '../../../../test-utils/localization';
 
 const scenarios: Scenario[] = [
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const grouping = {
         blocks: [2, 1],
         delimiters: ['#'],
@@ -14,7 +14,10 @@ const scenarios: Scenario[] = [
       };
       number.grouping = grouping;
       number.fraction = fraction;
-      return { locale: { ...locale, number }, delta: { grouping, fraction } };
+      return {
+        localeConfig: { ...localeConfig, number },
+        delta: { grouping, fraction },
+      };
     },
     expectations: [
       {
@@ -60,8 +63,8 @@ const scenarios: Scenario[] = [
     ],
   },
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const grouping = {
         blocks: [2, 1],
         delimiters: [' ', '#'],
@@ -69,7 +72,7 @@ const scenarios: Scenario[] = [
       number.grouping = grouping;
       // removes fraction if fraction was not defined
       return {
-        locale: { ...locale, number },
+        localeConfig: { ...localeConfig, number },
         delta: { grouping, fraction: undefined },
       };
     },
@@ -97,8 +100,8 @@ const scenarios: Scenario[] = [
     ],
   },
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const grouping = {
         blocks: [2, 1],
         delimiters: [' ', '#'],
@@ -109,7 +112,10 @@ const scenarios: Scenario[] = [
       };
       number.grouping = grouping;
       number.fraction = fraction;
-      return { locale: { ...locale, number }, delta: { grouping, fraction } };
+      return {
+        localeConfig: { ...localeConfig, number },
+        delta: { grouping, fraction },
+      };
     },
     expectations: [
       {
@@ -135,8 +141,8 @@ const scenarios: Scenario[] = [
     ],
   },
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const grouping = {
         blocks: [2, 1],
         delimiters: [' ', '#'],
@@ -147,7 +153,10 @@ const scenarios: Scenario[] = [
       };
       number.grouping = grouping;
       number.fraction = fraction;
-      return { locale: { ...locale, number }, delta: { grouping, fraction } };
+      return {
+        localeConfig: { ...localeConfig, number },
+        delta: { grouping, fraction },
+      };
     },
     expectations: [
       {
@@ -177,8 +186,8 @@ const scenarios: Scenario[] = [
     ],
   },
   {
-    prepare: (locale): PrepareResult => {
-      const { number } = locale;
+    prepare: (localeConfig): PrepareResult => {
+      const { number } = localeConfig;
       const grouping = {
         blocks: [2, 1],
         delimiters: [' ', '#'],
@@ -190,7 +199,10 @@ const scenarios: Scenario[] = [
       number.grouping = grouping;
       // if digits === -1 prints the fraction as it is
       number.fraction = fraction;
-      return { locale: { ...locale, number }, delta: { grouping, fraction } };
+      return {
+        localeConfig: { ...localeConfig, number },
+        delta: { grouping, fraction },
+      };
     },
     expectations: [
       {

@@ -91,4 +91,4 @@ export default {
       'Ara',
     ],
   },
-} as TSLisan.Locale;
+} as TSLisan.LocaleConfig;

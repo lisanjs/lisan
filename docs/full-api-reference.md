@@ -381,13 +381,13 @@ You can find the setup instructions and available options [here](/docs/lisan-plu
 
 </div>
 
-### `lisan.setLocale(locale)`
+### `lisan.setLocale(localeConfig)`
 
 **Input**
 
-| parameter | type                | description          |
-| --------- | ------------------- | -------------------- |
-| locale    | [TSLisan.Locale][1] | Locale config object |
+| parameter    | type                      | description          |
+| ------------ | ------------------------- | -------------------- |
+| localeConfig | [TSLisan.LocaleConfig][1] | Locale config object |
 
 **Returns**: `void`
 

@@ -89,7 +89,7 @@ For the full list of methods, see [Lisan Localization API](https://lisanjs.com/d
 **Type Signature**
 
 ```ts
-interface Locale {
+interface LocaleConfig {
   name: string;
 
   conditions?: Conditions;

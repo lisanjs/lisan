@@ -14,10 +14,10 @@ cases.forEach(({ method, scenarios }) => {
     });
     scenarios.forEach(({ expectations, prepare }) => {
       const localeClone = JSON.parse(JSON.stringify(LocaleBase));
-      const { locale, delta } = prepare(localeClone);
+      const { localeConfig, delta } = prepare(localeClone);
       describe(JSON.stringify(delta), () => {
         beforeEach(() => {
-          lisan.setLocale(locale);
+          lisan.setLocale(localeConfig);
         });
 
         expectations.forEach(({ input, output }) => {
