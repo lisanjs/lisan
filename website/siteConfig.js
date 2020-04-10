@@ -41,6 +41,11 @@ const siteConfig = {
   // e.g., for the https://JoelMarcey.github.io site, it would be set like...
   //   organizationName: 'JoelMarcey'
 
+  algolia: {
+    apiKey: 'c32fd47302ff90619db732b474567867',
+    indexName: 'lisanjs',
+  },
+
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'what-is-lisan', label: 'Docs' },
@@ -48,7 +53,7 @@ const siteConfig = {
     { page: 'try-it-out', label: 'Try it out' },
     { href: 'https://github.com/lisanjs/examples', label: 'Examples' },
     // { doc: 'examples/react', label: 'Tutorials' },
-    // { search: true },
+    { search: true },
     // Links to href destination
     { href: 'https://github.com/lisanjs/lisan', label: 'GitHub' },
   ],
