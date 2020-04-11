@@ -40,7 +40,11 @@ is taking advantage of
 [ES6 Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 and using them to generate functions to interpolate strings.
 
-Click [here](https://lisanjs.com/docs/what-is-lisan/) to learn more!.
+<p align="center">
+  <img alt="Lisan.js" src="./website/static/img/lisan-translation-dictionary.png">
+</p>
+
+Check out our [website](https://lisanjs.com/docs/what-is-lisan/) to learn more!
 
 ## Highlights
 
