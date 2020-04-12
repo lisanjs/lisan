@@ -8,7 +8,7 @@ Here you can find all supported options and methods provided by
 
 ## Methods
 
-- [`parseLisanLiteral(lisanLiteral)`](#parselisanliterallisanliteral)
+- [`parseLisanLiteral(lisanLiteral, options?)`](#parselisanliterallisanliteral)
 - [`parse(json, parseOptions)`](#parsejson-parseoptions)
 - [`generate(parsedDictionary, generateOptions)`](#generateparseddictionary-generateoptions)
 
