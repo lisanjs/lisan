@@ -123,6 +123,8 @@ const siteConfig = {
 
   docsSideNavCollapsible: false,
 
+  gaTrackingId: 'UA-3857339-12',
+
   // You may provide arbitrary config keys to be used as needed by your
   // template. For example, if you need your repo's URL...
   repoUrl: 'https://github.com/lisanjs/lisan',
