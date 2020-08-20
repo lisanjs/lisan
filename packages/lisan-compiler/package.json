@@ -36,9 +36,9 @@
   },
   "dependencies": {
     "@types/escodegen": "0.0.6",
-    "@types/estree": "0.0.44",
-    "acorn": "7.1.1",
-    "escodegen": "1.14.1"
+    "@types/estree": "0.0.45",
+    "acorn": "8.0.1",
+    "escodegen": "2.0.0"
   },
   "bugs": {
     "url": "https://github.com/lisanjs/lisan/issues"

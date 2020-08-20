@@ -38,20 +38,20 @@
     "url": "https://github.com/lisanjs/lisan/issues"
   },
   "dependencies": {
-    "chokidar": "3.3.1",
+    "chokidar": "3.4.2",
     "colors": "1.4.0",
-    "find-up": "4.1.0",
+    "find-up": "5.0.0",
     "glob": "7.1.6",
     "is-glob": "4.0.1",
     "json5": "2.1.3",
     "lisan-compiler": "^0.1.1",
     "read-env": "2.0.0",
-    "yargs": "15.3.1"
+    "yargs": "15.4.1"
   },
   "devDependencies": {
     "@types/is-glob": "4.0.1",
     "@types/json5": "0.0.30",
-    "@types/yargs": "15.0.4"
+    "@types/yargs": "15.0.5"
   },
   "gitHead": "f0ee2419c008b5d40cb5502a7ba9320260ef11d5"
 }
