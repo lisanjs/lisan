@@ -40,7 +40,7 @@ After installing [Lisan CLI](/docs/lisan-cli) as a dev dependency,
 simply run it like below:
 
 ```bash
-lisan compile --inputDir src/translations/ -outputDir static/dictionaries/ --watch
+lisan compile --inputDir src/translations/ --outputDir static/dictionaries/ --watch
 ```
 
 **lisan-cli** will find all **\*\*/\*.json** files in the **input directory**,
